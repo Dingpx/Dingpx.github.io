@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>20181202_cv | Dingpx&#39;s Blog</title>
+  <title>sss | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
+  <meta name="description" content="Assignment2听完了整体的CNN的框架和常用的调参技巧后，开始着手做assignment2 以下记录做题时遇到的问题 FullyConnectedNets.ipynb这个ipynb主要是将assignment1中的two_layer_net中实现的功能用一种模块化的形式去实现更复杂（多层网络）的结构 数据预处理首先要运行一个setup.py文件，目的是将某些用C写的东西编译出来，主要是涉及">
+<meta name="keywords" content="cs231n,assignment">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20181202_cv">
-<meta property="og:url" content="http://yoursite.com/2018/12/02/title-1/index.html">
+<meta property="og:title" content="sss">
+<meta property="og:url" content="http://yoursite.com/2018/12/03/title-1/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="Assignment2听完了整体的CNN的框架和常用的调参技巧后，开始着手做assignment2 以下记录做题时遇到的问题 FullyConnectedNets.ipynb这个ipynb主要是将assignment1中的two_layer_net中实现的功能用一种模块化的形式去实现更复杂（多层网络）的结构 数据预处理首先要运行一个setup.py文件，目的是将某些用C写的东西编译出来，主要是涉及">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-02T13:32:46.226Z">
+<meta property="og:updated_time" content="2018-12-02T16:38:21.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20181202_cv">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:title" content="sss">
+<meta name="twitter:description" content="Assignment2听完了整体的CNN的框架和常用的调参技巧后，开始着手做assignment2 以下记录做题时遇到的问题 FullyConnectedNets.ipynb这个ipynb主要是将assignment1中的two_layer_net中实现的功能用一种模块化的形式去实现更复杂（多层网络）的结构 数据预处理首先要运行一个setup.py文件，目的是将某些用C写的东西编译出来，主要是涉及">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -132,27 +133,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-title-1" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="posts-title-1" class="article article-type-posts " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      20181202_cv
+      sss
     </h1>
   
 
         
-        <a href="/2018/12/02/title-1/" class="archive-article-date">
-  	<time datetime="2018-12-02T13:32:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-02</time>
+        <a href="/2018/12/03/title-1/" class="archive-article-date">
+  	<time datetime="2018-12-02T16:35:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Assignment2"><a href="#Assignment2" class="headerlink" title="Assignment2"></a>Assignment2</h1><p>听完了整体的CNN的框架和常用的调参技巧后，开始着手做assignment2</p>
+<p>以下记录做题时遇到的问题</p>
+<h2 id="FullyConnectedNets-ipynb"><a href="#FullyConnectedNets-ipynb" class="headerlink" title="FullyConnectedNets.ipynb"></a>FullyConnectedNets.ipynb</h2><p>这个ipynb主要是将assignment1中的two_layer_net中实现的功能用一种模块化的形式去实现更复杂（多层网络）的结构</p>
+<h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><p>首先要运行一个setup.py文件，目的是将某些用C写的东西编译出来，主要是涉及一个imcool的算法，去减少卷积的算法复杂度（还没有细看，就先跑一下）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># As usual, a bit of setup</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function	<span class="comment">##__future__兼容此版本没有的库</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> cs231n.classifiers.fc_net <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> cs231n.data_utils <span class="keyword">import</span> get_CIFAR10_data</span><br><span class="line"><span class="keyword">from</span> cs231n.gradient_check <span class="keyword">import</span> eval_numerical_gradient, eval_numerical_gradient_array</span><br><span class="line"><span class="keyword">from</span> cs231n.solver <span class="keyword">import</span> Solver</span><br><span class="line"></span><br><span class="line"><span class="comment"># ipython里的magic function，用来内嵌绘图，同时可以省略plt.show()</span></span><br><span class="line">%matplotlib inline	</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认的像素：[6.0,4.0]，分辨率为100，图片尺寸为 600&amp;400</span></span><br><span class="line"><span class="comment"># 指定dpi=200，图片尺寸为 1200*800</span></span><br><span class="line"><span class="comment"># 指定dpi=300，图片尺寸为 1800*1200</span></span><br><span class="line"><span class="comment"># 设置figsize可以在不改变分辨率情况下改变比例</span></span><br><span class="line">plt.rcParams[<span class="string">'figure.figsize'</span>] = (<span class="number">10.0</span>, <span class="number">8.0</span>) </span><br><span class="line">plt.rcParams[<span class="string">'image.interpolation'</span>] = <span class="string">'nearest'</span> <span class="comment"># 设置最近邻插值</span></span><br><span class="line">plt.rcParams[<span class="string">'image.cmap'</span>] = <span class="string">'gray'</span> <span class="comment"># 设置灰度输出</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在ipython（jupyter基于ipython）里已经import过的模块修改后需要重新reload的部分自动reload</span></span><br><span class="line">%load_ext autoreload</span><br><span class="line">%autoreload <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rel_error</span><span class="params">(x, y)</span>:</span></span><br><span class="line">  <span class="string">""" returns relative error """</span></span><br><span class="line">  <span class="keyword">return</span> np.max(np.abs(x - y) / (np.maximum(<span class="number">1e-8</span>, np.abs(x) + np.abs(y))))</span><br><span class="line"></span><br><span class="line">data = get_CIFAR10_data()</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> list(data.items()):</span><br><span class="line">  print((<span class="string">'%s: '</span> % k, v.shape))</span><br></pre></td></tr></table></figure>
+<h3 id="Affine-layer-foward"><a href="#Affine-layer-foward" class="headerlink" title="Affine layer: foward"></a>Affine layer: foward</h3><p>完成cs231n/layers.py 里的affine_forward 方程</p>
+
       
 
       
@@ -160,6 +167,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -210,7 +232,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/02/title-1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/03/title-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -253,7 +275,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Assignment2"><span class="toc-number">1.</span> <span class="toc-text">Assignment2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#FullyConnectedNets-ipynb"><span class="toc-number">1.1.</span> <span class="toc-text">FullyConnectedNets.ipynb</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据预处理"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据预处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Affine-layer-foward"><span class="toc-number">1.1.2.</span> <span class="toc-text">Affine layer: foward</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -387,6 +409,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">assignment</a>
               </li>
             
             <div class="clearfix"></div>
