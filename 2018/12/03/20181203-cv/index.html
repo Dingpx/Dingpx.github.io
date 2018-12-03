@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
 <meta property="og:description" content="听完了整体的CNN的框架和常用的调参技巧后，开始着手做assignment2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T12:35:56.085Z">
+<meta property="og:updated_time" content="2018-12-03T12:38:51.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS231n Assignment2">
 <meta name="twitter:description" content="听完了整体的CNN的框架和常用的调参技巧后，开始着手做assignment2">
@@ -185,25 +185,20 @@
 <p>（参考链接：<a href="https://www.cnblogs.com/sunshinewang/p/6893503.html）" target="_blank" rel="noopener">https://www.cnblogs.com/sunshinewang/p/6893503.html）</a></p>
 </li>
 <li><p>numpy矩阵的乘法：</p>
-<ul>
-<li><p>区分好几个名词，点积=内积，适用于向量，而矩阵乘法是适用于矩阵，实质也还是矩阵行列之间的点积，矩阵的元素相乘和这些都没关系</p>
-</li>
-<li><p>二维时<strong>np.matmul()</strong>和<strong>np.dot()</strong>等价，而<strong>np.multiply()</strong>和<strong>*</strong>实现了元素级别乘法（参考链接：<a href="https://blog.csdn.net/u012300744/article/details/80423135）" target="_blank" rel="noopener">https://blog.csdn.net/u012300744/article/details/80423135）</a></p>
-</li>
-<li><p>关于<strong>np.matmul()</strong>和<strong>np.dot()</strong>的区别，要详细看numpy文档（暂时没看），以下链接是别人写的，可以</p>
+<ol>
+<li>区分好几个名词，点积=内积，适用于向量，而矩阵乘法是适用于矩阵，实质也还是矩阵行列之间的点积，矩阵的元素相乘和这些都没关系</li>
+<li>二维时<strong>np.matmul()</strong>和<strong>np.dot()</strong>等价，而<strong>np.multiply()</strong>和<strong>*</strong>实现了元素级别乘法（参考链接：<a href="https://blog.csdn.net/u012300744/article/details/80423135）" target="_blank" rel="noopener">https://blog.csdn.net/u012300744/article/details/80423135）</a></li>
+<li>关于<strong>np.matmul()</strong>和<strong>np.dot()</strong>的区别，要详细看numpy文档（暂时没看），以下链接是别人写的，可以</li>
+</ol>
 <p>（参考链接<a href="https://blog.csdn.net/qq_42698384/article/details/82936294" target="_blank" rel="noopener">https://blog.csdn.net/qq_42698384/article/details/82936294</a> ）</p>
-</li>
-</ul>
 </li>
 <li><p>numpy矩阵的sum：记得axis=谁，谁那一轴就消失，比如dout的维度是(10,5),做np.sum(dout,axis=0)，那么结果的维度就是（5，）</p>
 </li>
 <li><p>python默认向量维度是列向量；</p>
-<ul>
-<li><p>numpy的一维列向量维度是（n,），二维横向量的维度是（1,n）</p>
-</li>
-<li><p>一维列向量（如(3,)）在广播运算中是当做二维行向量（如(1,3)）计算的，也就是说(3,)相当于(1,3)</p>
-</li>
-</ul>
+<ol>
+<li>numpy的一维列向量维度是（n,），二维横向量的维度是（1,n）</li>
+<li>一维列向量（如(3,)）在广播运算中是当做二维行向量（如(1,3)）计算的，也就是说(3,)相当于(1,3)</li>
+</ol>
 </li>
 <li><p>矩阵乘法计算时注意维度的问题呀，是真滴还是计算时很杂乱，有机会去补一下这个基础哇</p>
 </li>
