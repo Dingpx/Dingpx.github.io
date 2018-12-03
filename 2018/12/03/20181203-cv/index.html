@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
 <meta property="og:description" content="听完了整体的CNN的框架和常用的调参技巧后，开始着手做assignment2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T12:26:13.244Z">
+<meta property="og:updated_time" content="2018-12-03T12:27:56.910Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS231n Assignment2">
 <meta name="twitter:description" content="听完了整体的CNN的框架和常用的调参技巧后，开始着手做assignment2">
@@ -173,6 +173,11 @@
 <p>2、同时还要搞清楚上面那个和reshape的联合是怎么做的</p>
 <p>3、np.prod()：默认计算所有element的乘积，可定义按某个轴计算</p>
 <p>4、Np.linspace(): 生成等差数列，默认间隔50，num项自定义间隔</p>
+<ol>
+<li>Afafasf.,,,</li>
+<li>afasd</li>
+<li>agad（<a href="https://zhidao.baidu.com/question/369701615352347164.html）" target="_blank" rel="noopener">https://zhidao.baidu.com/question/369701615352347164.html）</a></li>
+</ol>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Test the affine_forward function</span></span><br><span class="line"></span><br><span class="line">num_inputs = <span class="number">2</span></span><br><span class="line">input_shape = (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)</span><br><span class="line">output_dim = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Python允许你在list或tuple前面加一个*号，把list或tuple的元素变成可变参数传进去</span></span><br><span class="line"><span class="comment">#print(*input_shape)</span></span><br><span class="line"></span><br><span class="line">input_size = num_inputs * np.prod(input_shape)<span class="comment"># np.prod()计算数组元素乘积</span></span><br><span class="line">weight_size = output_dim * np.prod(input_shape)</span><br><span class="line"></span><br><span class="line"><span class="comment"># linspace函数默认生成等间隔(50)数列,点明num时以num作为间隔</span></span><br><span class="line">x = np.linspace(<span class="number">-0.1</span>, <span class="number">0.5</span>, num=input_size).reshape(num_inputs, *input_shape)</span><br><span class="line">w = np.linspace(<span class="number">-0.2</span>, <span class="number">0.3</span>, num=weight_size).reshape(np.prod(input_shape), output_dim)</span><br><span class="line">b = np.linspace(<span class="number">-0.3</span>, <span class="number">0.1</span>, num=output_dim)</span><br><span class="line"></span><br><span class="line">out, _ = affine_forward(x, w, b)</span><br><span class="line">correct_out = np.array([[ <span class="number">1.49834967</span>,  <span class="number">1.70660132</span>,  <span class="number">1.91485297</span>],</span><br><span class="line">                        [ <span class="number">3.25553199</span>,  <span class="number">3.5141327</span>,   <span class="number">3.77273342</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compare your output with ours. The error should be around e-9 or less.</span></span><br><span class="line">print(<span class="string">'Testing affine_forward function:'</span>)</span><br><span class="line">print(<span class="string">'difference: '</span>, rel_error(out, correct_out))</span><br></pre></td></tr></table></figure>
 <blockquote>
