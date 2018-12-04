@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>tags | Dingpx&#39;s Blog</title>
+  <title>Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="code: https://github.com/huguyuehuhu/HCN-pytorch 摘要解决这一任务的最关键因素在于两方面：用于关节共现的帧内表征和用于骨架的时间演化的帧间表征。 这些共现特征是用一种分层式的方法学习到的，其中不同层次的环境信息（contextual information）是逐渐聚合的。首先独立地编码每个节点的点层面的信息。然后同时在空间域和时间域将它们组合成形义">
+<meta name="keywords" content="论文,CV,，IJCAI2018,人体骨架检测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation">
+<meta property="og:url" content="http://yoursite.com/2018/12/04/20181204-paper/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="code: https://github.com/huguyuehuhu/HCN-pytorch 摘要解决这一任务的最关键因素在于两方面：用于关节共现的帧内表征和用于骨架的时间演化的帧间表征。 这些共现特征是用一种分层式的方法学习到的，其中不同层次的环境信息（contextual information）是逐渐聚合的。首先独立地编码每个节点的点层面的信息。然后同时在空间域和时间域将它们组合成形义">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-01T17:08:03.211Z">
+<meta property="og:updated_time" content="2018-12-04T03:39:31.069Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:title" content="Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation">
+<meta name="twitter:description" content="code: https://github.com/huguyuehuhu/HCN-pytorch 摘要解决这一任务的最关键因素在于两方面：用于关节共现的帧内表征和用于骨架的时间演化的帧间表征。 这些共现特征是用一种分层式的方法学习到的，其中不同层次的环境信息（contextual information）是逐渐聚合的。首先独立地编码每个节点的点层面的信息。然后同时在空间域和时间域将它们组合成形义">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -132,27 +133,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope="" itemprop="blogPost">
+            <article id="post-20181204-paper" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2018-12-01T17:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-02</time>
+        <a href="/2018/12/04/20181204-paper/" class="archive-article-date">
+  	<time datetime="2018-12-04T00:07:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <a id="more"></a>
+<p>code: <a href="https://github.com/huguyuehuhu/HCN-pytorch" target="_blank" rel="noopener">https://github.com/huguyuehuhu/HCN-pytorch</a></p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>解决这一任务的最关键因素在于两方面：用于关节共现的帧内表征和用于骨架的时间演化的帧间表征。</p>
+<p>这些共现特征是用一种分层式的方法学习到的，其中不同层次的环境信息（contextual information）是逐渐聚合的。首先独立地编码每个节点的点层面的信息。然后同时在空间域和时间域将它们组合成形义表征。</p>
+<p>具体而言，我们引入了一种全局空间聚合方案，可以学习到优于局部聚合方法的关节共现特征。</p>
+<p>此外，我们还将原始的骨架坐标与它们的时间差异整合成了一种双流式的范式。</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3>
       
 
       
@@ -160,6 +167,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">论文</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">，IJCAI2018</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">人体骨架检测</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -210,7 +240,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/04/20181204-paper/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -222,6 +252,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/12/04/20181204-tool/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Alfred入门
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/03/20181203-tool/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">typora格式规范</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -243,7 +292,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -285,7 +334,7 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
