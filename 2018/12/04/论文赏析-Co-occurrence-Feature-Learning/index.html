@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>typora入门 | Dingpx&#39;s Blog</title>
+  <title>论文赏析_Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写在开头，希望每天可以将所得所学总结出来，让自己成为一个可控的人。">
-<meta name="keywords" content="工具,typora,入门">
+  <meta name="description" content="code: https://github.com/huguyuehuhu/HCN-pytorch 摘要解决这一任务的最关键因素在于两方面：用于关节共现的帧内表征和用于骨架的时间演化的帧间表征。 这些共现特征是用一种分层式的方法学习到的，其中不同层次的环境信息（contextual information）是逐渐聚合的。首先独立地编码每个节点的点层面的信息。然后同时在空间域和时间域将它们组合成形义">
+<meta name="keywords" content="论文,CV,IJCAI2018,人体骨架检测,论文赏析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="typora入门">
-<meta property="og:url" content="http://yoursite.com/2018/12/02/20181202-note/index.html">
+<meta property="og:title" content="论文赏析_Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation">
+<meta property="og:url" content="http://yoursite.com/2018/12/04/论文赏析-Co-occurrence-Feature-Learning/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="写在开头，希望每天可以将所得所学总结出来，让自己成为一个可控的人。">
+<meta property="og:description" content="code: https://github.com/huguyuehuhu/HCN-pytorch 摘要解决这一任务的最关键因素在于两方面：用于关节共现的帧内表征和用于骨架的时间演化的帧间表征。 这些共现特征是用一种分层式的方法学习到的，其中不同层次的环境信息（contextual information）是逐渐聚合的。首先独立地编码每个节点的点层面的信息。然后同时在空间域和时间域将它们组合成形义">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-02T10:20:39.239Z">
+<meta property="og:updated_time" content="2018-12-05T04:48:22.912Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="typora入门">
-<meta name="twitter:description" content="写在开头，希望每天可以将所得所学总结出来，让自己成为一个可控的人。">
+<meta name="twitter:title" content="论文赏析_Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation">
+<meta name="twitter:description" content="code: https://github.com/huguyuehuhu/HCN-pytorch 摘要解决这一任务的最关键因素在于两方面：用于关节共现的帧内表征和用于骨架的时间演化的帧间表征。 这些共现特征是用一种分层式的方法学习到的，其中不同层次的环境信息（contextual information）是逐渐聚合的。首先独立地编码每个节点的点层面的信息。然后同时在空间域和时间域将它们组合成形义">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -133,184 +133,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-20181202-note" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-论文赏析-Co-occurrence-Feature-Learning" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      typora入门
+      论文赏析_Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation
     </h1>
   
 
         
-        <a href="/2018/12/02/20181202-note/" class="archive-article-date">
-  	<time datetime="2018-12-02T08:10:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-02</time>
+        <a href="/2018/12/04/论文赏析-Co-occurrence-Feature-Learning/" class="archive-article-date">
+  	<time datetime="2018-12-04T00:07:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>写在开头，希望每天可以将所得所学总结出来，让自己成为一个可控的人。</p>
-<a id="more"></a>
-<h2 id="段落格式"><a href="#段落格式" class="headerlink" title="段落格式"></a>段落格式</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><blockquote>
-<p>这是n级标题</p>
-</blockquote>
-<p>“ n个# + 文字 ”</p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>⌘+n(⌘+0 为段落)</p>
-<p>⌘ = 提升标题</p>
-<p>⌘ - 提升标题        </p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>“ |列名|列名| ”</p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>⌘ + ⎇ + T</p>
-<table>
-<thead>
-<tr>
-<th>第一列</th>
-<th>第二列</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>NLP</td>
-<td>CV</td>
-</tr>
-</tbody>
-</table>
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>3个`+语言名 </p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>⌘ + ⎇ + C</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">print(<span class="string">"my name is Dingpx"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="公式块"><a href="#公式块" class="headerlink" title="公式块"></a>公式块</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>“ $$+ 换行键 ”</p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>⌘ + ⎇ + B<br>$$<br>\lim_{x\to\infty}\exp(-x)=0<br>$$</p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>“ &gt; + 文字”</p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>⌘ + ⎇ + Q</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<ol>
-<li>有序列表：“  数字 + . + 内容 ”</li>
-</ol>
-<ul>
-<li>无序列表：“ +/-/* + 内容 ”</li>
-<li style="list-style: none"><input type="checkbox"> 任务列表：“ +/-/* + [ ] + 内容”(目前在hexo上显示有问题)</li>
-</ul>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<ol>
-<li>有序列表：⌘ + ⎇ + O</li>
-</ol>
-<ul>
-<li>无序列表：⌘ + ⎇ + U</li>
-<li style="list-style: none"><input type="checkbox"> 任务列表：⌘ + ⎇ + X</li>
-<li>减少缩进：⌘ +「</li>
-<li>增加缩进： ⌘ +  」</li>
-</ul>
-<h3 id="链接引用"><a href="#链接引用" class="headerlink" title="链接引用"></a>链接引用</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<ul>
-<li><p>“ [ 超链接的内容 ] +(超链接源 +超链接命名)”</p>
-<p>This is <a href="http://www.baidu.com/" title="Title" target="_blank" rel="noopener">an example</a> inline link</p>
-</li>
-<li><p>标注URL可自动识别</p>
-<p><a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
-</li>
-</ul>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<ul>
-<li>⌘ + ⎇ + L</li>
-</ul>
-<ul>
-<li>⌘ + K</li>
-</ul>
-<p><a href="www.buzhidao.com">快捷键</a></p>
-<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>文字 + [+^+序列+]</p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>⌘ + ⎇ + R</p>
-<p>快捷键<a href="这是脚注">^2</a>（在hexo上也显示不出来）</p>
-<h2 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h2><p>所有的清除样式是: ⌘ + \</p>
-<h3 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>开头结尾加双✳</p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>⌘ + B</p>
-<p><strong>double asterisks</strong></p>
-<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>开头结尾加单✳</p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>⌘ + I</p>
-<p><em>single asterisks</em></p>
-<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>用html的标记“u”（少加了尖括号&lt;&gt;）</p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>⌘ + U</p>
-<p><u>Underline</u></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>用<code></code>括住</p>
-<blockquote>
-<p>快捷键</p>
-</blockquote>
-<p>shift + ⌘ + `</p>
-<p><code>printf</code></p>
-<h3 id="内联公式"><a href="#内联公式" class="headerlink" title="内联公式"></a>内联公式</h3><blockquote>
-<p>标记</p>
-</blockquote>
-<p>在$$之间输入字母或者Tex公式</p>
-<p>这是插入在文章中的公式，$$\lim_{x\to\infty}\exp(-x)=0$$和用代码块显示的不一样</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1、Typora 是一个所见即所得的markdown的编辑器</p>
-<p>2、在想要截断的地方记得加<!--more--></p>
-<p>3、表格、任务列表、脚注功能暂时不兼容yilia主题</p>
-<p>4、hexo基础配置教程链接：<a href="https://blog.csdn.net/liu_wentao/article/details/70174508" target="_blank" rel="noopener">https://blog.csdn.net/liu_wentao/article/details/70174508</a></p>
-
+        <a id="more"></a>
+<p>code: <a href="https://github.com/huguyuehuhu/HCN-pytorch" target="_blank" rel="noopener">https://github.com/huguyuehuhu/HCN-pytorch</a></p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>解决这一任务的最关键因素在于两方面：用于关节共现的帧内表征和用于骨架的时间演化的帧间表征。</p>
+<p>这些共现特征是用一种分层式的方法学习到的，其中不同层次的环境信息（contextual information）是逐渐聚合的。首先独立地编码每个节点的点层面的信息。然后同时在空间域和时间域将它们组合成形义表征。</p>
+<p>具体而言，我们引入了一种全局空间聚合方案，可以学习到优于局部聚合方法的关节共现特征。</p>
+<p>此外，我们还将原始的骨架坐标与它们的时间差异整合成了一种双流式的范式。</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3>
       
 
       
@@ -323,15 +172,23 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">论文</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">typora</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">入门</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IJCAI2018</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">人体骨架检测</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">论文赏析</a>
         		</li>
       		
 		</ul>
@@ -387,7 +244,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/02/20181202-note/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/04/论文赏析-Co-occurrence-Feature-Learning/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -401,15 +258,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/03/20181203-cv/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/12/04/Alfred入门/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CS231n Assignment2
+          ç
         
       </div>
     </a>
   
+  
+    <a href="/2018/12/03/typora格式规范/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">typora格式规范</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -434,7 +296,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#段落格式"><span class="toc-number">1.</span> <span class="toc-text">段落格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标题"><span class="toc-number">1.1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格"><span class="toc-number">1.2.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码块"><span class="toc-number">1.3.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公式块"><span class="toc-number">1.4.</span> <span class="toc-text">公式块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用"><span class="toc-number">1.5.</span> <span class="toc-text">引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表"><span class="toc-number">1.6.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#链接引用"><span class="toc-number">1.7.</span> <span class="toc-text">链接引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#脚注"><span class="toc-number">1.8.</span> <span class="toc-text">脚注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字体样式"><span class="toc-number">2.</span> <span class="toc-text">字体样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加粗"><span class="toc-number">2.1.</span> <span class="toc-text">加粗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#斜体"><span class="toc-number">2.2.</span> <span class="toc-text">斜体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下划线"><span class="toc-number">2.3.</span> <span class="toc-text">下划线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">2.4.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内联公式"><span class="toc-number">2.5.</span> <span class="toc-text">内联公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -563,11 +425,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">typora</a>
+                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,11 +457,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
+                <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
               </li>
              
               <li class="article-tag-list-item">
