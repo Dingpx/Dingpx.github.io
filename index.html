@@ -133,6 +133,170 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-组会笔记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/11/组会笔记/">组会笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/11/组会笔记/" class="archive-article-date">
+  	<time datetime="2018-12-11T03:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>未来的走向：角色（进程），场景（数据），嵌入 （迁移学习）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/11/组会笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CS231n-Assignment2——cnn" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/10/CS231n-Assignment2——cnn/">CS231n_Assignment2——cnn</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/10/CS231n-Assignment2——cnn/" class="archive-article-date">
+  	<time datetime="2018-12-10T10:11:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Convolution-Naive-forward-pass"><a href="#Convolution-Naive-forward-pass" class="headerlink" title="Convolution: Naive forward pass"></a>Convolution: Naive forward pass</h2><ul>
+<li><p>np.pad()函数<a href="https://blog.csdn.net/qq_36332685/article/details/78803622" target="_blank" rel="noopener">https://blog.csdn.net/qq_36332685/article/details/78803622</a></p>
+<p><strong>1）语法结构</strong></p>
+<blockquote>
+<p>pad(array, pad_width, mode, **kwargs)</p>
+<p>返回值：数组</p>
+</blockquote>
+<p><strong>2）参数解释</strong></p>
+<blockquote>
+<p>array——表示需要填充的数组；</p>
+<p>pad_width——表示每个轴（axis）边缘需要填充的数值数目。<br>参数输入方式为：（(before_1, after_1), … (before_N, after_N)），其中(before_1, after_1)表示第1轴两边缘分别填充before_1个和after_1个数值。取值为：{sequence, array_like, int}; (pad,) or int 是before = after 简写形式 </p>
+<p>mode——表示填充的方式（取值：str字符串或用户提供的函数）,总共有11种填充模式；</p>
+</blockquote>
+<p>所以如果对 输入维度为(N, C, H, W)的x来卷积的话，要注意第二个参数</p>
+<p><code>x_padded = np.pad(x, ((0,), (0,), (pad,), (pad,)), &#39;constant&#39;)</code></p>
+<p>这里表示往第三个和第四个维度上pad，比如pad=1的时候，（2，3，4，4）就扩充为（2，3，6，6），注意的是这种写法等价于</p>
+<p><code>x_padded = np.pad(x, ((0,0), (0,0), (pad,pad), (pad,pad)), &#39;constant&#39;)</code></p>
+<p>要不就写全了前后边缘，要不就全省略着写</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/10/CS231n-Assignment2——cnn/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-CS231n-Assignment2——Dropout" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -926,14 +1090,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">论文</a>
               </li>
              
@@ -947,6 +1103,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
               </li>
             
             <div class="clearfix"></div>
