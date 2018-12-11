@@ -17,7 +17,7 @@
 <meta property="og:description" content="完成了bn的部分，开始着手dropout的部分，dropout在本质上就是一种正则化，去使得某些神经元失效来达到防止过拟合的效果">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy1sz1k6txj310i0oeacy.jpg">
-<meta property="og:updated_time" content="2018-12-10T10:00:10.696Z">
+<meta property="og:updated_time" content="2018-12-11T03:11:31.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CS231n_Assignment2——Dropout">
 <meta name="twitter:description" content="完成了bn的部分，开始着手dropout的部分，dropout在本质上就是一种正则化，去使得某些神经元失效来达到防止过拟合的效果">
@@ -158,7 +158,7 @@
         <p>完成了bn的部分，开始着手dropout的部分，dropout在本质上就是一种正则化，去使得某些神经元失效来达到防止过拟合的效果</p>
 <a id="more"></a>
 <ul>
-<li><p>这里的内容比较少，就不完整写出代码了，主要是这里用的是<strong>invited dropout</strong>，意思就是说，本来在训练阶段需要确定一个要抛弃的概率阈值，使得概率小于此的要抛弃，可是为了保持数据在训练和测试阶段的一致性，测试阶段也需要乘以这个阈值才可以，所以inverted的做法就是在训练阶段就除以这个概率阈值，那么相当于在测试阶段就不需要乘以这个值。</p>
+<li><p>这里的内容比较少，就不完整写出代码了，主要是这里用的是<strong>inverted dropout</strong>，意思就是说，本来在训练阶段需要确定一个要抛弃的概率阈值，使得概率小于此的要抛弃，可是为了保持数据在训练和测试阶段的一致性，测试阶段也需要乘以这个阈值才可以，所以inverted的做法就是在训练阶段就除以这个概率阈值，那么相当于在测试阶段就不需要乘以这个值。</p>
 </li>
 <li><p>下图可以很明显看出在测试阶段的准确率提高了很多</p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy1sz1k6txj310i0oeacy.jpg" alt="屏幕快照 2018-12-10 下午5.58.53"></p>
@@ -419,18 +419,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入门</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">CV</a>
               </li>
              
@@ -443,7 +431,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,14 +468,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
               </li>
             
             <div class="clearfix"></div>

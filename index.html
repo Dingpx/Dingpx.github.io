@@ -216,27 +216,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Convolution-Naive-forward-pass"><a href="#Convolution-Naive-forward-pass" class="headerlink" title="Convolution: Naive forward pass"></a>Convolution: Naive forward pass</h2><ul>
-<li><p>np.pad()函数<a href="https://blog.csdn.net/qq_36332685/article/details/78803622" target="_blank" rel="noopener">https://blog.csdn.net/qq_36332685/article/details/78803622</a></p>
-<p><strong>1）语法结构</strong></p>
-<blockquote>
-<p>pad(array, pad_width, mode, **kwargs)</p>
-<p>返回值：数组</p>
-</blockquote>
-<p><strong>2）参数解释</strong></p>
-<blockquote>
-<p>array——表示需要填充的数组；</p>
-<p>pad_width——表示每个轴（axis）边缘需要填充的数值数目。<br>参数输入方式为：（(before_1, after_1), … (before_N, after_N)），其中(before_1, after_1)表示第1轴两边缘分别填充before_1个和after_1个数值。取值为：{sequence, array_like, int}; (pad,) or int 是before = after 简写形式 </p>
-<p>mode——表示填充的方式（取值：str字符串或用户提供的函数）,总共有11种填充模式；</p>
-</blockquote>
-<p>所以如果对 输入维度为(N, C, H, W)的x来卷积的话，要注意第二个参数</p>
-<p><code>x_padded = np.pad(x, ((0,), (0,), (pad,), (pad,)), &#39;constant&#39;)</code></p>
-<p>这里表示往第三个和第四个维度上pad，比如pad=1的时候，（2，3，4，4）就扩充为（2，3，6，6），注意的是这种写法等价于</p>
-<p><code>x_padded = np.pad(x, ((0,0), (0,0), (pad,pad), (pad,pad)), &#39;constant&#39;)</code></p>
-<p>要不就写全了前后边缘，要不就全省略着写</p>
-</li>
-</ul>
-
+        <p>12月11号，开始写cnn.ipynb的部分</p>
+        
       
 
       
@@ -1062,18 +1043,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入门</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">CV</a>
               </li>
              
@@ -1086,7 +1055,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">typora</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">规范</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1103,14 +1092,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
               </li>
             
             <div class="clearfix"></div>
