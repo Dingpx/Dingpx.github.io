@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>笔记——Tensorflow实战Google深度学习框架（二） | Dingpx&#39;s Blog</title>
+  <title>Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
-<meta name="keywords" content="CV,笔记,tensorflow">
+  <meta name="description" content="title: 笔记——Tensorflow实战Google深度学习框架（二）date: 2018-12-17 13:59:51tags: [CV, 笔记, tensorflow] Tensorflow环境搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="笔记——Tensorflow实战Google深度学习框架（二）">
+<meta property="og:title" content="Dingpx&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/2018/12/17/笔记——Tensorflow实战Google深度学习框架（二）/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="title: 笔记——Tensorflow实战Google深度学习框架（二）date: 2018-12-17 13:59:51tags: [CV, 笔记, tensorflow] Tensorflow环境搭建">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T06:00:30.660Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fya0g4603jj30x204mgr0.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fya0gz5b8ej30ww0bgtmp.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fya0ivnb4mj30x4050ag2.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fya0sox1hxj30y807cte7.jpg">
+<meta property="og:updated_time" content="2018-12-17T12:41:10.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="笔记——Tensorflow实战Google深度学习框架（二）">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:title" content="Dingpx&#39;s Blog">
+<meta name="twitter:description" content="title: 笔记——Tensorflow实战Google深度学习框架（二）date: 2018-12-17 13:59:51tags: [CV, 笔记, tensorflow] Tensorflow环境搭建">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fya0g4603jj30x204mgr0.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -136,24 +140,86 @@
             <article id="post-笔记——Tensorflow实战Google深度学习框架（二）" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      笔记——Tensorflow实战Google深度学习框架（二）
-    </h1>
-  
-
-        
-        <a href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（二）/" class="archive-article-date">
-  	<time datetime="2018-12-17T05:59:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>title: 笔记——Tensorflow实战Google深度学习框架（二）<br>date: 2018-12-17 13:59:51<br>tags: [CV, 笔记, tensorflow]</p>
+<p>Tensorflow环境搭建</p>
+<a id="more"></a>
+<h2 id="2-1-Tensorflow-主要依赖包"><a href="#2-1-Tensorflow-主要依赖包" class="headerlink" title="2.1 Tensorflow 主要依赖包"></a>2.1 Tensorflow 主要依赖包</h2><p>主要是Protocol Buffer 和Bazel</p>
+<h3 id="2-1-1-Protocol-Buffer"><a href="#2-1-1-Protocol-Buffer" class="headerlink" title="2.1.1 Protocol Buffer"></a>2.1.1 Protocol Buffer</h3><ul>
+<li>定义<ul>
+<li>是谷歌开发的<strong>处理结构化数据</strong>的工具</li>
+<li><strong>处理结构化数据</strong>的步骤：先将<strong>结构化的数据</strong>序列化，并从序列化的数据流中还原出原来的结构化数据</li>
+</ul>
+</li>
+<li>和XML，JSON区别<ul>
+<li>序列化后的数据不是可读的字符串，是二进制流</li>
+<li>XML，JSON可以从序列化后的数据直接还原，但是Protocol Buffer需要预先定义数据的格式，还原时需要用到，因此序列化后的数据相比数据量小3-10倍，解析时间快20-100倍。</li>
+</ul>
+</li>
+<li>.proto：定义数据格式的文件<ul>
+<li>massage代表了一个类，包含字段限制,字段类型,字段名和编号<ul>
+<li>字段类型：布尔，整数，也可以是另一个message</li>
+<li>字段限制：必须/可选/可重复（意味着取值可以是一个列表）</li>
+<li>字段名</li>
+<li>编号：不表示字段的值，只是表示第几个属性</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">message</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"><span class="keyword">optional</span> <span class="built_in">string</span> name = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">required</span> <span class="built_in">int32</span> id = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">repeated</span> <span class="built_in">string</span> email = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>一旦定义好数据格式后，可以运行protocol buffer编译器，它会基于.proto文件为应用程序的语言（C++等）生成相应的类</p>
+<p>你的代码可以这样写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Person person;</span><br><span class="line">person.set_name(<span class="string">"John Doe"</span>);</span><br><span class="line">person.set_id(<span class="number">1234</span>);</span><br><span class="line">person.set_email(<span class="string">"jdoe@example.com"</span>);</span><br><span class="line"><span class="function">fstream <span class="title">output</span><span class="params">(<span class="string">"myfile"</span>, ios::out | ios::binary)</span></span>;</span><br><span class="line">person.SerializeToOstream(&amp;output);</span><br></pre></td></tr></table></figure>
+<p>然后你可以这样来读回你的消息：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">fstream <span class="title">input</span><span class="params">(<span class="string">"myfile"</span>, ios::in | ios::binary)</span></span>;</span><br><span class="line">Person person;</span><br><span class="line">person.ParseFromIstream(&amp;input);</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"Name: "</span> &lt;&lt; person.name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"E-mail: "</span> &lt;&lt; person.email() &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-1-2-Bazel"><a href="#2-1-2-Bazel" class="headerlink" title="2.1.2 Bazel"></a>2.1.2 Bazel</h3><ul>
+<li><p>定义：谷歌开源的编译软件</p>
+</li>
+<li><p>项目空间：其对应的文件夹是这个项目的根目录；包含源代码和输出编译结果的软连接WORKSPACE；可以包含一个或者多个应用</p>
+<ul>
+<li>必须有WORKSPACE文件：定义了对外部资源的依赖关系</li>
+<li>BUILD文件：通过这个文件找到需要编译的目标；使用类似于python的语法指定每一个编译目标的输入、输出以及编译方式</li>
+<li>源代码</li>
+</ul>
+</li>
+<li><p>编译python文件：</p>
+<ul>
+<li>py_binary：将python程序编译为可执行文件</li>
+<li>py_library：将python程序编译为库函数以便py_binary和py_test调用</li>
+<li>py_test：     编译python测试文件</li>
+</ul>
+</li>
+<li><p>编译实例：</p>
+<ul>
+<li><p>项目空间的文件如下：<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fya0g4603jj30x204mgr0.jpg" alt="屏幕快照 2018-12-17 下午8.22.54"></p>
+</li>
+<li><p>BUILD文件由一系列编译目标组成，编译的先后顺序没有关系</p>
+<ul>
+<li>每一个编译目标第一行指定编译方式：库函数用library，主函数用binary</li>
+<li><p>编译目标的主体需要很多信息：name(编译目标的名字), src(源代码), deps(依赖关系)</p>
+</li>
+<li><p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fya0gz5b8ej30ww0bgtmp.jpg" alt="屏幕快照 2018-12-17 下午8.23.40"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fya0ivnb4mj30x4050ag2.jpg" alt="屏幕快照 2018-12-17 下午8.25.14"></p>
+</li>
+</ul>
+</li>
+<li><p>执行 bazel build :hello_main，得到下面的结果，这些结果都是以软连接的方式存在当前的项目空间里，实际的编译结果都会保存到～/.cache/bazel目录下</p>
+<ul>
+<li><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fya0sox1hxj30y807cte7.jpg" alt="屏幕快照 2018-12-17 下午8.35.01"></li>
+</ul>
+</li>
+<li><p>其中当前文件夹内的bazel-bin内存放了编译产生的二进制文件，所以执行</p>
+<p><code>bazel-bin/hello_main</code> 就可以输出“Hello world”</p>
+</li>
+</ul>
+</li>
+</ul>
+
       
 
       
@@ -161,25 +227,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -273,7 +320,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Tensorflow-主要依赖包"><span class="toc-number">1.</span> <span class="toc-text">2.1 Tensorflow 主要依赖包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-Protocol-Buffer"><span class="toc-number">1.1.</span> <span class="toc-text">2.1.1 Protocol Buffer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-Bazel"><span class="toc-number">1.2.</span> <span class="toc-text">2.1.2 Bazel</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -398,18 +445,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入门</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">CV</a>
               </li>
              
@@ -422,11 +457,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">入门</a>
               </li>
              
               <li class="article-tag-list-item">
