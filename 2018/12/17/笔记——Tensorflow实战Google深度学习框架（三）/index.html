@@ -8,18 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>笔记——Tensorflow实战Google深度学习框架（三） | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
+  <meta name="description" content="TensorFlow 入门">
 <meta name="keywords" content="CV,笔记,tensorflow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记——Tensorflow实战Google深度学习框架（三）">
 <meta property="og:url" content="http://yoursite.com/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="TensorFlow 入门">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T12:46:49.182Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fya23q81vfj30ii062gnt.jpg">
+<meta property="og:updated_time" content="2018-12-17T16:50:48.726Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记——Tensorflow实战Google深度学习框架（三）">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:description" content="TensorFlow 入门">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fya23q81vfj30ii062gnt.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -153,7 +155,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>TensorFlow 入门</p>
+<a id="more"></a>
+<h2 id="3-1-TensorFlow-计算模型——计算图"><a href="#3-1-TensorFlow-计算模型——计算图" class="headerlink" title="3.1 TensorFlow 计算模型——计算图"></a>3.1 TensorFlow 计算模型——计算图</h2><h3 id="3-1-1-计算图的概念"><a href="#3-1-1-计算图的概念" class="headerlink" title="3.1.1 计算图的概念"></a>3.1.1 计算图的概念</h3><p>Tensor：张量（也可以理解为多维数组）</p>
+<p>Flow：流（tensor之间通过计算相互转化的过程）</p>
+<p>Tensorflow：是一个通过计算图来表诉计算的编程系统，其中<strong>每一个计算</strong>都是计算图上的<strong>一个节点</strong>，而<strong>节点之间的边</strong>描述了<strong>计算之间的依赖关系<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fya23q81vfj30ii062gnt.jpg" alt="屏幕快照 2018-12-17 下午9.20.10"></strong></p>
+<h3 id="3-1-2-计算图的使用"><a href="#3-1-2-计算图的使用" class="headerlink" title="3.1.2 计算图的使用"></a>3.1.2 计算图的使用</h3><p>程序分为两个阶段，<strong>图的构建</strong>和<strong>图的运行</strong></p>
+<ul>
+<li><p>图的构建：</p>
+<ul>
+<li><p>首先程序 自动构建一个默认的计算图，可以用<code>tf.get_default_graph()</code>获取</p>
+</li>
+<li><p>其次定义的每个计算都会自动地转化为计算图上的节点，查看某个运算所属的图用<code>a.graph</code>,没有特殊指定的情况下属于当前默认的计算图</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = tf.constant([<span class="number">1</span>,<span class="number">2</span>],name=<span class="string">"a"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = tf.constant([<span class="number">2</span>,<span class="number">3</span>],name=<span class="string">"b"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>result = a+b</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.graph</span><br><span class="line">&lt;tensorflow.python.framework.ops.Graph object at <span class="number">0x1018f4ac8</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>tf.get_default_graph()</span><br><span class="line">&lt;tensorflow.python.framework.ops.Graph object at <span class="number">0x1018f4ac8</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>tf.get_default_graph() <span class="keyword">is</span> a.graph</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>用<code>tf.Graph</code>生成新的计算图，不同计算图上的张量和运算不会共享<ul>
+<li>要注意的是，最后一个量e不是定义在with语句里面的，也就是说，e会包含在最开始的那个图中。也就是说，要在某个graph里面定义量，要在with语句的范围里面定义</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">c=tf.constant(value=<span class="number">1</span>)</span><br><span class="line">print(c.graph <span class="keyword">is</span> tf.get_default_graph())</span><br><span class="line">print(c.graph)</span><br><span class="line">print(tf.get_default_graph())</span><br><span class="line"><span class="comment">#True</span></span><br><span class="line"><span class="comment">#&lt;tensorflow.python.framework.ops.Graph object at 0x111a55160&gt;</span></span><br><span class="line"><span class="comment">#&lt;tensorflow.python.framework.ops.Graph object at 0x111a55160&gt;</span></span><br><span class="line"></span><br><span class="line">g1=tf.Graph()</span><br><span class="line">print(<span class="string">"g1:"</span>,g1)</span><br><span class="line"><span class="keyword">with</span> g1.as_default():</span><br><span class="line">    d=tf.constant(value=<span class="number">2</span>)</span><br><span class="line">    print(d.graph)</span><br><span class="line"><span class="comment">#g1: &lt;tensorflow.python.framework.ops.Graph object at 0x1836b8a828&gt;</span></span><br><span class="line"><span class="comment">#&lt;tensorflow.python.framework.ops.Graph object at 0x1836b8a828&gt;</span></span><br><span class="line"></span><br><span class="line">g2=tf.Graph()</span><br><span class="line">print(<span class="string">"g2:"</span>,g2)</span><br><span class="line">g2.as_default()</span><br><span class="line">e=tf.constant(value=<span class="number">15</span>)</span><br><span class="line">print(e.graph)</span><br><span class="line"><span class="comment">#g2: &lt;tensorflow.python.framework.ops.Graph object at 0x1836b8a748&gt;</span></span><br><span class="line"><span class="comment">#&lt;tensorflow.python.framework.ops.Graph object at 0x111a55160&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
 
       
@@ -273,7 +299,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-TensorFlow-计算模型——计算图"><span class="toc-number">1.</span> <span class="toc-text">3.1 TensorFlow 计算模型——计算图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-计算图的概念"><span class="toc-number">1.1.</span> <span class="toc-text">3.1.1 计算图的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-计算图的使用"><span class="toc-number">1.2.</span> <span class="toc-text">3.1.2 计算图的使用</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -430,15 +456,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
               </li>
              
               <li class="article-tag-list-item">
