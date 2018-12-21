@@ -6,29 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Alfred入门 | Dingpx&#39;s Blog</title>
+  <title>笔记——Tensorflow实战Google深度学习框架（四） | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[TOC] 一直看别人对于这个软件的赞赏，没来得及去真正去了解使用过，这篇旨在帮助自己入门Alfred，熟悉界面功能，并尝试添加常用的workflow，以后会不定期更新。">
-<meta name="keywords" content="工具,Alfred,入门">
+  <meta name="description" content="第4章 深层神经网络开始对神经网络内部结构的了解.">
+<meta name="keywords" content="CV,笔记,tensorflow">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Alfred入门">
-<meta property="og:url" content="http://yoursite.com/2018/12/04/Alfred入门/index.html">
+<meta property="og:title" content="笔记——Tensorflow实战Google深度学习框架（四）">
+<meta property="og:url" content="http://yoursite.com/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="[TOC] 一直看别人对于这个软件的赞赏，没来得及去真正去了解使用过，这篇旨在帮助自己入门Alfred，熟悉界面功能，并尝试添加常用的workflow，以后会不定期更新。">
+<meta property="og:description" content="第4章 深层神经网络开始对神经网络内部结构的了解.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxx11lm7pyj30wm0kc43a.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxx1288jz3j31b20omak6.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxx12ubyl1j31bc0g0dmy.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxx13cjzpij30e609o0tp.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxx13nizepj30w00jqqfl.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxx143fr13j31360octf1.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxx14icmtpj30p00bawg2.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxx1edhrnaj31b20rw7ax.jpg">
-<meta property="og:updated_time" content="2018-12-06T07:03:45.502Z">
+<meta property="og:image" content="http://yoursite.com/Users/dpx/Desktop/屏幕快照%202018-12-21%20下午4.29.54.png">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fyejbw2w5yj30ug0d2akq.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fyel6qux6dj30t80g4tgo.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fyem5m3u3bj30t005e43w.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fyem5pbdwmj30sw11ee81.jpg">
+<meta property="og:updated_time" content="2018-12-21T12:20:17.557Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alfred入门">
-<meta name="twitter:description" content="[TOC] 一直看别人对于这个软件的赞赏，没来得及去真正去了解使用过，这篇旨在帮助自己入门Alfred，熟悉界面功能，并尝试添加常用的workflow，以后会不定期更新。">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxx11lm7pyj30wm0kc43a.jpg">
+<meta name="twitter:title" content="笔记——Tensorflow实战Google深度学习框架（四）">
+<meta name="twitter:description" content="第4章 深层神经网络开始对神经网络内部结构的了解.">
+<meta name="twitter:image" content="http://yoursite.com/Users/dpx/Desktop/屏幕快照%202018-12-21%20下午4.29.54.png">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -142,79 +139,122 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Alfred入门" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-笔记——Tensorflow实战Google深度学习框架（四）" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Alfred入门
+      笔记——Tensorflow实战Google深度学习框架（四）
     </h1>
   
 
         
-        <a href="/2018/12/04/Alfred入门/" class="archive-article-date">
-  	<time datetime="2018-12-04T09:08:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-04</time>
+        <a href="/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/" class="archive-article-date">
+  	<time datetime="2018-12-21T08:25:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[TOC]</p>
-<p>一直看别人对于这个软件的赞赏，没来得及去真正去了解使用过，这篇旨在帮助自己入门Alfred，熟悉界面功能，并尝试添加常用的workflow，以后会不定期更新。</p>
+        <h2 id="第4章-深层神经网络"><a href="#第4章-深层神经网络" class="headerlink" title="第4章 深层神经网络"></a>第4章 深层神经网络</h2><p>开始对神经网络内部结构的了解.</p>
 <a id="more"></a>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装的网址就是官网即可，主要的是官网版无法提供workflow的操作，所以需要破解注册机，注册机已经上传到我的网盘（如何破解可以参考<a href="https://www.jianshu.com/p/7d92bcaf2d49）" target="_blank" rel="noopener">https://www.jianshu.com/p/7d92bcaf2d49）</a></p>
-<h2 id="配置Alfred"><a href="#配置Alfred" class="headerlink" title="配置Alfred"></a>配置Alfred</h2><p>这篇blog写的很全，下面就摘录几条自己常用的快捷键操作，参考链接（<a href="https://www.cnblogs.com/baitongtong/p/8298456.html）" target="_blank" rel="noopener">https://www.cnblogs.com/baitongtong/p/8298456.html）</a></p>
-<p>（<a href="https://sspai.com/post/32979这个链接讲的内容更多更细，可供参考）" target="_blank" rel="noopener">https://sspai.com/post/32979这个链接讲的内容更多更细，可供参考）</a></p>
+<h2 id="4-1-深度学习和神经网络"><a href="#4-1-深度学习和神经网络" class="headerlink" title="4.1 深度学习和神经网络"></a>4.1 深度学习和神经网络</h2><h3 id="4-1-1-线性模型的局限性"><a href="#4-1-1-线性模型的局限性" class="headerlink" title="4.1.1 线性模型的局限性"></a>4.1.1 线性模型的局限性</h3><ul>
+<li>多层的线性模型累加依旧是线性模型，所以面对非线性可分的问题就会陷入困境</li>
+</ul>
+<p><img src="/Users/dpx/Desktop/屏幕快照 2018-12-21 下午4.29.54.png" alt="屏幕快照 2018-12-21 下午4.29.54"></p>
+<h3 id="4-1-2-激活函数实现去线性化"><a href="#4-1-2-激活函数实现去线性化" class="headerlink" title="4.1.2 激活函数实现去线性化"></a>4.1.2 激活函数实现去线性化</h3><ul>
+<li>tensorflow提供了七种非线性激活函数，tf.nn.relu、 tf.sigrnoid 和 tf.tanh 是其中比较常用的几个 </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a= tf.nn.relu (tf.matmul(x, wl) + biasesl) </span><br><span class="line">y= tf.nn.relu (tf.matmul(a, w2) + biases2)</span><br></pre></td></tr></table></figure>
+<h3 id="4-1-3-多层网络解决异或运算"><a href="#4-1-3-多层网络解决异或运算" class="headerlink" title="4.1.3 多层网络解决异或运算"></a>4.1.3 多层网络解决异或运算</h3><ul>
+<li><p>一开始先提出的mlp感知机，是两层的神经网络，但是它无法解决异或的问题。</p>
+</li>
+<li><p>之后有人加了一个隐藏层成功做到了，这说明了隐藏层具有重新组合特征的能力，也是以后越来越深网络的基础</p>
+</li>
+</ul>
+<h2 id="4-2-损失函数定义"><a href="#4-2-损失函数定义" class="headerlink" title="4.2 损失函数定义"></a>4.2 损失函数定义</h2><h3 id="4-2-1-经典损失函数"><a href="#4-2-1-经典损失函数" class="headerlink" title="4.2.1 经典损失函数"></a>4.2.1 经典损失函数</h3><ul>
+<li><p>对于多分类的问题，考虑<strong>交叉熵</strong></p>
 <ul>
-<li><p>打开：option + 空格</p>
-</li>
-<li><p>默认不需要把所有文件类型加入搜索里面，而<strong>使用Find+空格+文件名来查询文件或文件夹；使用Open+空格+文件名也可以</strong></p>
-</li>
-<li><p>目前Alfred只可检索Safari的书签，若你想检索Chrome的书签。则需要将Chrome书签导入到Safari中。导入步骤为：<strong>打开Safari -&gt; 菜单【文件】 -&gt; 【导入自】 -&gt; 谷歌Chrome导入书签数据</strong>。</p>
-</li>
-<li><p>可自行增加自己需要的搜索，下面是我常用的网址URL备份</p>
+<li><p>但是交叉熵函数考虑的是<strong>两个概率分布</strong>之间的关系，所以需要在神经网络后面加一层softmax</p>
 <ul>
-<li>百度:    <a href="http://www.baidu.com/s?ie=UTF-8&amp;wd={query}" target="_blank" rel="noopener">http://www.baidu.com/s?ie=UTF-8&amp;wd={query}</a></li>
-<li>知乎：<a href="http://www.zhihu.com/search?q=%7Bquery%7D&amp;type1=all" target="_blank" rel="noopener">http://www.zhihu.com/search?q={query}&amp;type1=all</a></li>
-<li>有道翻译：<a href="http://dict.youdao.com/search?q=%7Bquery%7D" target="_blank" rel="noopener">http://dict.youdao.com/search?q={query}</a></li>
-<li>GitHub: <a href="https://github.com/search?q={query}" target="_blank" rel="noopener">https://github.com/search?q={query}</a></li>
-<li>groundai: <a href="https://github.com/search?q={query}" target="_blank" rel="noopener">https://github.com/search?q={query}</a></li>
-<li>Arxiv: <a href="https://arxiv.org/search/?query={query}&amp;searchtype=all&amp;source=header" target="_blank" rel="noopener">https://arxiv.org/search/?query={query}&amp;searchtype=all&amp;source=header</a></li>
+<li>H(p ,q) =-∑p(x)log q(x)</li>
+<li>交叉熵不是对称的（ H(p, q)!=H(q,p) ），它刻画的是通过概率分布 q 来表达概率分布 p 的困难程度，p代表的是正确答案， q代表的是预测值。</li>
+<li>熵越小，越接近结果</li>
 </ul>
-</li>
-<li><p>snippet功能：</p>
-</li>
-<li>查找文件时，直接空格一下就好，然后按-&gt;即可以查找这个文件夹下的内容，同理向上查找也是一样</li>
-</ul>
-<h2 id="配置workflow"><a href="#配置workflow" class="headerlink" title="配置workflow"></a>配置workflow</h2><p>直接去网上下载自己需要的workflow就可以，目前我常用的是</p>
-<p><strong>cdto</strong>: 直接找到terminal上的文件，不用反复的cd，真滴很方便</p>
-<p><strong>Terminalfinder</strong>:可以在当前find界面打开terminal或者在terminal界面打开find,链接如下（<a href="http://www.packal.org/workflow/terminalfinder）" target="_blank" rel="noopener">http://www.packal.org/workflow/terminalfinder）</a></p>
-<p><strong>packal</strong>:一个比较多的workflow应用的集合<a href="http://www.packal.org/workflow/packal-workflow-search" target="_blank" rel="noopener">http://www.packal.org/workflow/packal-workflow-search</a></p>
-<p>Kill,relaunch,Uninstall:这些都可以在packal里面找到</p>
-<h2 id="编写自己需要的workflow"><a href="#编写自己需要的workflow" class="headerlink" title="编写自己需要的workflow"></a>编写自己需要的workflow</h2><p>主要根据<a href="https://www.jianshu.com/p/4b980a0193b6上讲的内容，配置两款自己需要的workflow" target="_blank" rel="noopener">https://www.jianshu.com/p/4b980a0193b6上讲的内容，配置两款自己需要的workflow</a></p>
-<h3 id="自动更新发布hexo博客"><a href="#自动更新发布hexo博客" class="headerlink" title="自动更新发布hexo博客"></a>自动更新发布hexo博客</h3><ul>
-<li>点击左下角的+号 –&gt; Blank Workflow，内容填写如下</li>
-</ul>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxx11lm7pyj30wm0kc43a.jpg" alt="屏幕快照 2018-12-06 下午2.39.44"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># y_为正确结果；y为预测结果</span></span><br><span class="line"><span class="comment"># tf.clip_by_value(y, le-10, 1.0)规范了值域，防止有0这个值出现</span></span><br><span class="line"><span class="comment"># *是矩阵元素间相乘</span></span><br><span class="line"><span class="comment"># 本来是生成（n,m）维度的矩阵，然后对每一行求和后再对n行使用求平均，但是！因为类别数量（C）是不变的，所以就直接对整个矩阵求和也ok</span></span><br><span class="line">cross_entropy = -tf.reduce_mean(</span><br><span class="line">y_ * tf.log(tf.clip_by_value(y, le<span class="number">-10</span>, <span class="number">1.0</span>)))</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>添加后选中新建的Blank Workflow 右键input-&gt;keyword</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxx1288jz3j31b20omak6.jpg" alt="屏幕快照 2018-12-06 下午2.40.21"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxx12ubyl1j31bc0g0dmy.jpg" alt="屏幕快照 2018-12-06 下午2.41.20"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxx13cjzpij30e609o0tp.jpg" alt="屏幕快照 2018-12-06 下午2.41.28"></p>
-</li>
-<li><p>配置好后再右上角 + Action-&gt;Terminal Command</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxx13nizepj30w00jqqfl.jpg" alt="屏幕快照 2018-12-06 下午2.48.43"></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxx143fr13j31360octf1.jpg" alt="屏幕快照 2018-12-06 下午2.48.52"></p>
-</li>
-<li><p>保存就完成了</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxx14icmtpj30p00bawg2.jpg" alt="屏幕快照 2018-12-06 下午2.49.00"></p>
+<li>tf提供了两种工具的结合体：<code>tf.nn.softmax_cross_entropy_with_logits（labels=y , logits=y）</code>或者<code>sparse_softmax_cross_entropy_with_logits(labels=None, logits=None)</code>，唯一的区别是sparse的labels是int类型（即label结果是1，2这之类），而非sparse的labels是one-hot类</li>
+</ul>
 </li>
 </ul>
-<h3 id="自动激活anaconda环境并打开juypter-notebook"><a href="#自动激活anaconda环境并打开juypter-notebook" class="headerlink" title="自动激活anaconda环境并打开juypter notebook"></a>自动激活anaconda环境并打开juypter notebook</h3><p>根据以上的步骤走一遍就好</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxx1edhrnaj31b20rw7ax.jpg" alt="屏幕快照 2018-12-06 下午3.03.25"></p>
+</li>
+<li><p>对于回归问题，用<strong>均方误差</strong>就好<code>mse = tf.reduce_mean(tf.square(y_ - y))</code></p>
+</li>
+</ul>
+<h3 id="4-2-2-自定义损失函数"><a href="#4-2-2-自定义损失函数" class="headerlink" title="4.2.2 自定义损失函数"></a>4.2.2 自定义损失函数</h3><ul>
+<li><p>有时候输出的目标会很取决于目标函数，所以呢，需要自己自定义损失函数，下面给出书上给出的一个例子，其中会用上<code>tf.where</code>,<code>tf.greater</code>这两个函数</p>
+<ul>
+<li><code>tf.greater</code>的输入是两个张量，此函数会比较这两个输入张量中每一个元素的大小，并返回比较结果</li>
+<li><code>tf.where</code>函数有三个参数。 第一个为选择条件根据， 当选择条件为 True 时， tf.where 函数会选择第二个参数中的值 ， 否则使用第三个参数中的值。</li>
+</ul>
+</li>
+<li><p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyejbw2w5yj30ug0d2akq.jpg" alt="屏幕快照 2018-12-21 下午6.18.24"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loss = tf.reduce_sum(tf.where(tf.greater(v1，v2) ,(vl - v2)*a, (v2 - vl)*b))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-3-神经网络优化算法"><a href="#4-3-神经网络优化算法" class="headerlink" title="4.3 神经网络优化算法"></a>4.3 神经网络优化算法</h2><p>方向传播算法需要梯度下降的方法来解决，但是会遇到两个问题</p>
+<ul>
+<li>不一定到全局最优解（只有凸函数才可以），但是这是所有最优化算法的通病，我们可以用加动量等方式去缓解。</li>
+<li>迭代时间过长，因为数据量太大。所以考虑用随机梯度下降来做，每次都要选择一个数据进行更新计算，但是又会存在问题，即某一个数据的损失最小不代表全体数据的损失最小，所以最后才做出了以一个折中的办法，即用一个batch来训练</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">batch size = n</span><br><span class="line">#每次读取一小部分数据作为当前的训练数据来执行反向传播算法。</span><br><span class="line">x = tf.placeholder(tf.float32, shape=(batch_size, 2) ， name=’x-input’) </span><br><span class="line">Y_ = tf.placeholder(tf.float32, shape=(batch_size, 1) ， name=’y-input’)</span><br><span class="line">#定义神经网络结构和优化算法。</span><br><span class="line">loss = .....</span><br><span class="line">train_step = tf.train.AdamOptimizer(0.001) .minimize(loss&#125;</span><br><span class="line">#训练神经网络。</span><br><span class="line">with tf. Session() as sess :</span><br><span class="line">	#参数初始化。</span><br><span class="line">	for i in range(STEPS):</span><br><span class="line">	#准备 batch size 个训练数据。 一般将所有训练数据随机打乱之后再选取可以得到更好的优化效果。</span><br><span class="line">	current X, current Y = sess.run(train_step, feed_dict=&#123;x:current_X , y_: current_Y&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="4-4-神经网络进一步优化"><a href="#4-4-神经网络进一步优化" class="headerlink" title="4.4 神经网络进一步优化"></a>4.4 神经网络进一步优化</h2><p>下面是一些更细节的做法</p>
+<h3 id="4-4-1-学习率-的设置"><a href="#4-4-1-学习率-的设置" class="headerlink" title="4.4.1 学习率 的设置"></a>4.4.1 学习率 的设置</h3><ul>
+<li><p>学习率的指数衰减：为了前期能够快速更新，而在后期不再因为过大的学习率而达不到收敛，而tf提供了<code>tf.train.exponential_decay</code>,相当于实现了下面代码所示的功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># decay_steps 通常代表了完整的使用 一遍训练数据 所需要的迭代轮数。这个迭代轮数也就是总训练样本数除以每 一个 batch 中的训练样本数 。</span></span><br><span class="line"><span class="comment"># 一般来说初始学习率、衰减系数和衰减速度都是根据经验设置的。</span></span><br><span class="line">decayed_learning_rate = learning_rate * decay_rate * (global_step /decay_steps)</span><br></pre></td></tr></table></figure>
+<p>注意呢，有两种权重衰减的方式，一种是阶梯状衰减，一种是连续衰减，由参数<code>staircase</code>来决定，当为TRUE时，<code>global_step /decay_steps</code>会被转化成整数。</p>
+<ul>
+<li><p>阶梯状：每过完一次所有的数据，则学习率变化一次，那么使得所有数据对于模型训练有着相等的作用</p>
+</li>
+<li><p>连续：不同的训练数据都有不同的学习率，当学习率很小时，对数据的依赖性就会相应的变小了</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyel6qux6dj30t80g4tgo.jpg" alt="屏幕快照 2018-12-21 下午7.19.49"></p>
+</li>
+<li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">global</span> step= tf.Variable(O)</span><br><span class="line"><span class="comment">#通过 exponential_decay 函数生成学习率</span></span><br><span class="line"><span class="comment">#0.1 是初始学习率，100是训练完所有的数据的iterations数(迭代轮数)，0.96是衰减系数</span></span><br><span class="line">learning rate= tf.train.exponential_decay(<span class="number">0.1</span>, <span class="keyword">global</span> step, <span class="number">100</span>, <span class="number">0.96</span>, staircase=<span class="keyword">True</span>)</span><br><span class="line"><span class="comment">#在 minimize 函数中传入 global_step 将自动更新global_step参数</span></span><br><span class="line">learning_step = tf.train.GradientDescentOptimizer (learning_rate)\</span><br><span class="line">.minimize( ... my loss ... , global_step=global_step)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一般来讲，衰减的速度和最后的能够达到的损失没关系，所以不能根据前面几轮的速度快慢去决定优劣</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-4-2-过拟合问题"><a href="#4-4-2-过拟合问题" class="headerlink" title="4.4.2 过拟合问题"></a>4.4.2 过拟合问题</h3><ul>
+<li><p>正则化：目的是加入一个 <strong>刻画模型复杂程度的指标</strong>，这里也可以理解为去除某些噪音的影响，使得模型更简洁</p>
+</li>
+<li><p><strong>L1和L2的区别</strong>：<strong>L1往往使得结果变得稀疏</strong>，即有很多的参数为0，但是因为L2正则因为很多数在平方时就会变得很小，比如0.001，所以不会太影响loss，所以不容易为0，而是倾向于让结果比较小，比较平滑，那么由此得到的模型会更简单</p>
+</li>
+<li><p><code>tf.contrib.layers.12（l1）_regularizer</code> ，其中lambda为系数</p>
+</li>
+<li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">w= tf.Variable(tf.random_normal([<span class="number">2</span> , <span class="number">1</span>] , stddev=l , seed=l))</span><br><span class="line">y = tf.matmul(x, w)</span><br><span class="line">loss= tf.reduce mean(tf.square(y_ - y)) +</span><br><span class="line">tf.contrib.layers<span class="number">.12</span> regularizer (<span class="keyword">lambda</span>) (w)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以利用集合的方式来分开<strong>结构化损失</strong>和<strong>正则化损失</strong>部分</p>
+<ul>
+<li>tf.get_collectio()返回一个列表</li>
+<li>tf.add_n()函数是实现一个列表的元素的相加。就是输入的对象是一个列表，列表里的元素可以是向量，矩阵，等</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyem5m3u3bj30t005e43w.jpg" alt="屏幕快照 2018-12-21 下午7.56.09"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fyem5pbdwmj30sw11ee81.jpg" alt="屏幕快照 2018-12-21 下午7.56.01"></p>
+<h3 id="4-4-3-滑动平均模型（不太懂怎么应用在模型中）"><a href="#4-4-3-滑动平均模型（不太懂怎么应用在模型中）" class="headerlink" title="4.4.3 滑动平均模型（不太懂怎么应用在模型中）"></a>4.4.3 滑动平均模型（不太懂怎么应用在模型中）</h3><p>（前提是在采用随机梯度下降法训练算法模型的时候）使用滑动平均值的做法可以在很多应用上提升测试集的表现，实质上是利用decay的机制来减缓参数的变化</p>
+<blockquote>
+<p>其实滑动平均模型，主要是通过控制衰减率来控制参数更新前后之间的差距，从而达到减缓参数的变化值（如，参数更新前是5，更新后的值是4，通过滑动平均模型之后，参数的值会在4到5之间）</p>
+</blockquote>
+<p><code>ema = tf.train.ExponentialMovingAverage(0.99,step)</code>:定义一个ema类对象</p>
+<p><code>ema.apply([v1])</code>:执行更新操作</p>
+<p><code>ema.average(v1)</code>:取更新完的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment">#定义一个变量用于计算滑动平均，变量的初始值为0，变量的类型必须是实数</span></span><br><span class="line">    v1 = tf.Variable(<span class="number">5</span>,dtype=tf.float32)</span><br><span class="line">    <span class="comment">#定义一个迭代轮数的变量，动态控制衰减率,并设置为不可训练</span></span><br><span class="line">    step = tf.Variable(<span class="number">10</span>,trainable=<span class="keyword">False</span>)</span><br><span class="line">    <span class="comment">#定义一个滑动平均类，初始化衰减率为0.99和衰减率的变量step</span></span><br><span class="line">    ema = tf.train.ExponentialMovingAverage(<span class="number">0.99</span>,step)</span><br><span class="line">    <span class="comment">#定义每次滑动平均所更新的列表</span></span><br><span class="line">    maintain_average_op = ema.apply([v1])</span><br><span class="line">    <span class="comment">#初始化上下文会话</span></span><br><span class="line">    <span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">        <span class="comment">#初始化所有变量</span></span><br><span class="line">        init = tf.initialize_all_variables()</span><br><span class="line">        sess.run(init)</span><br><span class="line">        <span class="comment">#更新v1的滑动平均值</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        衰减率为min(0.99,(1+step)/(10+step)=0.1&#125;=0.1</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        sess.run(maintain_average_op)</span><br><span class="line">        <span class="comment">#[5.0, 5.0]</span></span><br><span class="line">        print(sess.run([v1,ema.average(v1)]))</span><br><span class="line">        sess.run(tf.assign(v1,<span class="number">4</span>))</span><br><span class="line">        sess.run(maintain_average_op)</span><br><span class="line">        <span class="comment">#[4.0, 4.5500002],5*(11/20) + 4*(9/20)</span></span><br><span class="line">        print(sess.run([v1, ema.average(v1)]))</span><br></pre></td></tr></table></figure>
 
       
 
@@ -228,15 +268,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Alfred</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">入门</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
         		</li>
       		
 		</ul>
@@ -292,7 +332,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/04/Alfred入门/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,18 +346,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/06/日程表（12-4至12-10）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          日程表（12_4至12_10）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/04/论文赏析-Co-occurrence-Feature-Learning/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">论文赏析_Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation</div>
+    <a href="/2018/12/18/日程表（12-11至12-17）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">日程表（12_11至12_17）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -344,7 +375,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Alfred"><span class="toc-number">2.</span> <span class="toc-text">配置Alfred</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置workflow"><span class="toc-number">3.</span> <span class="toc-text">配置workflow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写自己需要的workflow"><span class="toc-number">4.</span> <span class="toc-text">编写自己需要的workflow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自动更新发布hexo博客"><span class="toc-number">4.1.</span> <span class="toc-text">自动更新发布hexo博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动激活anaconda环境并打开juypter-notebook"><span class="toc-number">4.2.</span> <span class="toc-text">自动激活anaconda环境并打开juypter notebook</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第4章-深层神经网络"><span class="toc-number">1.</span> <span class="toc-text">第4章 深层神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-深度学习和神经网络"><span class="toc-number">2.</span> <span class="toc-text">4.1 深度学习和神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1-线性模型的局限性"><span class="toc-number">2.1.</span> <span class="toc-text">4.1.1 线性模型的局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2-激活函数实现去线性化"><span class="toc-number">2.2.</span> <span class="toc-text">4.1.2 激活函数实现去线性化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3-多层网络解决异或运算"><span class="toc-number">2.3.</span> <span class="toc-text">4.1.3 多层网络解决异或运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-损失函数定义"><span class="toc-number">3.</span> <span class="toc-text">4.2 损失函数定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-经典损失函数"><span class="toc-number">3.1.</span> <span class="toc-text">4.2.1 经典损失函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-2-自定义损失函数"><span class="toc-number">3.2.</span> <span class="toc-text">4.2.2 自定义损失函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-神经网络优化算法"><span class="toc-number">4.</span> <span class="toc-text">4.3 神经网络优化算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-神经网络进一步优化"><span class="toc-number">5.</span> <span class="toc-text">4.4 神经网络进一步优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-1-学习率-的设置"><span class="toc-number">5.1.</span> <span class="toc-text">4.4.1 学习率 的设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-2-过拟合问题"><span class="toc-number">5.2.</span> <span class="toc-text">4.4.2 过拟合问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-3-滑动平均模型（不太懂怎么应用在模型中）"><span class="toc-number">5.3.</span> <span class="toc-text">4.4.3 滑动平均模型（不太懂怎么应用在模型中）</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
