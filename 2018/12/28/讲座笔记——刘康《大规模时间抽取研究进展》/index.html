@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 笔记 | Dingpx&#39;s Blog</title>
+  <title>讲座笔记——刘康《大规模时间抽取研究进展》 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dingpx&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/笔记/index.html">
+  <meta name="description" content="导师个人主页：http://people.ucas.ac.cn/~liukang#%20580170">
+<meta name="keywords" content="讲座笔记,知识图谱">
+<meta property="og:type" content="article">
+<meta property="og:title" content="讲座笔记——刘康《大规模时间抽取研究进展》">
+<meta property="og:url" content="http://yoursite.com/2018/12/28/讲座笔记——刘康《大规模时间抽取研究进展》/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="导师个人主页：http://people.ucas.ac.cn/~liukang#%20580170">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-28T08:08:04.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dingpx&#39;s Blog">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:title" content="讲座笔记——刘康《大规模时间抽取研究进展》">
+<meta name="twitter:description" content="导师个人主页：http://people.ucas.ac.cn/~liukang#%20580170">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -131,206 +133,199 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-讲座笔记——刘康《大规模时间抽取研究进展》" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      讲座笔记——刘康《大规模时间抽取研究进展》
+    </h1>
+  
+
+        
+        <a href="/2018/12/28/讲座笔记——刘康《大规模时间抽取研究进展》/" class="archive-article-date">
+  	<time datetime="2018-12-28T07:00:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>导师个人主页：<a href="http://people.ucas.ac.cn/~liukang#%20580170" target="_blank" rel="noopener">http://people.ucas.ac.cn/~liukang#%20580170</a></p>
+<a id="more"></a>
+<p>目前的做法：从文本中抽事件的结构化数据</p>
+<p>目前的做法都是抽取实体</p>
+<p>现在想去做事件，有很多类型，给事件很多预定义的嘈位（属性），目前的属性是预定义好的</p>
+<p>事件和实体的区别：实体是一个字符串，容易去表示；事件很难找到一个词去代表</p>
+<p>ace??</p>
+<p>判断实体和trigger word（往往是动词） 的关系</p>
+<p>四个字任务：</p>
+<ul>
+<li>识别哪些是trigger word</li>
+<li>识别 trigger word类型</li>
+<li>识别哪些是argument</li>
+<li>argument的role</li>
+</ul>
+<p>有些时候动词是省略的，但是事件也是的确存在的</p>
+<p>以前也在做：ACE，KBP</p>
+<p>Test&gt;labels&gt;training data&gt;featrue&gt;event extractor</p>
+<p>希望在lable和feature的工作上自动化一点</p>
+<hr>
+<p>第一个工作：</p>
+<p>利用attentions 找到最佳的arguments ,找到能够帮助理解trigger word的理解，（hard和soft都做了）</p>
+<p>用正则项：约束模型学出来的权重 和 人工标注的要接近</p>
+<hr>
+<p>第二个：</p>
+<p>找到中心词的周边词的类型，而不是最好的那个argument</p>
+<p>对抗网络、</p>
+<hr>
+<hr>
+<p>第四个：</p>
+<p>判断哪种语言的翻译方式有利于句子的理解</p>
+<p>第五个： </p>
+<p>机器自动标注、trigger  word 回标</p>
+<p>Tf-idf，用framenet 做一个过滤，</p>
+<p>第六个：</p>
+<p>给定文档中抽取感兴趣的事件的内容</p>
+<p>先文本分类、再训练一个序列标注器</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/22/笔记——Tensorflow实战Google深度学习框架（五）/" class="archive-article-date">
-  	<time datetime="2018-12-22T07:13:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/22/笔记——Tensorflow实战Google深度学习框架（五）/">笔记——Tensorflow实战Google深度学习框架（五）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">讲座笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">知识图谱</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/28/讲座笔记——刘康《大规模时间抽取研究进展》/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/" class="archive-article-date">
-  	<time datetime="2018-12-21T08:25:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/22/笔记——Tensorflow实战Google深度学习框架（五）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">笔记——Tensorflow实战Google深度学习框架（五）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/">笔记——Tensorflow实战Google深度学习框架（四）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/" class="archive-article-date">
-  	<time datetime="2018-12-17T12:44:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/">笔记——Tensorflow实战Google深度学习框架（三）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（二）/" class="archive-article-date">
-  	<time datetime="2018-12-17T05:59:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（二）/">笔记——Tensorflow实战Google深度学习框架（二）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -353,9 +348,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
