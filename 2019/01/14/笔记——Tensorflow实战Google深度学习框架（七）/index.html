@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: tensorflow | Dingpx&#39;s Blog</title>
+  <title>笔记——Tensorflow实战Google深度学习框架（七） | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dingpx&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/tensorflow/index.html">
+  <meta name="description" content="7.1 节将介绍如何统一输入数据的格式，使得在之后系统中可以更加方便地处理。来自实际问题的数据往往有很多格式和属性，这一节将介绍的 TFRecord格式可以统一不同的原始数据格式， 井更加有效地管理不同的属性。   7.2 节将介绍如何对图像数据进行预处理 。 这一节将列举TensorFlow 支持的图像处理函数，并介绍如何使用这些处理方式来弱化与图像识别无关的因素。复杂的图像处理函数有可能降低">
+<meta name="keywords" content="CV,笔记,tensorflow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记——Tensorflow实战Google深度学习框架（七）">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/笔记——Tensorflow实战Google深度学习框架（七）/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="7.1 节将介绍如何统一输入数据的格式，使得在之后系统中可以更加方便地处理。来自实际问题的数据往往有很多格式和属性，这一节将介绍的 TFRecord格式可以统一不同的原始数据格式， 井更加有效地管理不同的属性。   7.2 节将介绍如何对图像数据进行预处理 。 这一节将列举TensorFlow 支持的图像处理函数，并介绍如何使用这些处理方式来弱化与图像识别无关的因素。复杂的图像处理函数有可能降低">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz6fe64qagj30wy0fkk9d.jpg">
+<meta property="og:updated_time" content="2019-01-14T14:04:40.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dingpx&#39;s Blog">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:title" content="笔记——Tensorflow实战Google深度学习框架（七）">
+<meta name="twitter:description" content="7.1 节将介绍如何统一输入数据的格式，使得在之后系统中可以更加方便地处理。来自实际问题的数据往往有很多格式和属性，这一节将介绍的 TFRecord格式可以统一不同的原始数据格式， 井更加有效地管理不同的属性。   7.2 节将介绍如何对图像数据进行预处理 。 这一节将列举TensorFlow 支持的图像处理函数，并介绍如何使用这些处理方式来弱化与图像识别无关的因素。复杂的图像处理函数有可能降低">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz6fe64qagj30wy0fkk9d.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -131,138 +135,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-笔记——Tensorflow实战Google深度学习框架（七）" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      笔记——Tensorflow实战Google深度学习框架（七）
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/14/笔记——Tensorflow实战Google深度学习框架（七）/" class="archive-article-date">
+
+        
+        <a href="/2019/01/14/笔记——Tensorflow实战Google深度学习框架（七）/" class="archive-article-date">
   	<time datetime="2019-01-14T13:12:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/14/笔记——Tensorflow实战Google深度学习框架（七）/">笔记——Tensorflow实战Google深度学习框架（七）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+        
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/14/笔记——Tensorflow实战Google深度学习框架（六）/" class="archive-article-date">
-  	<time datetime="2019-01-14T07:24:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/14/笔记——Tensorflow实战Google深度学习框架（六）/">笔记——Tensorflow实战Google深度学习框架（六）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
+    <div class="article-entry" itemprop="articleBody">
       
-        </div></section>
+        <blockquote>
+<p>7.1 节将介绍如何统一输入数据的格式，使得在之后系统中可以更加方便地处理。来自实际问题的数据往往有很多格式和属性，这一节将介绍的 TFRecord格式可以统一不同的原始数据格式， 井更加有效地管理不同的属性。</p>
+</blockquote>
+<blockquote>
+<p>7.2 节将介绍如何对图像数据进行预处理 。 这一节将列举TensorFlow 支持的图像处理函数，并介绍如何使用这些处理方式来弱化与图像识别无关的因素。复杂的图像处理函数有可能降低 训 练的速度，为了加速数据预处理过程 ， </p>
+</blockquote>
+<blockquote>
+<p>7.3 节将完整地介绍 TensorFlow 利用队列进行多线程数据预处理流程。在这 一节中将首先介绍TensorFlow 中多线程和队列的概念，这是 TensorFlow 多线程数据预处理的基本组成部分。然后将具体介绍数据预处理流程中的每个部分 ， 并将给出 一个完整的多线程数据预处理流程图和程序框架。 </p>
+</blockquote>
+<blockquote>
+<p>7.4 节介绍了最新的数据集( Dataset) API o 数据集从 Tensorflow 1.3 起成为官方推荐的数据输入框架，它使数据的输入和处理大大简 化 。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="7-1-TFRecord输入数据格式"><a href="#7-1-TFRecord输入数据格式" class="headerlink" title="7.1 TFRecord输入数据格式"></a>7.1 TFRecord输入数据格式</h3><h4 id="7-1-1-TFRecord的格式介绍"><a href="#7-1-1-TFRecord的格式介绍" class="headerlink" title="7.1.1 TFRecord的格式介绍"></a>7.1.1 TFRecord的格式介绍</h4><ul>
+<li><p>TensorFlow 提供了 TFRecord 的格式来统一存储数据，TFRecord文件中的数据都是通过 tf.train.Example Protocol Buffer的格式存储的</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz6fe64qagj30wy0fkk9d.jpg" alt="屏幕快照 2019-01-14 下午9.18.03"></p>
+</li>
+<li><p>从上面可以看出，包含一个从属性名称到取值的字典，属性名称是字符串，取值可以为字符列表、实数列表或整数列表</p>
+</li>
+<li>TFRecords文件包含了<code>tf.train.Example</code> 协议内存块(protocol buffer)(协议内存块包含了字段 <code>Features</code>)。我们可以写一段代码获取你的数据， 将数据填入到<code>Example</code>协议内存块(protocol buffer)，将协议内存块序列化为一个字符串， 并且通过<code>tf.python_io.TFRecordWriter</code> 写入到TFRecords文件。</li>
+<li>从TFRecords文件中读取数据， 可以使用<code>tf.TFRecordReader</code>的<code>tf.parse_single_example</code>解析器。这个操作可以将<code>Example</code>协议内存块(protocol buffer)解析为张量。</li>
+</ul>
+<h4 id="7-1-2-TFRecord-样例程序"><a href="#7-1-2-TFRecord-样例程序" class="headerlink" title="7.1.2 TFRecord 样例程序"></a>7.1.2 TFRecord 样例程序</h4><p>下面的程序是将输入数据转化为TFRecord的格式</p>
+<p>基本的，一个<code>Example</code>中包含<code>Features</code>，<code>Features</code>里包含<code>Feature</code>（这里没s）的字典。最后，<code>Feature</code>里包含有一个 <code>FloatList</code>， 或者<code>ByteList</code>，或者<code>Int64List</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义函数转化变量类型。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_int64_feature</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_bytes_feature</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取mnist数据。</span></span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">"../../datasets/MNIST_data"</span>,dtype=tf.uint8, one_hot=<span class="keyword">True</span>)</span><br><span class="line">images = mnist.train.images</span><br><span class="line">labels = mnist.train.labels</span><br><span class="line">pixels = images.shape[<span class="number">1</span>]</span><br><span class="line">num_examples = mnist.train.num_examples</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出TFRecord文件的地址。</span></span><br><span class="line">filename = <span class="string">"Records/output.tfrecords"</span></span><br><span class="line"><span class="comment"># 创建一个writer 来写TFRecord文件</span></span><br><span class="line">writer = tf.python_io.TFRecordWriter(filename)</span><br><span class="line"><span class="keyword">for</span> index <span class="keyword">in</span> range(num_examples):</span><br><span class="line">    <span class="comment"># 将一个图像矩阵转化为一个字符串</span></span><br><span class="line">    image_raw = images[index].tostring()</span><br><span class="line">	<span class="comment"># 将一个样例转化为 Example Protocol Buffer，并将所有的信息写入这个数据结构</span></span><br><span class="line">    example = tf.train.Example(features=tf.train.Features(feature=&#123;</span><br><span class="line">        <span class="string">'pixels'</span>: _int64_feature(pixels),</span><br><span class="line">        <span class="string">'label'</span>: _int64_feature(np.argmax(labels[index])),</span><br><span class="line">        <span class="string">'image_raw'</span>: _bytes_feature(image_raw)</span><br><span class="line">    &#125;))</span><br><span class="line">    <span class="comment"># SerializeToString()序列化为字符串</span></span><br><span class="line">    <span class="comment"># 将一个Example写入TFRecord文件</span></span><br><span class="line">    writer.write(example.SerializeToString())</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+<p>接下来是读取数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读取文件。</span></span><br><span class="line">reader = tf.TFRecordReader()</span><br><span class="line"><span class="comment"># 创建一个队列来维护输入文件列表</span></span><br><span class="line">filename_queue = tf.train.string_input_producer([<span class="string">"Records/output.tfrecords"</span>])</span><br><span class="line"><span class="comment"># 从文件中读出一个样例。也可以使用read_up_to函数一次性读取多个样例。</span></span><br><span class="line">_,serialized_example = reader.read(filename_queue)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解析读取的一个样例。</span></span><br><span class="line">features = tf.parse_single_example(</span><br><span class="line">    serialized_example,</span><br><span class="line">    features=&#123;</span><br><span class="line">        <span class="comment"># TensorFlow 提供两种不同的属性解析方法。 一种是方法是 	tf.FixedLenFeature,</span></span><br><span class="line">        <span class="comment">#这种方法解析的结果为一个 Tensor。另一种方法是 tf.VarLenFeature，这种方法 </span></span><br><span class="line">        <span class="comment">#得到的解析结果为 SparseTensor，用于处理稀疏数据。这里解析数据的格式需要和 </span></span><br><span class="line">        <span class="comment">#上面程序写入数据的格式一致。</span></span><br><span class="line">        <span class="string">'image_raw'</span>:tf.FixedLenFeature([],tf.string),</span><br><span class="line">        <span class="string">'pixels'</span>:tf.FixedLenFeature([],tf.int64),</span><br><span class="line">        <span class="string">'label'</span>:tf.FixedLenFeature([],tf.int64)</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment"># tf.decode_raw可以将字符串解析成图像对应的像索数组。</span></span><br><span class="line"><span class="comment"># tf.cast 是类型转换</span></span><br><span class="line">images = tf.decode_raw(features[<span class="string">'image_raw'</span>],tf.uint8)</span><br><span class="line">labels = tf.cast(features[<span class="string">'label'</span>],tf.int32)</span><br><span class="line">pixels = tf.cast(features[<span class="string">'pixels'</span>],tf.int32)</span><br><span class="line">sess = tf.Session()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动多线程处理输入数据。</span></span><br><span class="line">coord = tf.train.Coordinator()</span><br><span class="line">threads = tf.train.start_queue_runners(sess=sess,coord=coord)</span><br><span class="line"><span class="comment"># 每次运行可以读取 TFRecord 文件中的一个样例，</span></span><br><span class="line"><span class="comment"># 当所有样例都读完之后，在此样例中程序会再次读取？？这个地方有些问题的哦</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    image, label, pixel = sess.run([images, labels, pixels])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>要注意，tensorflow中的队列和普通的队列差不多，不过它里面的<code>operation</code>和<code>tensor</code>都是符号型的（<code>symbolic</code>），在调用<code>sess.run()</code>时才执行。</p>
+</blockquote>
+<h3 id="7-2-图像数据处理"><a href="#7-2-图像数据处理" class="headerlink" title="7.2 图像数据处理"></a>7.2 图像数据处理</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/22/笔记——Tensorflow实战Google深度学习框架（五）/" class="archive-article-date">
-  	<time datetime="2018-12-22T07:13:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/22/笔记——Tensorflow实战Google深度学习框架（五）/">笔记——Tensorflow实战Google深度学习框架（五）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -282,157 +212,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/14/笔记——Tensorflow实战Google深度学习框架（七）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/" class="archive-article-date">
-  	<time datetime="2018-12-21T08:25:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/14/笔记——Tensorflow实战Google深度学习框架（六）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">笔记——Tensorflow实战Google深度学习框架（六）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/">笔记——Tensorflow实战Google深度学习框架（四）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-TFRecord输入数据格式"><span class="toc-number">1.</span> <span class="toc-text">7.1 TFRecord输入数据格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-1-TFRecord的格式介绍"><span class="toc-number">1.1.</span> <span class="toc-text">7.1.1 TFRecord的格式介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-2-TFRecord-样例程序"><span class="toc-number">1.2.</span> <span class="toc-text">7.1.2 TFRecord 样例程序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-图像数据处理"><span class="toc-number">2.</span> <span class="toc-text">7.2 图像数据处理</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/" class="archive-article-date">
-  	<time datetime="2018-12-17T12:44:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/">笔记——Tensorflow实战Google深度学习框架（三）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（二）/" class="archive-article-date">
-  	<time datetime="2018-12-17T05:59:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（二）/">笔记——Tensorflow实战Google深度学习框架（二）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -455,9 +347,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
