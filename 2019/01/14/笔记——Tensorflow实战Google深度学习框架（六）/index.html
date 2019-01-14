@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Dingpx&#39;s Blog</title>
+  <title>笔记——Tensorflow实战Google深度学习框架（六） | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dingpx&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="期末考试结束，开始继续恶补tensorflow，上几章节对于其基本的数据结构有了基本的认识，这一章着重学习在图像上的用处。  6.1 节将介绍图像识别领域解决的问题以及图像识别领域中经典的数据集  6.2 节将介绍卷积神经网络的主体思想和整体架构 。  6.3 节将详细讲解卷积层和池化层的网络结构，以及 TensorFlow 对这些网络结构的支持  6.4 节中将通过两个 经典的卷积神经网络模型来">
+<meta name="keywords" content="CV,笔记,tensorflow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记——Tensorflow实战Google深度学习框架（六）">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/笔记——Tensorflow实战Google深度学习框架（六）/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="期末考试结束，开始继续恶补tensorflow，上几章节对于其基本的数据结构有了基本的认识，这一章着重学习在图像上的用处。  6.1 节将介绍图像识别领域解决的问题以及图像识别领域中经典的数据集  6.2 节将介绍卷积神经网络的主体思想和整体架构 。  6.3 节将详细讲解卷积层和池化层的网络结构，以及 TensorFlow 对这些网络结构的支持  6.4 节中将通过两个 经典的卷积神经网络模型来">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz65jxblsuj30wm0cagt6.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz67f8wcs8j30jo0eajxr.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz67ijejx7j30w00ccdmq.jpg">
+<meta property="og:updated_time" content="2019-01-14T13:06:58.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dingpx&#39;s Blog">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:title" content="笔记——Tensorflow实战Google深度学习框架（六）">
+<meta name="twitter:description" content="期末考试结束，开始继续恶补tensorflow，上几章节对于其基本的数据结构有了基本的认识，这一章着重学习在图像上的用处。  6.1 节将介绍图像识别领域解决的问题以及图像识别领域中经典的数据集  6.2 节将介绍卷积神经网络的主体思想和整体架构 。  6.3 节将详细讲解卷积层和池化层的网络结构，以及 TensorFlow 对这些网络结构的支持  6.4 节中将通过两个 经典的卷积神经网络模型来">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz65jxblsuj30wm0cagt6.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -131,120 +137,88 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-笔记——Tensorflow实战Google深度学习框架（六）" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      笔记——Tensorflow实战Google深度学习框架（六）
+    </h1>
+  
+
+        
+        <a href="/2019/01/14/笔记——Tensorflow实战Google深度学习框架（六）/" class="archive-article-date">
+  	<time datetime="2019-01-14T07:24:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-14</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>期末考试结束，开始继续恶补tensorflow，上几章节对于其基本的数据结构有了基本的认识，这一章着重学习在图像上的用处。</p>
+<blockquote>
+<p>6.1 节将介绍图像识别领域解决的问题以及图像识别领域中经典的数据集 </p>
+<p>6.2 节将介绍卷积神经网络的主体思想和整体架构 。 </p>
+<p>6.3 节将详细讲解卷积层和池化层的网络结构，以及 TensorFlow 对这些网络结构的支持 </p>
+<p>6.4 节中将通过两个 经典的卷积神经网络模型来介绍如何设计卷积神经网络的架构以及如何设置每 一层 神经网络的配置 。这一节将通过 TensorFlow 实现 LeNet-5 模型，并介绍 TensorFlow-Slim 来实现更加复杂的Inception-v3 模型中的 Inception 模块 。</p>
+<p>6.5 节中将介绍如何通过 TensorFlow 实现卷积神经网络的迁移学习。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="6-1-图像识别问题简介以及经典数据集"><a href="#6-1-图像识别问题简介以及经典数据集" class="headerlink" title="6.1 图像识别问题简介以及经典数据集"></a>6.1 图像识别问题简介以及经典数据集</h3><ul>
+<li>mnist, cifar, imagenet</li>
+</ul>
+<h3 id="6-2-卷积神经网络"><a href="#6-2-卷积神经网络" class="headerlink" title="6.2 卷积神经网络"></a>6.2 卷积神经网络</h3><ul>
+<li>问题：全联接网络的参数太过庞大，容易过拟合</li>
+<li>卷积的优点：局部链接、权值共享</li>
+<li>一般结构：如下图</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz65jxblsuj30wm0cagt6.jpg" alt="屏幕快照 2019-01-14 下午3.37.37"></p>
+<h3 id="6-3-卷积神经网络常用结构"><a href="#6-3-卷积神经网络常用结构" class="headerlink" title="6.3 卷积神经网络常用结构"></a>6.3 卷积神经网络常用结构</h3><h4 id="6-3-1-卷积层"><a href="#6-3-1-卷积层" class="headerlink" title="6.3.1 卷积层"></a>6.3.1 卷积层</h4><p>具体的细节就不赘述，细看代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过 tf.get variable 创建filter的weights和biases</span></span><br><span class="line"><span class="comment"># 前两个维度表示filter的尺寸；第三个表示当前层的深度；第四个表示filter的深度</span></span><br><span class="line">filter_weight = tf.get_variable (’weights’,[<span class="number">5</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">16</span>], initializer=tf.truncated normal,initializer(stddev=<span class="number">0.1</span>))</span><br><span class="line"><span class="comment"># 表示filter的深度</span></span><br><span class="line">biases = tf.get_variable(’biases’,[<span class="number">16</span>],initializer=tf.constant_initializer(<span class="number">0.1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#输入层是四维矩阵，比如input[O, :, :, :]表示第一张图片</span></span><br><span class="line"><span class="comment">#第二个参数提供了卷积层的权主，</span></span><br><span class="line"><span class="comment">#第三个参数为不同维度上的步长。虽然第三个参数提供的是一个长度为 4 的数组，但是第一维和最后一维的数字要求一定是 l。这是因为卷积层的步氏只对矩阵的长和宽有效</span></span><br><span class="line"><span class="comment">#最后一个参数是填充(padding) 的方法， TensorFlow 中提供 SAME 或是 VALID 两种选择。其中 SAME但表示添加全 0 填充，“VALID”表示不添加</span></span><br><span class="line">conv = tf.nn.conv2d(</span><br><span class="line">input, filter_weight, strides=[l, <span class="number">1</span>, <span class="number">1</span>, l], padding=’SAME’)</span><br><span class="line"><span class="comment"># tf.nn.bias_add提供了一个厅便的函数给每一个节点加上偏置顷。</span></span><br><span class="line">bias= tf.nn.bias_add(conv, biases) </span><br><span class="line"><span class="comment">#将计算结果迦过 ReLU 激活函数完成非线性化。 </span></span><br><span class="line">actived_conv = tf.nn.relu(bias)</span><br></pre></td></tr></table></figure>
+<h4 id="6-3-2-池化层"><a href="#6-3-2-池化层" class="headerlink" title="6.3.2 池化层"></a>6.3.2 池化层</h4><ul>
+<li>使用池化层既可以加快计算速度也有防止过拟合问题的作用</li>
+<li>卷积层和池化层中过滤器移动的方式是相似的，唯 一 的区别在于<ul>
+<li>卷积层使用的过滤器是横跨整个深度的，</li>
+<li>而池化层使用 的过滤器只影响一个深度上的节点。</li>
+</ul>
+</li>
+<li>所以池化层的过滤器除了在长和宽两个维度移动 ，它还需要在深度这个维度移动。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tf.nn.max_pool 实现了耻火池化层的前向传播过程，它的参数和 tf.nn.conv2d 函数类似。 </span></span><br><span class="line"><span class="comment"># ksize 提供了过滤器的尺寸, strides 提供了步长信息， padding 提供了是否使用全 0 填充。 </span></span><br><span class="line"></span><br><span class="line">pool= tf.nn.max_pool(actived_conv, ksize=[l, <span class="number">3</span> , <span class="number">3</span>, l],</span><br><span class="line">strides=[l, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=’SAME’)</span><br><span class="line"></span><br><span class="line"><span class="comment">#tf.nn.avg_pool 来实现平均池化层</span></span><br></pre></td></tr></table></figure>
+<h3 id="6-4-经典卷积网络模型"><a href="#6-4-经典卷积网络模型" class="headerlink" title="6.4 经典卷积网络模型"></a>6.4 经典卷积网络模型</h3><blockquote>
+<p>在 6.4.1 节中将具体介绍 LeNet-5 模型，并给出 一个完整的 TensorFlow 程序来实现 LeNet-5 模型 。通过这个模型，将给出卷积神经网络结构设计的一个通用模式。</p>
+</blockquote>
+<blockquote>
+<p>然后 6.4.2节将介绍设计卷积神经网络<br>结构的另外一种思路一-Inception模型。这个小节将简单介TensorFlow-Slim工具，并通过这个工具实现谷歌提出的 Inception-v3 模型中的 一个模块。</p>
+</blockquote>
+<h4 id="6-4-1-Lenet-5模型"><a href="#6-4-1-Lenet-5模型" class="headerlink" title="6.4.1 Lenet-5模型"></a>6.4.1 Lenet-5模型</h4><p>这是inference的部分</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">INPUT_NODE = <span class="number">784</span></span><br><span class="line">OUTPUT_NODE = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">IMAGE_SIZE = <span class="number">28</span></span><br><span class="line">NUM_CHANNELS = <span class="number">1</span></span><br><span class="line">NUM_LABELS = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">CONV1_DEEP = <span class="number">32</span></span><br><span class="line">CONV1_SIZE = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">CONV2_DEEP = <span class="number">64</span></span><br><span class="line">CONV2_SIZE = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">FC_SIZE = <span class="number">512</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inference</span><span class="params">(input_tensor, train, regularizer)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> tf.variable_scope(<span class="string">'layer1-conv1'</span>):</span><br><span class="line">        conv1_weights = tf.get_variable(</span><br><span class="line">            <span class="string">"weight"</span>, [CONV1_SIZE, CONV1_SIZE, NUM_CHANNELS, CONV1_DEEP],</span><br><span class="line">            initializer=tf.truncated_normal_initializer(stddev=<span class="number">0.1</span>))</span><br><span class="line">        conv1_biases = tf.get_variable(<span class="string">"bias"</span>, [CONV1_DEEP], initializer=tf.constant_initializer(<span class="number">0.0</span>))</span><br><span class="line">        conv1 = tf.nn.conv2d(input_tensor, conv1_weights, strides=[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">        relu1 = tf.nn.relu(tf.nn.bias_add(conv1, conv1_biases))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">"layer2-pool1"</span>):</span><br><span class="line">        pool1 = tf.nn.max_pool(relu1, ksize = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>],strides=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>],padding=<span class="string">"SAME"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> tf.variable_scope(<span class="string">"layer3-conv2"</span>):</span><br><span class="line">        conv2_weights = tf.get_variable(</span><br><span class="line">            <span class="string">"weight"</span>, [CONV2_SIZE, CONV2_SIZE, CONV1_DEEP, CONV2_DEEP],</span><br><span class="line">            initializer=tf.truncated_normal_initializer(stddev=<span class="number">0.1</span>))</span><br><span class="line">        conv2_biases = tf.get_variable(<span class="string">"bias"</span>, [CONV2_DEEP], initializer=tf.constant_initializer(<span class="number">0.0</span>))</span><br><span class="line">        conv2 = tf.nn.conv2d(pool1, conv2_weights, strides=[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">        relu2 = tf.nn.relu(tf.nn.bias_add(conv2, conv2_biases))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> tf.name_scope(<span class="string">"layer4-pool2"</span>):</span><br><span class="line">        pool2 = tf.nn.max_pool(relu2, ksize=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">        pool_shape = pool2.get_shape().as_list()</span><br><span class="line">        nodes = pool_shape[<span class="number">1</span>] * pool_shape[<span class="number">2</span>] * pool_shape[<span class="number">3</span>]</span><br><span class="line">        reshaped = tf.reshape(pool2, [pool_shape[<span class="number">0</span>], nodes])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> tf.variable_scope(<span class="string">'layer5-fc1'</span>):</span><br><span class="line">        fc1_weights = tf.get_variable(<span class="string">"weight"</span>, [nodes, FC_SIZE],</span><br><span class="line">                                      initializer=tf.truncated_normal_initializer(stddev=<span class="number">0.1</span>))</span><br><span class="line">        <span class="keyword">if</span> regularizer != <span class="keyword">None</span>: tf.add_to_collection(<span class="string">'losses'</span>, regularizer(fc1_weights))</span><br><span class="line">        fc1_biases = tf.get_variable(<span class="string">"bias"</span>, [FC_SIZE], initializer=tf.constant_initializer(<span class="number">0.1</span>))</span><br><span class="line"></span><br><span class="line">        fc1 = tf.nn.relu(tf.matmul(reshaped, fc1_weights) + fc1_biases)</span><br><span class="line">        <span class="keyword">if</span> train: fc1 = tf.nn.dropout(fc1, <span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> tf.variable_scope(<span class="string">'layer6-fc2'</span>):</span><br><span class="line">        fc2_weights = tf.get_variable(<span class="string">"weight"</span>, [FC_SIZE, NUM_LABELS],</span><br><span class="line">                                      initializer=tf.truncated_normal_initializer(stddev=<span class="number">0.1</span>))</span><br><span class="line">        <span class="keyword">if</span> regularizer != <span class="keyword">None</span>: tf.add_to_collection(<span class="string">'losses'</span>, regularizer(fc2_weights))</span><br><span class="line">        fc2_biases = tf.get_variable(<span class="string">"bias"</span>, [NUM_LABELS], initializer=tf.constant_initializer(<span class="number">0.1</span>))</span><br><span class="line">        logit = tf.matmul(fc1, fc2_weights) + fc2_biases</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> logit</span><br></pre></td></tr></table></figure>
+<p>这是train的部分</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow.examples.tutorials.mnist <span class="keyword">import</span> input_data</span><br><span class="line"><span class="keyword">import</span> LeNet5_infernece</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">BATCH_SIZE = <span class="number">100</span></span><br><span class="line">LEARNING_RATE_BASE = <span class="number">0.01</span></span><br><span class="line">LEARNING_RATE_DECAY = <span class="number">0.99</span></span><br><span class="line">REGULARIZATION_RATE = <span class="number">0.0001</span></span><br><span class="line">TRAINING_STEPS = <span class="number">10000</span></span><br><span class="line">MOVING_AVERAGE_DECAY = <span class="number">0.99</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(mnist)</span>:</span></span><br><span class="line">    <span class="comment"># 定义输出为4维矩阵的placeholder</span></span><br><span class="line">    x = tf.placeholder(tf.float32, [</span><br><span class="line">            BATCH_SIZE,</span><br><span class="line">            LeNet5_infernece.IMAGE_SIZE,</span><br><span class="line">            LeNet5_infernece.IMAGE_SIZE,</span><br><span class="line">            LeNet5_infernece.NUM_CHANNELS],</span><br><span class="line">        name=<span class="string">'x-input'</span>)</span><br><span class="line">    y_ = tf.placeholder(tf.float32, [<span class="keyword">None</span>, LeNet5_infernece.OUTPUT_NODE], name=<span class="string">'y-input'</span>)</span><br><span class="line">    </span><br><span class="line">    regularizer = tf.contrib.layers.l2_regularizer(REGULARIZATION_RATE)</span><br><span class="line">    y = LeNet5_infernece.inference(x,<span class="keyword">False</span>,regularizer)</span><br><span class="line">    global_step = tf.Variable(<span class="number">0</span>, trainable=<span class="keyword">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义损失函数、学习率、滑动平均操作以及训练过程。</span></span><br><span class="line">    variable_averages = tf.train.ExponentialMovingAverage(MOVING_AVERAGE_DECAY, global_step)</span><br><span class="line">    variables_averages_op = variable_averages.apply(tf.trainable_variables())</span><br><span class="line">    cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(y, tf.argmax(y_, <span class="number">1</span>))</span><br><span class="line">    cross_entropy_mean = tf.reduce_mean(cross_entropy)</span><br><span class="line">    loss = cross_entropy_mean + tf.add_n(tf.get_collection(<span class="string">'losses'</span>))</span><br><span class="line">    learning_rate = tf.train.exponential_decay(</span><br><span class="line">        LEARNING_RATE_BASE,</span><br><span class="line">        global_step,</span><br><span class="line">        mnist.train.num_examples / BATCH_SIZE, LEARNING_RATE_DECAY,</span><br><span class="line">        staircase=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">    train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss, global_step=global_step)</span><br><span class="line">    <span class="keyword">with</span> tf.control_dependencies([train_step, variables_averages_op]):</span><br><span class="line">        train_op = tf.no_op(name=<span class="string">'train'</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 初始化TensorFlow持久化类。</span></span><br><span class="line">    saver = tf.train.Saver()</span><br><span class="line">    <span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">        tf.global_variables_initializer().run()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(TRAINING_STEPS):</span><br><span class="line">            xs, ys = mnist.train.next_batch(BATCH_SIZE)</span><br><span class="line"></span><br><span class="line">            reshaped_xs = np.reshape(xs, (</span><br><span class="line">                BATCH_SIZE,</span><br><span class="line">                LeNet5_infernece.IMAGE_SIZE,</span><br><span class="line">                LeNet5_infernece.IMAGE_SIZE,</span><br><span class="line">                LeNet5_infernece.NUM_CHANNELS))</span><br><span class="line">            _, loss_value, step = sess.run([train_op, loss, global_step], feed_dict=&#123;x: reshaped_xs, y_: ys&#125;)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> i % <span class="number">1000</span> == <span class="number">0</span>:</span><br><span class="line">                print(<span class="string">"After %d training step(s), loss on training batch is %g."</span> % (step, loss_value))</span><br><span class="line">                </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(argv=None)</span>:</span></span><br><span class="line">    mnist = input_data.read_data_sets(<span class="string">"../../../datasets/MNIST_data"</span>, one_hot=<span class="keyword">True</span>)</span><br><span class="line">    train(mnist)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h4 id="6-4-2-Inception-v3-模型"><a href="#6-4-2-Inception-v3-模型" class="headerlink" title="6.4.2 Inception-v3 模型"></a>6.4.2 Inception-v3 模型</h4><blockquote>
+<p>Inception 模块会首先使用不同尺寸的过滤器处理输入矩阵。</p>
+<p>最上方矩阵为使用了边长为 l 的过滤器的卷积层前向传播的结果。类似的,中间矩阵使用的过滤器边长为 3，下方矩阵使用的过滤器边长为 5。</p>
+<p>不同的矩阵代表了 Inception模块中的一条计算路径。虽然过滤器的大小不同，但如果所有的过滤器都使用全 0 填充且步长为 l，那么前向传播得到的结果矩阵的长和宽都与输入矩阵一致。</p>
+<p>这样经过不同过滤器处理的结果矩阵可以拼接成一个更深的矩阵，可以将它们在深度这个维度上组合起来。</p>
+</blockquote>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz67f8wcs8j30jo0eajxr.jpg" alt="屏幕快照 2019-01-14 下午4.42.13"></p>
+<p>上图中展示的是 Inception 模块的核心思想， 真正在 Inception-v3 模型中使用的 Inception 棋块要更加复杂且多样</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz67ijejx7j30w00ccdmq.jpg" alt="屏幕快照 2019-01-14 下午4.45.32"></p>
+<p>因为有很多层，如果按照正常的创建卷积层来做的话，需要写很多行代码，这里利用slim这个包来创建。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 直接使用API实现卷积层</span></span><br><span class="line"><span class="keyword">with</span> tf.variable scope(scope name) :</span><br><span class="line">	weights = tf. get_variable (”weight”,...)</span><br><span class="line">	biases= tf .get_variable (”bias”, ...)</span><br><span class="line">	conv = tf.nn.conv2d(...)</span><br><span class="line">	relu = tf.nn.relu(tf.nn.bias add(conv, biases))</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 使用 TensorFlow-Slim 实现卷积层。通过 TensorFlow-Slim 可以在一行中实现一个卷积层的前向传播算法。 </span></span><br><span class="line"><span class="comment"># slim.conv2d 函数的有 3 个参数是必填的。</span></span><br><span class="line"><span class="comment"># 第一个参数为输入节点矩阵</span></span><br><span class="line"><span class="comment"># 第二参数是当前卷积层过滤器的深度</span></span><br><span class="line"><span class="comment"># 第三个参数是过滤器的尺寸</span></span><br><span class="line"><span class="comment"># 可边的参数有过滤然移动的步长、是否使用全0填充、激活函数的选择以及变量的命名空间等。 </span></span><br><span class="line"></span><br><span class="line">net = slim.conv2d(Input, <span class="number">32</span>, [<span class="number">3</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<p>下面实现其中的某一块的Inception</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">slim = tf.contrib.slim</span><br><span class="line"><span class="comment"># slim.arg_scope 函数可以用于设置默认的参数取值。 </span></span><br><span class="line"><span class="comment"># 第一个参数是一个函数列表，在这个列表中的函数将使用默认的参数取值</span></span><br><span class="line"><span class="comment"># 后面的参数就是默认的参数取值</span></span><br><span class="line"><span class="keyword">with</span> slim.arg_scope([slim.conv2d, slim.max_pool2d, slim.arg_pool2d],stride =<span class="number">1</span>, psdding=<span class="string">'VALID'</span>):</span><br><span class="line">    ...</span><br><span class="line">    net = 上一层输出节点矩阵</span><br><span class="line">    <span class="keyword">with</span> tf.variable_scope(<span class="string">'Mixed_7c'</span>):</span><br><span class="line">        <span class="keyword">with</span> tf.variable_scope(<span class="string">'Branch_0'</span>):</span><br><span class="line">            branch_0 = slim.conv2d(net , <span class="number">320</span> , [<span class="number">1</span> , <span class="number">1</span>], scope= <span class="string">'Conv2d_Oa_lxl'</span>)</span><br><span class="line">        <span class="keyword">with</span> tf.variable_scope (<span class="string">'Branch_l'</span>):</span><br><span class="line">            branch_1 = slim.conv2d(net , <span class="number">384</span> , [<span class="number">1</span> , <span class="number">1</span>], scope= <span class="string">'Conv2d_Oa_lxl'</span>)</span><br><span class="line">            <span class="comment"># tf.concat的第一个参数是指定拼接的维度</span></span><br><span class="line">            branch_1 = tf.concat(<span class="number">3</span> , [</span><br><span class="line">				slim.conv2d(branch_1, <span class="number">384</span>, [<span class="number">1</span>,<span class="number">3</span>], scope=<span class="string">'Conv2d_Ob_lx3'</span>)， </span><br><span class="line">            	slim.conv2d(branch_1, <span class="number">384</span>, [<span class="number">3</span>,<span class="number">1</span>], scope=<span class="string">'Conv2d_Oc_3xl'</span>)</span><br><span class="line">                           ])</span><br><span class="line">		...</span><br><span class="line">        net = tf.concat (<span class="number">3</span>, [branch <span class="number">0</span>, branch <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="6-5-迁移学习"><a href="#6-5-迁移学习" class="headerlink" title="6.5 迁移学习"></a>6.5 迁移学习</h3><p>暂时先放在这里，后期再来补这块</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/30/外汇交易学习/" class="archive-article-date">
-  	<time datetime="2018-12-30T14:29:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/30/外汇交易学习/">外汇交易学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">经济</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">外汇交易</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/28/讲座笔记——刘康《大规模时间抽取研究进展》/" class="archive-article-date">
-  	<time datetime="2018-12-28T07:00:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/28/讲座笔记——刘康《大规模时间抽取研究进展》/">讲座笔记——刘康《大规模时间抽取研究进展》</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">讲座笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">知识图谱</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/22/笔记——Tensorflow实战Google深度学习框架（五）/" class="archive-article-date">
-  	<time datetime="2018-12-22T07:13:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/22/笔记——Tensorflow实战Google深度学习框架（五）/">笔记——Tensorflow实战Google深度学习框架（五）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -264,317 +238,118 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/14/笔记——Tensorflow实战Google深度学习框架（六）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/" class="archive-article-date">
-  	<time datetime="2018-12-21T08:25:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/30/外汇交易学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">外汇交易学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/">笔记——Tensorflow实战Google深度学习框架（四）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-图像识别问题简介以及经典数据集"><span class="toc-number">1.</span> <span class="toc-text">6.1 图像识别问题简介以及经典数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-卷积神经网络"><span class="toc-number">2.</span> <span class="toc-text">6.2 卷积神经网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-卷积神经网络常用结构"><span class="toc-number">3.</span> <span class="toc-text">6.3 卷积神经网络常用结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-1-卷积层"><span class="toc-number">3.1.</span> <span class="toc-text">6.3.1 卷积层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-2-池化层"><span class="toc-number">3.2.</span> <span class="toc-text">6.3.2 池化层</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-经典卷积网络模型"><span class="toc-number">4.</span> <span class="toc-text">6.4 经典卷积网络模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-1-Lenet-5模型"><span class="toc-number">4.1.</span> <span class="toc-text">6.4.1 Lenet-5模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-2-Inception-v3-模型"><span class="toc-number">4.2.</span> <span class="toc-text">6.4.2 Inception-v3 模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-迁移学习"><span class="toc-number">5.</span> <span class="toc-text">6.5 迁移学习</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/18/日程表（12-11至12-17）/" class="archive-article-date">
-  	<time datetime="2018-12-17T17:11:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-18</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/18/日程表（12-11至12-17）/">日程表（12_11至12_17）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">2018日程记录</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/" class="archive-article-date">
-  	<time datetime="2018-12-17T12:44:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/">笔记——Tensorflow实战Google深度学习框架（三）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（二）/" class="archive-article-date">
-  	<time datetime="2018-12-17T05:59:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（二）/">笔记——Tensorflow实战Google深度学习框架（二）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/13/cs231n—Tensorflow/" class="archive-article-date">
-  	<time datetime="2018-12-13T08:35:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/13/cs231n—Tensorflow/">CS231n_Assignment2———Tensorflow</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/11/组会笔记/" class="archive-article-date">
-  	<time datetime="2018-12-11T03:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/11/组会笔记/">组会笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/10/CS231n-Assignment2——cnn/" class="archive-article-date">
-  	<time datetime="2018-12-10T10:11:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/10/CS231n-Assignment2——cnn/">CS231n_Assignment2——cnn</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -598,8 +373,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
