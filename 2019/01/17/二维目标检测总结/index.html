@@ -6,24 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>日程表（12_4至12_10） | Dingpx&#39;s Blog</title>
+  <title>二维目标检测总结 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是12_4号至12_10所做的事情，记录下来，持续更新。">
-<meta name="keywords" content="2018日程记录">
+  <meta name="description" content="目标检测（Object Detection）是一项从图像中检测到物体的位置并区分物体类别的一项任务，即输出为检测框的四个坐标 ( x1,x2,y1,y2 ) 和物体的类别 y。目前有两种方式，一种为单阶段检测，以yolo和ssd为代表；另外一种为双阶段检测，以rcnn系列为代表。本文下面将总结这两种检测方法的思想和模型，以期望打好3D 物体检测的基础。">
+<meta name="keywords" content="CV,目标检测,综述">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日程表（12_4至12_10）">
-<meta property="og:url" content="http://yoursite.com/2018/12/06/日程表（12-4至12-10）/index.html">
+<meta property="og:title" content="二维目标检测总结">
+<meta property="og:url" content="http://yoursite.com/2019/01/17/二维目标检测总结/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="这是12_4号至12_10所做的事情，记录下来，持续更新。">
+<meta property="og:description" content="目标检测（Object Detection）是一项从图像中检测到物体的位置并区分物体类别的一项任务，即输出为检测框的四个坐标 ( x1,x2,y1,y2 ) 和物体的类别 y。目前有两种方式，一种为单阶段检测，以yolo和ssd为代表；另外一种为双阶段检测，以rcnn系列为代表。本文下面将总结这两种检测方法的思想和模型，以期望打好3D 物体检测的基础。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxx2k1gsc7j314k06caev.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxx2oledbpj31a208i0yv.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxxlbpr4mdj311u07aafc.jpg">
-<meta property="og:updated_time" content="2018-12-10T10:09:27.529Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz9xewejfej30j809udjn.jpg">
+<meta property="og:updated_time" content="2019-01-18T05:14:35.171Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日程表（12_4至12_10）">
-<meta name="twitter:description" content="这是12_4号至12_10所做的事情，记录下来，持续更新。">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxx2k1gsc7j314k06caev.jpg">
+<meta name="twitter:title" content="二维目标检测总结">
+<meta name="twitter:description" content="目标检测（Object Detection）是一项从图像中检测到物体的位置并区分物体类别的一项任务，即输出为检测框的四个坐标 ( x1,x2,y1,y2 ) 和物体的类别 y。目前有两种方式，一种为单阶段检测，以yolo和ssd为代表；另外一种为双阶段检测，以rcnn系列为代表。本文下面将总结这两种检测方法的思想和模型，以期望打好3D 物体检测的基础。">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz9xewejfej30j809udjn.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -137,66 +135,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-日程表（12-4至12-10）" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-二维目标检测总结" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      日程表（12_4至12_10）
+      二维目标检测总结
     </h1>
   
 
         
-        <a href="/2018/12/06/日程表（12-4至12-10）/" class="archive-article-date">
-  	<time datetime="2018-12-06T07:07:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-06</time>
+        <a href="/2019/01/17/二维目标检测总结/" class="archive-article-date">
+  	<time datetime="2019-01-17T09:34:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是12_4号至12_10所做的事情，记录下来，持续更新。</p>
+        <p>目标检测（Object Detection）是一项从图像中检测到物体的位置并区分物体类别的一项任务，即输出为检测框的四个坐标 ( x1,x2,y1,y2 ) 和物体的类别 y。目前有两种方式，一种为单阶段检测，以yolo和ssd为代表；另外一种为双阶段检测，以rcnn系列为代表。本文下面将总结这两种检测方法的思想和模型，以期望打好3D 物体检测的基础。</p>
 <a id="more"></a>
-<table>
-<thead>
-<tr>
-<th>时间</th>
-<th>事项</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>12_4(周二)</td>
-<td><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxx2k1gsc7j314k06caev.jpg" alt="屏幕快照 2018-12-06 下午3.43.35"></td>
-</tr>
-<tr>
-<td>12_5(周三)</td>
-<td><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxx2oledbpj31a208i0yv.jpg" alt="屏幕快照 2018-12-06 下午3.47.57"></td>
-</tr>
-<tr>
-<td>12_6(周四)</td>
-<td><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxxlbpr4mdj311u07aafc.jpg" alt="屏幕快照 2018-12-07 上午2.32.44"></td>
-</tr>
-<tr>
-<td>12_7(周五)</td>
-<td>完成了assignment2的FullyConnectedNets中的SGD+Momentum、RMSProp and Adam内容</td>
-</tr>
-<tr>
-<td>12_8(周六)</td>
-<td>陪她出去再次办理证明；回来后完成了assignment2的Batchnorm中的bn前向和反向的代码内容，但是在把它应用在Fullyconneted的地方一直有个bug没有解决</td>
-</tr>
-<tr>
-<td>12_9(周日)</td>
-<td>重构了fc_net里面关于loss计算和求导部分的代码，在参数初始化部分存在着问题，调bug直至成功</td>
-</tr>
-<tr>
-<td>12_10(周一)</td>
-<td>完成了assignment2的Batchnorm中layer norm的内容，完成了assignment2中dropout的代码的内容</td>
-</tr>
-</tbody>
-</table>
+<h1 id="单阶段"><a href="#单阶段" class="headerlink" title="单阶段"></a>单阶段</h1><h2 id="yolo"><a href="#yolo" class="headerlink" title="yolo"></a>yolo</h2><blockquote>
+<p>论文下载：<a href="http://arxiv.org/abs/1506.02640" target="_blank" rel="noopener">http://arxiv.org/abs/1506.02640</a></p>
+<p>代码下载：<a href="https://github.com/pjreddie/darknet" target="_blank" rel="noopener">https://github.com/pjreddie/darknet</a> </p>
+</blockquote>
+<h3 id="论文翻译"><a href="#论文翻译" class="headerlink" title="论文翻译"></a>论文翻译</h3><h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><blockquote>
+<p>方法的本质</p>
+</blockquote>
+<p>过去的工作是使用<strong>classfier</strong>去进行检测（repurposes classifiers to perform detection），相反我们把目标检测设计为一种关于bounding boxes和class propabilities的<strong>回归</strong>问题，我们采用一个single神经网络只需要一次evaluation直接从图像中得到bounding boxes 和类别概率，因为整个检测流程是基于单个网络，所以可以直接根据detection performance 进行优化。</p>
+<blockquote>
+<p>有三个优点：</p>
+</blockquote>
+<p>1、我们的网络非常快，基本的model 可以达到每秒45frames，fast yolo可以达到155frame 每秒的同时保证mAP指标是其他方法的两倍。</p>
+<p>2、与现在最好的方法比，YOLO在定位上（localization）错误率更高但是在背景上预测的错误率更小。</p>
+<p>3、最后，YOLO的对物体的泛化表示更好，相比较于RCNN和DPM，在从自然图像到艺术作品的泛化性能更好。</p>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><blockquote>
+<p>快速识别物体的重要性</p>
+</blockquote>
+<p>人类看了一眼图像，立刻就知道图像中的对象是什么，它们在哪里，以及它们是如何相互作用的。人类的视觉系统是快速和准确的，允许我们执行复杂的任务，如驾驶时，很少有清醒的思考过程。快速、准确的物体检测算法将使计算机能够在没有特殊传感器的情况下驾驶汽车，使辅助设备能够向人类用户传递实时场景信息，并为通用、响应性的机器人系统挖掘潜力。</p>
+<blockquote>
+<p>当前主流方法的简要介绍</p>
+</blockquote>
+<p>当前的检测系统将分类器重新使用分类器来检测。为了检测对象，这些系统为该对象提取一个分类器，并在测试图像中的不同位置和尺度上对其进行评估。</p>
+<p>1、像DPM模型这样的系统使用滑动窗口方法，其中分类器在整个图像上的均匀间隔位置运行；</p>
+<p>2、而RCNN模型是使用RPN办法在图像上首先生成潜在的bbox，然后再在这些盒子上使用分类器，之后再用一些后期处理重新定位bbox,消除重复的检测，并根据场景中的其他对象重新计算得分。</p>
+<p>3、这些复杂的方法因为是单独地被训练的，所以很难被优化。</p>
+<blockquote>
+<p>本文方法的简介</p>
+</blockquote>
+<p>我们把目标检测重新设计为了一种单一的回归问题，直接从图像的pixels到bbox的坐标和类别概率。一个CNN网络同时预测了多个bbox的坐标和类别概率。YOLO在整个图片上训练并且直接优化detection的性能，下面是与传统方法的benifits:</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz9xewejfej30j809udjn.jpg" alt="屏幕快照 2019-01-17 下午9.58.09"></p>
+<p>First，YOLO速度非常快。由于我们设计的检测系统实质上是一个回归问题，我们不需要一个复杂的pipeline。在测试时我们只需在新图像上运行我们的神经网络就能预测检测结果。我们的基本网络在没有批处理的Titan X GPU运行45帧每秒，在一个快速版本运行超过150 fps。这意味着我们可以在少于25毫秒的延迟时间内实时处理流视频。此外，YOLO的平均精度是其他实时系统的两倍以上。</p>
+<p>Second，YOLO在做预测时能够全局思考图像。与基于滑动窗口sliding window和区域提案region proposal的技术不同，YOLO在训练和测试期间看到了整个图像，因此它隐式编码了有关类的上下文信息以及它们的外观。Fast R-CNN会把背景上的一小块看作是一个object，因为它不能看到范围更广的信息，而YOLO比起Fast R-CNN背景的错误率降低了一半。</p>
+<p>Third，YOLO学习对象的泛化表示。在对自然图像进行训练并在artwork上进行测试时，YOLO远远超过了DPM和R-CNN这样的顶级检测方法。由于YOLO具有很高的泛化能力，所以当应用于新的场景或有unexpected inputs时，不太可能发生问题。</p>
+<p>最后，YOLO在准确性方面仍然落后于最先进的检测系统。虽然它能快速识别出图像中的物体，但它很难精确地定位一些物体，尤其是小型物体。</p>
 
       
 
@@ -210,7 +204,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">2018日程记录</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">目标检测</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">综述</a>
         		</li>
       		
 		</ul>
@@ -266,7 +268,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/06/日程表（12-4至12-10）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/17/二维目标检测总结/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +282,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/07/CS231n-Assignment2——BatchNormalization/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CS231n_Assignment2——BatchNormalization
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/04/Alfred入门/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Alfred入门</div>
+    <a href="/2019/01/16/讲座笔记——苏航《可解释性AI》/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">讲座笔记——VALSE讲座《可解释性AI》</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -318,7 +311,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#单阶段"><span class="toc-number">1.</span> <span class="toc-text">单阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#yolo"><span class="toc-number">1.1.</span> <span class="toc-text">yolo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#论文翻译"><span class="toc-number">1.1.1.</span> <span class="toc-text">论文翻译</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#摘要"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#介绍"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">介绍</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

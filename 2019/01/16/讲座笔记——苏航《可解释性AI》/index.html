@@ -6,24 +6,82 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>日程表（12_4至12_10） | Dingpx&#39;s Blog</title>
+  <title>讲座笔记——VALSE讲座《可解释性AI》 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是12_4号至12_10所做的事情，记录下来，持续更新。">
-<meta name="keywords" content="2018日程记录">
+  <meta name="description" content="周博磊场景表示 语义概念的解耦                       从分类网络到生成网络 分析GAN里面的神经元在做什么    去掉了台灯，但是影子还在   因为需要将用户上传的图随意变化，而不是将GAN生成的图变化，就需要一个invert的做法，paper还没有出    可解释性本身意义不怎么大，但是和实际的场景结合起来才比较有意义   张泉池 可解释性的重要性在于实际应用案例上给出具体">
+<meta name="keywords" content="CV,讲座笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日程表（12_4至12_10）">
-<meta property="og:url" content="http://yoursite.com/2018/12/06/日程表（12-4至12-10）/index.html">
+<meta property="og:title" content="讲座笔记——VALSE讲座《可解释性AI》">
+<meta property="og:url" content="http://yoursite.com/2019/01/16/讲座笔记——苏航《可解释性AI》/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="这是12_4号至12_10所做的事情，记录下来，持续更新。">
+<meta property="og:description" content="周博磊场景表示 语义概念的解耦                       从分类网络到生成网络 分析GAN里面的神经元在做什么    去掉了台灯，但是影子还在   因为需要将用户上传的图随意变化，而不是将GAN生成的图变化，就需要一个invert的做法，paper还没有出    可解释性本身意义不怎么大，但是和实际的场景结合起来才比较有意义   张泉池 可解释性的重要性在于实际应用案例上给出具体">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxx2k1gsc7j314k06caev.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxx2oledbpj31a208i0yv.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxxlbpr4mdj311u07aafc.jpg">
-<meta property="og:updated_time" content="2018-12-10T10:09:27.529Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8ohihgrej314a0n4kgj.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8on83f7yj313u0lk45h.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oo055q0j31440le1ds.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8ooz56hfj313e0kugph.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8opmbg6bj313e0kiq9r.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oqfhm3pj314c0lg1it.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8oqxbjlvj31300j4n7l.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8orlotztj313e0kge1n.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8osuicdqj31280juk6a.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8ou6bad1j31320k2nel.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8oubxz3sj313u0kee0m.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oujrtazj313i0max66.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8ourtueej31300jmqfl.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8ovd9744j311w0j84d2.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8oy0ztb7j313s0kik1w.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oy53gs7j312u0jmjyd.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8oy9mrdij30xi0i2gt4.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8oyott4fj312k0iwjx6.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oz594zfj312u0jstg3.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p02pl1pj311s0iudna.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8p0t2aqtj312c0hsjys.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p1j7eg5j310q0jqahz.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p252qx1j313a0gyq84.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8p3ge6nyj312m0gstjn.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8p55dyfkj31360k07ky.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p675j8tj31360kagxg.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8p7q0104j31360k4h4a.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p8jt34sj313g0l2tsw.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8p9obb6bj312w0kowss.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8pa6kt0jj312y0k04a4.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8pbbmb9jj31200k6x1x.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pd16b95j31300hyqtl.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pe6z23mj312y0jsdpe.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8pevesy2j312o0j67r5.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8pgozc8tj313y0ma49k.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8phsjrtzj312u0lm14v.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8pntg8qrj312i0liaux.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8porevlej311w0kwafp.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8prcvg3ej312i0luqmg.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8prth7hnj311m0l6q98.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8psm7xd4j31300lqgx7.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pu3zhl5j312c0mo4qp.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8purkh4vj31300luwr9.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8pvjvxmkj313a0jg4ep.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8pvwrm5xj312w0m01kx.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pwtgoe0j313k0makad.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8px6oy8bj30zy0k0117.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8py6owelj312s0l20vr.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8pytpzaaj313i0li4ce.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pzqek5pj313i0j64qp.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8q0ahw5gj312k0k6aq6.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8q1o44p0j31260m8gt0.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8q2luw42j313y0m2at0.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8q4d2salj31300min77.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8q6fiz9fj31420lg1kx.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8q7foyrnj311k0l2qfq.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fz8qa0rvnsj31160ha49i.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8qak4g89j312e0lsk5p.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz8qcxpg4aj313k0lg7qa.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8qh2j680j312u0kwak5.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fz8qhfetqpj313o0h40zr.jpg">
+<meta property="og:updated_time" content="2019-01-16T13:24:15.261Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日程表（12_4至12_10）">
-<meta name="twitter:description" content="这是12_4号至12_10所做的事情，记录下来，持续更新。">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxx2k1gsc7j314k06caev.jpg">
+<meta name="twitter:title" content="讲座笔记——VALSE讲座《可解释性AI》">
+<meta name="twitter:description" content="周博磊场景表示 语义概念的解耦                       从分类网络到生成网络 分析GAN里面的神经元在做什么    去掉了台灯，但是影子还在   因为需要将用户上传的图随意变化，而不是将GAN生成的图变化，就需要一个invert的做法，paper还没有出    可解释性本身意义不怎么大，但是和实际的场景结合起来才比较有意义   张泉池 可解释性的重要性在于实际应用案例上给出具体">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fz8ohihgrej314a0n4kgj.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -137,66 +195,93 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-日程表（12-4至12-10）" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-讲座笔记——苏航《可解释性AI》" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      日程表（12_4至12_10）
+      讲座笔记——VALSE讲座《可解释性AI》
     </h1>
   
 
         
-        <a href="/2018/12/06/日程表（12-4至12-10）/" class="archive-article-date">
-  	<time datetime="2018-12-06T07:07:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-06</time>
+        <a href="/2019/01/16/讲座笔记——苏航《可解释性AI》/" class="archive-article-date">
+  	<time datetime="2019-01-16T12:01:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这是12_4号至12_10所做的事情，记录下来，持续更新。</p>
-<a id="more"></a>
-<table>
-<thead>
-<tr>
-<th>时间</th>
-<th>事项</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>12_4(周二)</td>
-<td><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxx2k1gsc7j314k06caev.jpg" alt="屏幕快照 2018-12-06 下午3.43.35"></td>
-</tr>
-<tr>
-<td>12_5(周三)</td>
-<td><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxx2oledbpj31a208i0yv.jpg" alt="屏幕快照 2018-12-06 下午3.47.57"></td>
-</tr>
-<tr>
-<td>12_6(周四)</td>
-<td><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxxlbpr4mdj311u07aafc.jpg" alt="屏幕快照 2018-12-07 上午2.32.44"></td>
-</tr>
-<tr>
-<td>12_7(周五)</td>
-<td>完成了assignment2的FullyConnectedNets中的SGD+Momentum、RMSProp and Adam内容</td>
-</tr>
-<tr>
-<td>12_8(周六)</td>
-<td>陪她出去再次办理证明；回来后完成了assignment2的Batchnorm中的bn前向和反向的代码内容，但是在把它应用在Fullyconneted的地方一直有个bug没有解决</td>
-</tr>
-<tr>
-<td>12_9(周日)</td>
-<td>重构了fc_net里面关于loss计算和求导部分的代码，在参数初始化部分存在着问题，调bug直至成功</td>
-</tr>
-<tr>
-<td>12_10(周一)</td>
-<td>完成了assignment2的Batchnorm中layer norm的内容，完成了assignment2中dropout的代码的内容</td>
-</tr>
-</tbody>
-</table>
+        <h1 id="周博磊"><a href="#周博磊" class="headerlink" title="周博磊"></a>周博磊</h1><h5 id="场景表示-语义概念的解耦"><a href="#场景表示-语义概念的解耦" class="headerlink" title="场景表示 语义概念的解耦"></a>场景表示 语义概念的解耦</h5><p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8ohihgrej314a0n4kgj.jpg" alt="屏幕快照 2019-01-16 下午8.03.39"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8on83f7yj313u0lk45h.jpg" alt="屏幕快照 2019-01-16 下午8.09.00"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oo055q0j31440le1ds.jpg" alt="屏幕快照 2019-01-16 下午8.09.59"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8ooz56hfj313e0kugph.jpg" alt="屏幕快照 2019-01-16 下午8.10.50"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8opmbg6bj313e0kiq9r.jpg" alt="屏幕快照 2019-01-16 下午8.11.37"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oqfhm3pj314c0lg1it.jpg" alt="屏幕快照 2019-01-16 下午8.12.20"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8oqxbjlvj31300j4n7l.jpg" alt="屏幕快照 2019-01-16 下午8.12.48"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8orlotztj313e0kge1n.jpg" alt="屏幕快照 2019-01-16 下午8.13.22"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8osuicdqj31280juk6a.jpg" alt="屏幕快照 2019-01-16 下午8.14.33"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8ou6bad1j31320k2nel.jpg" alt="屏幕快照 2019-01-16 下午8.15.11"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8oubxz3sj313u0kee0m.jpg" alt="屏幕快照 2019-01-16 下午8.15.22"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oujrtazj313i0max66.jpg" alt="屏幕快照 2019-01-16 下午8.15.48"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8ourtueej31300jmqfl.jpg" alt="屏幕快照 2019-01-16 下午8.16.01"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8ovd9744j311w0j84d2.jpg" alt="屏幕快照 2019-01-16 下午8.16.48"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8oy0ztb7j313s0kik1w.jpg" alt="屏幕快照 2019-01-16 下午8.18.29"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oy53gs7j312u0jmjyd.jpg" alt="屏幕快照 2019-01-16 下午8.18.37"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8oy9mrdij30xi0i2gt4.jpg" alt="屏幕快照 2019-01-16 下午8.19.33"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8oyott4fj312k0iwjx6.jpg" alt="屏幕快照 2019-01-16 下午8.20.19"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8oz594zfj312u0jstg3.jpg" alt="屏幕快照 2019-01-16 下午8.20.42"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p02pl1pj311s0iudna.jpg" alt="屏幕快照 2019-01-16 下午8.21.39"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8p0t2aqtj312c0hsjys.jpg" alt="屏幕快照 2019-01-16 下午8.22.20"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p1j7eg5j310q0jqahz.jpg" alt="屏幕快照 2019-01-16 下午8.22.59"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p252qx1j313a0gyq84.jpg" alt="屏幕快照 2019-01-16 下午8.23.37"></p>
+<p>从分类网络到生成网络<img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8p3ge6nyj312m0gstjn.jpg" alt="屏幕快照 2019-01-16 下午8.24.44"></p>
+<p>分析GAN里面的神经元在做什么</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8p55dyfkj31360k07ky.jpg" alt="屏幕快照 2019-01-16 下午8.26.32"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p675j8tj31360kagxg.jpg" alt="屏幕快照 2019-01-16 下午8.27.33"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8p7q0104j31360k4h4a.jpg" alt="屏幕快照 2019-01-16 下午8.28.59"></p>
+<p>去掉了台灯，但是影子还在</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8p8jt34sj313g0l2tsw.jpg" alt="屏幕快照 2019-01-16 下午8.29.49"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8p9obb6bj312w0kowss.jpg" alt="屏幕快照 2019-01-16 下午8.30.52"></p>
+<p>因为需要将用户上传的图随意变化，而不是将GAN生成的图变化，就需要一个invert的做法，paper还没有出</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8pa6kt0jj312y0k04a4.jpg" alt="屏幕快照 2019-01-16 下午8.31.24"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8pbbmb9jj31200k6x1x.jpg" alt="屏幕快照 2019-01-16 下午8.32.27"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pd16b95j31300hyqtl.jpg" alt="屏幕快照 2019-01-16 下午8.34.04"></p>
+<p>可解释性本身意义不怎么大，但是和实际的场景结合起来才比较有意义</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pe6z23mj312y0jsdpe.jpg" alt="屏幕快照 2019-01-16 下午8.35.15"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8pevesy2j312o0j67r5.jpg" alt="屏幕快照 2019-01-16 下午8.35.53"></p>
+<h1 id="张泉池"><a href="#张泉池" class="headerlink" title="张泉池"></a>张泉池</h1><p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8pgozc8tj313y0ma49k.jpg" alt="屏幕快照 2019-01-16 下午8.37.39"></p>
+<p>可解释性的重要性在于实际应用案例上给出具体的原因，比如医疗中给出诊断的原因；比如自动驾驶中的给出一个诊断性的fix功能</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8phsjrtzj312u0lm14v.jpg" alt="屏幕快照 2019-01-16 下午8.38.44"></p>
+<p>语义上+定量上+概率上</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8pntg8qrj312i0liaux.jpg" alt="屏幕快照 2019-01-16 下午8.44.24"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8porevlej311w0kwafp.jpg" alt="屏幕快照 2019-01-16 下午8.45.18"></p>
+<p>解释性图模型表示<img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8prcvg3ej312i0luqmg.jpg" alt="屏幕快照 2019-01-16 下午8.47.52"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8prth7hnj311m0l6q98.jpg" alt="屏幕快照 2019-01-16 下午8.48.20"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8psm7xd4j31300lqgx7.jpg" alt="屏幕快照 2019-01-16 下午8.49.08"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pu3zhl5j312c0mo4qp.jpg" alt="屏幕快照 2019-01-16 下午8.50.31"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8purkh4vj31300luwr9.jpg" alt="屏幕快照 2019-01-16 下午8.51.08"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8pvjvxmkj313a0jg4ep.jpg" alt="屏幕快照 2019-01-16 下午8.51.56"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8pvwrm5xj312w0m01kx.jpg" alt="屏幕快照 2019-01-16 下午8.52.11"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pwtgoe0j313k0makad.jpg" alt="屏幕快照 2019-01-16 下午8.53.07"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8px6oy8bj30zy0k0117.jpg" alt="屏幕快照 2019-01-16 下午8.53.30"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8py6owelj312s0l20vr.jpg" alt="屏幕快照 2019-01-16 下午8.54.24"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8pytpzaaj313i0li4ce.jpg" alt="屏幕快照 2019-01-16 下午8.55.05"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8pzqek5pj313i0j64qp.jpg" alt="屏幕快照 2019-01-16 下午8.55.53"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8q0ahw5gj312k0k6aq6.jpg" alt="屏幕快照 2019-01-16 下午8.56.26"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8q1o44p0j31260m8gt0.jpg" alt="屏幕快照 2019-01-16 下午8.57.49"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8q2luw42j313y0m2at0.jpg" alt="屏幕快照 2019-01-16 下午8.58.09"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fz8q4d2salj31300min77.jpg" alt="屏幕快照 2019-01-16 下午9.00.22"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8q6fiz9fj31420lg1kx.jpg" alt="屏幕快照 2019-01-16 下午9.02.22"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8q7foyrnj311k0l2qfq.jpg" alt="屏幕快照 2019-01-16 下午9.03.19"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fz8qa0rvnsj31160ha49i.jpg" alt="屏幕快照 2019-01-16 下午9.05.49"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8qak4g89j312e0lsk5p.jpg" alt="屏幕快照 2019-01-16 下午9.06.19"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz8qcxpg4aj313k0lg7qa.jpg" alt="屏幕快照 2019-01-16 下午9.08.34"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8qh2j680j312u0kwak5.jpg" alt="屏幕快照 2019-01-16 下午9.12.34"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fz8qhfetqpj313o0h40zr.jpg" alt="屏幕快照 2019-01-16 下午9.12.59"></p>
 
       
 
@@ -210,7 +295,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">2018日程记录</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">讲座笔记</a>
         		</li>
       		
 		</ul>
@@ -266,7 +355,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/06/日程表（12-4至12-10）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/16/讲座笔记——苏航《可解释性AI》/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +369,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/07/CS231n-Assignment2——BatchNormalization/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/17/二维目标检测总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CS231n_Assignment2——BatchNormalization
+          二维目标检测总结
         
       </div>
     </a>
   
   
-    <a href="/2018/12/04/Alfred入门/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Alfred入门</div>
+    <a href="/2019/01/14/笔记——Tensorflow实战Google深度学习框架（七）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">笔记——Tensorflow实战Google深度学习框架（七）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -318,7 +407,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#周博磊"><span class="toc-number">1.</span> <span class="toc-text">周博磊</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#场景表示-语义概念的解耦"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">场景表示 语义概念的解耦</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#张泉池"><span class="toc-number">2.</span> <span class="toc-text">张泉池</span></a></li>
                     </div>
                 </span>
             </div>
