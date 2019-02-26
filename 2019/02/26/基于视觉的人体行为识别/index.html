@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CS231n_Assignment2——Dropout | Dingpx&#39;s Blog</title>
+  <title>论文阅读——基于视觉的人体行为识别 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="完成了bn的部分，开始着手dropout的部分，dropout在本质上就是一种正则化，去使得某些神经元失效来达到防止过拟合的效果">
-<meta name="keywords" content="CV,cs231n,assignment">
+  <meta name="description" content="本文。。。">
+<meta name="keywords" content="CV,论文赏析,人体动作分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CS231n_Assignment2——Dropout">
-<meta property="og:url" content="http://yoursite.com/2018/12/10/CS231n-Assignment2——Dropout/index.html">
+<meta property="og:title" content="论文阅读——基于视觉的人体行为识别">
+<meta property="og:url" content="http://yoursite.com/2019/02/26/基于视觉的人体行为识别/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="完成了bn的部分，开始着手dropout的部分，dropout在本质上就是一种正则化，去使得某些神经元失效来达到防止过拟合的效果">
+<meta property="og:description" content="本文。。。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy1sz1k6txj310i0oeacy.jpg">
-<meta property="og:updated_time" content="2018-12-11T03:11:31.017Z">
+<meta property="og:updated_time" content="2019-02-26T16:00:34.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CS231n_Assignment2——Dropout">
-<meta name="twitter:description" content="完成了bn的部分，开始着手dropout的部分，dropout在本质上就是一种正则化，去使得某些神经元失效来达到防止过拟合的效果">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fy1sz1k6txj310i0oeacy.jpg">
+<meta name="twitter:title" content="论文阅读——基于视觉的人体行为识别">
+<meta name="twitter:description" content="本文。。。">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -135,36 +133,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CS231n-Assignment2——Dropout" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-基于视觉的人体行为识别" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CS231n_Assignment2——Dropout
+      论文阅读——基于视觉的人体行为识别
     </h1>
   
 
         
-        <a href="/2018/12/10/CS231n-Assignment2——Dropout/" class="archive-article-date">
-  	<time datetime="2018-12-10T09:50:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-10</time>
+        <a href="/2019/02/26/基于视觉的人体行为识别/" class="archive-article-date">
+  	<time datetime="2019-02-26T15:29:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>完成了bn的部分，开始着手dropout的部分，dropout在本质上就是一种正则化，去使得某些神经元失效来达到防止过拟合的效果</p>
+        <p>本文。。。</p>
 <a id="more"></a>
+<h3 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h3><p>1、对于我们人类来说判断一个行为的类别就是瞬间通过人眼反馈到大脑得出结果， 但是对于计算机来说是一个大工程。基本流程：</p>
 <ul>
-<li><p>这里的内容比较少，就不完整写出代码了，主要是这里用的是<strong>inverted dropout</strong>，意思就是说，本来在训练阶段需要确定一个要抛弃的概率阈值，使得概率小于此的要抛弃，可是为了保持数据在训练和测试阶段的一致性，测试阶段也需要乘以这个阈值才可以，所以inverted的做法就是在训练阶段就除以这个概率阈值，那么相当于在测试阶段就不需要乘以这个值。</p>
+<li>通过各种传感器采集原始信息</li>
+<li>建立人体行为模型</li>
+<li>提取可分类的人体行为特征，通过训练达到用高层语义表达分类的目的</li>
+</ul>
+<p>2、难点：</p>
+<ul>
+<li><p>高层语义表达部分，即动作表达的多样性</p>
+<ul>
+<li>一个动作的表达具有多样性</li>
+<li>动作不具有固定的周期性和规律性</li>
+<li>典型动作（走、跑）和非典型动作（摔跤）的区分</li>
+</ul>
 </li>
-<li><p>下图可以很明显看出在测试阶段的准确率提高了很多</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fy1sz1k6txj310i0oeacy.jpg" alt="屏幕快照 2018-12-10 下午5.58.53"></p>
+<li><p>检测方面：背景的干扰、遮挡、采集图像时候的相机抖动和光照影响</p>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> mode == <span class="string">'train'</span>:</span><br><span class="line">    <span class="comment">#######################################################################</span></span><br><span class="line">    <span class="comment"># <span class="doctag">TODO:</span> Implement training phase forward pass for inverted dropout.   #</span></span><br><span class="line">    <span class="comment"># Store the dropout mask in the mask variable.                        #</span></span><br><span class="line">    <span class="comment">#######################################################################</span></span><br><span class="line">    mask = np.random.rand(*x.shape) &lt; (<span class="number">1</span> - p)</span><br><span class="line">    mask = mask / (<span class="number">1</span> - p)</span><br><span class="line">    out = mask * x</span><br><span class="line">    <span class="comment">#######################################################################</span></span><br><span class="line">    <span class="comment">#                           END OF YOUR CODE                          #</span></span><br><span class="line">    <span class="comment">#######################################################################</span></span><br><span class="line"><span class="keyword">elif</span> mode == <span class="string">'test'</span>:</span><br><span class="line">    <span class="comment">#######################################################################</span></span><br><span class="line">    <span class="comment"># <span class="doctag">TODO:</span> Implement the test phase forward pass for inverted dropout.   #</span></span><br><span class="line">    <span class="comment">#######################################################################</span></span><br><span class="line">    out = x</span><br></pre></td></tr></table></figure>
+<p>3、选用两个较为完整的行为库KTH数据库和Weizmann数据库。（？未查）</p>
+<p>4、本文研究的方法如下：</p>
+<ul>
+<li><p>目标行为检测部分，目的将要研究的人体行为从背景中提取出来</p>
+<ul>
+<li>先用背景差分法把人体行为提取出来</li>
+<li>为了让实验效果更好， 同时使用了OTSU全局阀值的改进算法来提取目标行为</li>
+<li>通过将两种方法效果图对比， 选出结果较好的算法进行下一步</li>
+</ul>
+</li>
+<li><p>目标行为特征提取部分， 目的是为了提高最后的识别率， 通过多种特征融合的方法提高实验的识别率 </p>
+<ul>
+<li>根据形状特征提取<strong>全局特征傅里叶描述子</strong>和<strong>局部特征梯度方向直方图</strong></li>
+<li>为了增加特征的多样性， 先后用<strong>尺度不变特征变换算法（SIFT）</strong>和<strong>光流法</strong>提取了目标特征的兴趣点和运动轨迹 </li>
+<li>最后用四种特征融和来识别行为</li>
+</ul>
+</li>
+<li>人体行为识别， 用是SVM分类器，先将提取出的特征训练出各个动作类的动作模板， 然后对比模板对待测的目标行为进行识别</li>
+</ul>
+<p>待更新。。。。</p>
 
       
 
@@ -182,11 +210,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">论文赏析</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">人体动作分析</a>
         		</li>
       		
 		</ul>
@@ -242,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/10/CS231n-Assignment2——Dropout/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/26/基于视觉的人体行为识别/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -256,18 +284,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/10/CS231n-Assignment2——cnn/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CS231n_Assignment2——cnn
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/07/CS231n-Assignment2——BatchNormalization/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CS231n_Assignment2——BatchNormalization</div>
+    <a href="/2019/02/26/将caj归于endnote下存档/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">将caj归于endnote下存档</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -294,7 +313,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一章-绪论"><span class="toc-number">1.</span> <span class="toc-text">第一章 绪论</span></a></li></ol>
                     </div>
                 </span>
             </div>
