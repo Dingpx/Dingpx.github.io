@@ -8,18 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>论文赏析——《A Video Dataset of Spatio-temporally Localized Atomic Visual Actions》 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
+  <meta name="description" content="本文是关于AVA数据集的介绍论文。">
 <meta name="keywords" content="CV,论文,人体多语义分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文赏析——《A Video Dataset of Spatio-temporally Localized Atomic Visual Actions》">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/论文赏析——《A-Video-Dataset-of-Spatio-temporally-Localized-Atomic-Visual-Actions》/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="本文是关于AVA数据集的介绍论文。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-27T09:03:00.382Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0l9ef03tvj30hs0geqfd.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0la0vpmetj30i008m405.jpg">
+<meta property="og:updated_time" content="2019-02-27T14:17:55.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文赏析——《A Video Dataset of Spatio-temporally Localized Atomic Visual Actions》">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:description" content="本文是关于AVA数据集的介绍论文。">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0l9ef03tvj30hs0geqfd.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -153,7 +156,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>本文是关于AVA数据集的介绍论文。</p>
+<a id="more"></a>
+<blockquote>
+<p>摘要</p>
+</blockquote>
+<p>这篇文章提出了一个视频数据集，时空定位的原子视觉动作Atomic Visual Actions (AVA)。这个数据集在430个15分钟的视频片段中密集得标注了80种原始动作，这些动作由时间和空间定位，导致产生了1.58m个动作标签（频繁地发生在每个人身上的多个标签）。本数据集的特点是（1）原始视觉动作的定义不同于其他的混合动作；（2）对每个人可能存在的动作准确地进行了时空标注（3）在15min的视频片段中进行了详细地标注；所以和现有的时空动作识别数据集有着明显的不同，那些数据集提供了短视频中复杂混合动作的稀疏标注。</p>
+<p>AVA问题，由于现实场景的存在和动作的复杂性，暴露了动作识别的内在困难。基于此我们提出了一种新方法用于动作定位，并在HJHMDB和UCF101-24数据集上展现了很好的性能，但是这种方法在AVA数据集的总体结果是15.6%mAP，这也需要有新的方法来做视频理解。</p>
+<blockquote>
+<p>1.Introduction</p>
+</blockquote>
+<p>此论文提出了一个新的标注视频数据集AVA支持动作识别的研究（Fig. 1）。标注以1HZ的频率采样并以人为中心，每个人用框定位，关联的标签相当于人在做的可能动作。有的动作相当于这个人的姿势pose（橘色文字）包括站立，坐着，走路，游泳等。有动作相当于与物体互动（红色文字），或人与人互动（蓝色文字），包含多个人的的框中每个人单独会被标注。<img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0l9ef03tvj30hs0geqfd.jpg" alt="屏幕快照 2019-02-27 下午8.34.26"></p>
+<p>要给一个人所执行的行为贴上标签，一个关键的选择是标注词汇表，而标注词汇表又是由行为分类的时间粒度决定的（？？）。我们用当前帧的±1.5 s的时间段给当前帧的动作标注做一个上下文的环境线索，这样就不会让标注者因为当前静态帧而误标注动作（比如put down和pick up 搞混）。我们保持时间粒度相对简短，因为我们对物理动作的精细标注感兴趣，即“原子视觉行为”(原子视觉行为)。词汇表由80个不同的原子视觉动作组成。我们的数据集来源于430部不同电影的15到30分钟的时间间隔，在1Hz采样频率下(1s采样一次)，每部电影的关键帧数接近900。在每个词中，每个人都被标记为(可能是多个)词汇中的动作。每个人都被链接到连续的关键帧中以提供短时间序列的动作标签（？没看懂，但会在4.3中继续讲）。</p>
+<p><strong>现在我们准备在AVA里解释4个关键设计选择</strong></p>
+<p><strong>Atomic action categories</strong>  Barker &amp; Wright在他们对堪萨斯州一个小镇居民日常生活中的“行为事件”的经典研究中，他注意到了事件的等级性质。在最细致的层次上，动作包括原子肢体动作或物体的操纵，但在更粗的层次上，最自然的描述是以目标为导向的行为。<img src="https://ws2.sinaimg.cn/large/006tKfTcly1g0la0vpmetj30i008m405.jpg" alt="屏幕快照 2019-02-27 下午8.56.05"></p>
+<p>这个层次使得定义动作标签的词汇不恰当，导致我们领域的进展比物体识别要慢；不顾一切地列出高层级的行为是不可取的。然而，如果我们把自己限制在更细的时间尺度上，那么这些动作在本质上是非常物理的，并且具有清晰的视觉特征。在这里，我们以1HZ作为采样的标准，因为它足够密集可以捕获动作的完整语义内容，同时使我们能够避免对于动作边界（？？）的一些不精确时间标注。THUMOS challenge[18]注意到动作边界(不像对象)本质上是模糊的，导致标注者之间的相互矛盾。相反，标注者可以轻易地决定一帧是否包含被给的动作（有±1.5 s的上下文），同时可以有效地定义动作的开始和结束在一个可接受的±0.5 s的精度上。</p>
+<p><strong>Person-centric action time series</strong>  虽然像🌲倒下这样的事件不涉及人，但我们的重点是人们的活动，被视为单一的行为主体（agent）。在一项运动中可能有很多人但是每一个人都是有独立选择的一个行为主体(agent)，所以我们应该分开对待，随着时间的推移分配给一个人的动作标签是时间建模的丰富数据来源（4.3节中会讲？？）</p>
+<p><strong>Annotation of movies</strong>  理想情况下，我们希望行为“在自然条件下”。我们没有这一点，但电影是一个令人信服的近似，特别是当我们考虑到电影产业繁荣和题材的多样性时。</p>
+<p><strong>Exhaustive action labeling</strong>  我们把所有的人的行为都贴上标签。这自然会导致某一行为类别之间的不平衡。将有更多的典型行动(站立或坐)比难忘的(跳舞)的例子，但这是应该的！识别模型需要在真实的“长尾”行为分布上操作，而不是使用人工平衡的行为分布。</p>
+<p>我们认为，由于其现实的复杂性，AVA暴露了该领域中许多流行的行为识别的内在困难。在典型的视频片段下，游泳这样的视觉动作的很容易与跑步的人区别开来，但是如果遇到多个actors，在图像中显示地很小同时做着一些有细微区别的操作时（比如抚摸和拿着一个东西）就会出现问题。为了证实这个直觉，我们在JHMDB , UCF101-24 categories 和 AVA数据集上都做了基准实验，用的是目前最先进的办法，事实证明在前两者上效果不错但在AVA上的mAP只有15.6%。</p>
+<p>….待更新</p>
+
       
 
       
@@ -443,19 +466,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">综述</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">规范</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">综述</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,18 +494,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">论文</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IJCAI2018</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">人体骨架检测</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">讲座笔记</a>
               </li>
              
@@ -491,7 +502,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">论文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">人体多语义分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IJCAI2018</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">人体骨架检测</a>
               </li>
              
               <li class="article-tag-list-item">
