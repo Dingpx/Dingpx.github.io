@@ -17,7 +17,14 @@
 <meta property="og:description" content="本文。。。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1g0kba5zt21j30um0iuqge.jpg">
-<meta property="og:updated_time" content="2019-02-27T05:11:37.663Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0m7pluxc7j30w00cezvk.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0mb5388c6j30vs0b4tix.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g0mb639p2yj30ra0igwvd.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0maruhwfcj30ss0kodsu.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1g0mbdp6s07j30vu0j8dvb.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0mbhc5jx1j30x80j416j.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1g0mbztjbbxj30w00nw1gb.jpg">
+<meta property="og:updated_time" content="2019-02-28T10:51:49.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文赏析——基于视频的人类行为识别方法研究">
 <meta name="twitter:description" content="本文。。。">
@@ -157,13 +164,97 @@
       
         <p>本文。。。</p>
 <a id="more"></a>
-<p>1、人类动作的4个层次：手势gesture、单人行为action、多方交互Interaction、群体行为group activity</p>
+<blockquote>
+<p>第一章 绪论</p>
+</blockquote>
+<p>1、人类动作的4个层次：肢体运动gesture、单人行为action、多方交互Interaction、群体行为group activity</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0kba5zt21j30um0iuqge.jpg" alt="屏幕快照 2019-02-27 上午12.54.06"></p>
 <p>2、主要是对第三层次的人类行为分析，包含两个方向</p>
 <ul>
 <li><p>行为识别（action recognition）：每个视频中通常仅包含一种行为类别中的一个行为实例</p>
+<ul>
+<li><p>包括行为特征提取，行为表示，行为分类三个部分。</p>
 </li>
-<li><p>行为检测（temporal action detection）：每段视频中往往包含多个行为类别的多个行为实例</p>
+<li><p>特征提取：输入视频，输出特征向量</p>
+</li>
+<li><p>行为表示：将特征向量组织为具有高层表达意义的向量</p>
+</li>
+<li><p>行为分类：将行为表示向量归类</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g0m7pluxc7j30w00cezvk.jpg" alt="屏幕快照 2019-02-28 下午4.21.30"></p>
+</li>
+</ul>
+</li>
+<li><p>行为检测（temporal action detection）：每段视频中往往包含多个行为类别的多个行为实例，要定位出行为实力发生的时间（类似于物体检测）。</p>
+<ul>
+<li>包括特征提取，备选提名（proposal generation），行为分类</li>
+<li>特征提取：从视频中提取出静态和动态的行为特征</li>
+<li>备选提名：找到可能发生的位置</li>
+<li>行为分类：分类</li>
+</ul>
+</li>
+</ul>
+<p>3、国内外研究现状：</p>
+<ul>
+<li><p>3.1 动作识别（action recognition）</p>
+<ul>
+<li><p>传统：从视频中提取鲁棒的行为特征</p>
+<ul>
+<li><p>基于低层行为特征（low-level）</p>
+<p>（1）过程：先提取时空兴趣点（Point of Interest），再在兴趣点附近区域提取行为特征，接着用视觉词袋模型等对行为特征进行建模表示，最后用分类器进行分类</p>
+<ul>
+<li><p>兴趣点采集：Harris角点检测算子；基于Gaber的检测算子；基于3D Hessian的时空兴趣点探测法；稠密的网格采样</p>
+</li>
+<li><p>特征提取：在兴趣点领域进行特征提取，</p>
+<ul>
+<li><p>梯度直方图（HOG)：提取人类的外观特征；</p>
+<p>【HOG描述器最重要的思想是：在一副图像中，局部目标的表象和形状（appearance and shape）能够被梯度或边缘的方向密度分布很好地描述】</p>
+</li>
+<li><p>光流方向直方图（HOF）：提取人类的运动特征</p>
+<p>【因为运动特征可以排除背景的干扰来获取更多的运动信息】<img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0mb5388c6j30vs0b4tix.jpg" alt="屏幕快照 2019-02-28 下午6.20.19"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g0mb639p2yj30ra0igwvd.jpg" alt="屏幕快照 2019-02-28 下午6.21.14"></p>
+</li>
+<li><p>SIFT描述子（旋转和尺度不变）；</p>
+</li>
+<li><p>extended SURF描述子；</p>
+</li>
+<li><p>移动边界直方图（MBH）描述子</p>
+</li>
+</ul>
+</li>
+<li><p>特征建模：视觉词袋建模，（可以参考下面的链接<a href="https://www.cnblogs.com/YiXiaoZhou/p/5999357.html）" target="_blank" rel="noopener">https://www.cnblogs.com/YiXiaoZhou/p/5999357.html）</a></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0maruhwfcj30ss0kodsu.jpg" alt="屏幕快照 2019-02-28 下午6.07.36"></p>
+</li>
+<li><p>行为分类：生成模型和判别模型</p>
+</li>
+</ul>
+<p>（2）效果：不依赖预处理的操作，在简单的数据集上有较好的识别表现。但是对于光照、遮挡等方面的处理很差，且词袋模型的可解释性比较差</p>
+</li>
+<li><p>基于高层行为特征（high-level）</p>
+<ul>
+<li>使用带有语义信息的基本行为属性来表达视频中的人类行为</li>
+<li>往往利用语义信息建立行为属性图<img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0mbdp6s07j30vu0j8dvb.jpg" alt="屏幕快照 2019-02-28 下午6.28.37"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>深度学习：设计更合理的端对端神经网络</p>
+<ul>
+<li>双流(Two-stream CNN)<img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0mbhc5jx1j30x80j416j.jpg" alt="屏幕快照 2019-02-28 下午6.32.06"></li>
+<li>TSN（Temporal Segment ConvNet）</li>
+<li>LSTM</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>3.2动作检测（temporal action detection/localization）</p>
+<p>主要是用在长视频中，会有一些问题：动作边界的界定；不同行为在时间上的跨度差异很大；数据量很大</p>
+<ul>
+<li><p>第一类方法：对每一帧图片或每几张连续图片进行单独分析， 然后使用时域平滑技术整合整个视频的识别结果。</p>
+</li>
+<li><p>第二类方法：使用提名机制产生行为发生的片段位置提名，然后通过独立的分类模型对提名片段进行分类。（必须用到NMS非极大抑制）</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1g0mbztjbbxj30w00nw1gb.jpg" alt="屏幕快照 2019-02-28 下午6.49.54"></p>
+</li>
+</ul>
 </li>
 </ul>
 
@@ -436,6 +527,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">endnote</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
               </li>
              
@@ -445,10 +540,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">typora</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">endnote</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,19 +559,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">论文</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">人体多语义分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">人体行为分析</a>
+                <a href="javascript:void(0)" class="js-tag color2">人体动作分析</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,7 +575,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">人体动作分析</a>
+                <a href="javascript:void(0)" class="js-tag color3">论文</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">人体多语义分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">人体行为分析</a>
               </li>
              
               <li class="article-tag-list-item">
