@@ -6,18 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 人体骨架检测 | Dingpx&#39;s Blog</title>
+  <title>二维目标检测总结 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dingpx&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/人体骨架检测/index.html">
+  <meta name="description" content="目标检测（Object Detection）是一项从图像中检测到物体的位置并区分物体类别的一项任务，即输出为检测框的四个坐标 ( x1,x2,y1,y2 ) 和物体的类别 y。目前有两种方式，一种为单阶段检测，以yolo和ssd为代表；另外一种为双阶段检测，以rcnn系列为代表。本文下面将总结这两种检测方法的思想和模型，以期望打好3D 物体检测的基础。">
+<meta name="keywords" content="CV,目标检测,综述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二维目标检测总结">
+<meta property="og:url" content="http://yoursite.com/2019/01/17/综述——二维目标检测/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="目标检测（Object Detection）是一项从图像中检测到物体的位置并区分物体类别的一项任务，即输出为检测框的四个坐标 ( x1,x2,y1,y2 ) 和物体的类别 y。目前有两种方式，一种为单阶段检测，以yolo和ssd为代表；另外一种为双阶段检测，以rcnn系列为代表。本文下面将总结这两种检测方法的思想和模型，以期望打好3D 物体检测的基础。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz9xewejfej30j809udjn.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fzatgwbym3j30hm0gen53.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fzatbyusckj30gg020q2z.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fzatt90wufj311a0g0mzr.jpg">
+<meta property="og:updated_time" content="2019-01-21T05:10:24.568Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dingpx&#39;s Blog">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:title" content="二维目标检测总结">
+<meta name="twitter:description" content="目标检测（Object Detection）是一项从图像中检测到物体的位置并区分物体类别的一项任务，即输出为检测框的四个坐标 ( x1,x2,y1,y2 ) 和物体的类别 y。目前有两种方式，一种为单阶段检测，以yolo和ssd为代表；另外一种为双阶段检测，以rcnn系列为代表。本文下面将总结这两种检测方法的思想和模型，以期望打好3D 物体检测的基础。">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fz9xewejfej30j809udjn.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -131,36 +138,95 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-综述——二维目标检测" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/04/论文赏析-Co-occurrence-Feature-Learning/" class="archive-article-date">
-  	<time datetime="2018-12-04T00:07:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/04/论文赏析-Co-occurrence-Feature-Learning/">论文赏析_Co-occurrence Feature Learning from Skeleton Data for Action Recognition and Detection with Hierarchical Aggregation</a>
+    <h1 class="article-title" itemprop="name">
+      二维目标检测总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/01/17/综述——二维目标检测/" class="archive-article-date">
+  	<time datetime="2019-01-17T09:34:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>目标检测（Object Detection）是一项从图像中检测到物体的位置并区分物体类别的一项任务，即输出为检测框的四个坐标 ( x1,x2,y1,y2 ) 和物体的类别 y。目前有两种方式，一种为单阶段检测，以yolo和ssd为代表；另外一种为双阶段检测，以rcnn系列为代表。本文下面将总结这两种检测方法的思想和模型，以期望打好3D 物体检测的基础。</p>
+<a id="more"></a>
+<h1 id="单阶段"><a href="#单阶段" class="headerlink" title="单阶段"></a>单阶段</h1><h2 id="yolo"><a href="#yolo" class="headerlink" title="yolo"></a>yolo</h2><blockquote>
+<p>论文下载：<a href="http://arxiv.org/abs/1506.02640" target="_blank" rel="noopener">http://arxiv.org/abs/1506.02640</a></p>
+<p>代码下载：<a href="https://github.com/pjreddie/darknet" target="_blank" rel="noopener">https://github.com/pjreddie/darknet</a> </p>
+</blockquote>
+<h3 id="论文翻译"><a href="#论文翻译" class="headerlink" title="论文翻译"></a>论文翻译</h3><h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><blockquote>
+<p>方法的本质</p>
+</blockquote>
+<p>过去的工作是使用<strong>classfier</strong>去进行检测（repurposes classifiers to perform detection），相反我们把目标检测设计为一种关于bounding boxes和class propabilities的<strong>回归</strong>问题，我们采用一个single神经网络只需要一次evaluation直接从图像中得到bounding boxes 和类别概率，因为整个检测流程是基于单个网络，所以可以直接根据detection performance 进行优化。</p>
+<blockquote>
+<p>有三个优点：</p>
+</blockquote>
+<p>1、我们的网络非常快，基本的model 可以达到每秒45frames，fast yolo可以达到155frame 每秒的同时保证mAP指标是其他方法的两倍。</p>
+<p>2、与现在最好的方法比，YOLO在定位上（localization）错误率更高但是在背景上预测的错误率更小。</p>
+<p>3、最后，YOLO的对物体的泛化表示更好，相比较于RCNN和DPM，在从自然图像到艺术作品的泛化性能更好。</p>
+<h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h4><blockquote>
+<p>快速识别物体的重要性</p>
+</blockquote>
+<p>人类看了一眼图像，立刻就知道图像中的对象是什么，它们在哪里，以及它们是如何相互作用的。人类的视觉系统是快速和准确的，允许我们执行复杂的任务，如驾驶时，很少有清醒的思考过程。快速、准确的物体检测算法将使计算机能够在没有特殊传感器的情况下驾驶汽车，使辅助设备能够向人类用户传递实时场景信息，并为通用、响应性的机器人系统挖掘潜力。</p>
+<blockquote>
+<p>当前主流方法的简要介绍</p>
+</blockquote>
+<p>当前的检测系统将分类器重新使用分类器来检测。为了检测对象，这些系统为该对象提取一个分类器，并在测试图像中的不同位置和尺度上对其进行评估。</p>
+<p>1、像DPM模型这样的系统使用滑动窗口方法，其中分类器在整个图像上的均匀间隔位置运行；</p>
+<p>2、而RCNN模型是使用RPN办法在图像上首先生成潜在的bbox，然后再在这些盒子上使用分类器，之后再用一些后期处理重新定位bbox,消除重复的检测，并根据场景中的其他对象重新计算得分。</p>
+<p>3、这些复杂的方法因为是单独地被训练的，所以很难被优化。</p>
+<blockquote>
+<p>本文方法的简介</p>
+</blockquote>
+<p>我们把目标检测重新设计为了一种单一的回归问题，直接从图像的pixels到bbox的坐标和类别概率。一个CNN网络同时预测了多个bbox的坐标和类别概率。YOLO在整个图片上训练并且直接优化detection的性能，下面是与传统方法的benifits:</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fz9xewejfej30j809udjn.jpg" alt="屏幕快照 2019-01-17 下午9.58.09"></p>
+<p>First，YOLO速度非常快。由于我们设计的检测系统实质上是一个回归问题，我们不需要一个复杂的pipeline。在测试时我们只需在新图像上运行我们的神经网络就能预测检测结果。我们的基本网络在没有批处理的Titan X GPU运行45帧每秒，在一个快速版本运行超过150 fps。这意味着我们可以在少于25毫秒的延迟时间内实时处理流视频。此外，YOLO的平均精度是其他实时系统的两倍以上。</p>
+<p>Second，YOLO在做预测时能够全局思考图像。与基于滑动窗口sliding window和区域提案region proposal的技术不同，YOLO在训练和测试期间看到了整个图像，因此它隐式编码了有关类的上下文信息以及它们的外观。Fast R-CNN会把背景上的一小块看作是一个object，因为它不能看到范围更广的信息，而YOLO比起Fast R-CNN背景的错误率降低了一半。</p>
+<p>Third，YOLO学习对象的泛化表示。在对自然图像进行训练并在artwork上进行测试时，YOLO远远超过了DPM和R-CNN这样的顶级检测方法。由于YOLO具有很高的泛化能力，所以当应用于新的场景或有unexpected inputs时，不太可能发生问题。</p>
+<p>最后，YOLO在准确性方面仍然落后于最先进的检测系统。虽然它能快速识别出图像中的物体，但它很难精确地定位一些物体，尤其是小型物体。</p>
+<h4 id="2-统一检测"><a href="#2-统一检测" class="headerlink" title="2. 统一检测"></a>2. 统一检测</h4><p>我们将对象检测的独立组件统一到单个神经网络中。我们的网络使用来自整个图像的特征来预测每个边界框。它还可以同时预测所有类别中和所有边界框。这就意味着我们的网络原因是围绕整个图像和图像中的所有对象。Yolo设计能够实现端到端培训和实时速度，同时保持较高的平均精度。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fzatgwbym3j30hm0gen53.jpg" alt="屏幕快照 2019-01-18 下午4.27.02"></p>
+<blockquote>
+<p>具体方法细节</p>
+</blockquote>
+<p>1、将输入图像划分为S*S 个grid。如果center of object落入一个grid cell中，则该cell负责检测该object。（<strong>每个cell预测B个bbox和这些框的置信度分数</strong>）</p>
+<ul>
+<li>正式地定义置信度得分：Pr(Object)✖️IOU</li>
+<li>如果没有物体存在这个cell里面，Pr(Object)为0，也就是置信度为0，</li>
+<li>否则的话，Pr(object)为1，置信度得分就为IOU的值。</li>
+</ul>
+<p>2、每个bbox包括 5个预测值： x, y, w, h, confidence。</p>
+<ul>
+<li><p>(x，y)坐标表示盒的中心相对于网格单元格边界的距离；</p>
+</li>
+<li><p>宽度和高度是相对于整个图像进行预测的；</p>
+</li>
+<li><p>置信度预测表示预测的盒子与ground_truth之间的IOU。</p>
+</li>
+</ul>
+<p>3、每个cell还预测C个类别条件概率Pr(Class|Object)，这些概率取决于包含对象的网格单元格，我们只预测每个网格单元格的一组类概率，而不管bbox框的数量。</p>
+<p>在测试时，我们将条件类概率和单个盒置信度预测相乘，就得到每个框预测得到的特定类别的置信度分数，这些分数既编码了该类出现在框中的概率，也表示了预测的框和对象的适应程度。<img src="https://ws2.sinaimg.cn/large/006tNc79ly1fzatbyusckj30gg020q2z.jpg" alt="屏幕快照 2019-01-18 下午4.22.35"></p>
+<h5 id="2-1-网络设计"><a href="#2-1-网络设计" class="headerlink" title="2.1. 网络设计"></a>2.1. 网络设计</h5><p>我们将该模型实现为一个卷积神经网络，并在Pascal VOC检测数据集上进行了evaluate。网络的初始卷积层从图像中提取特征，全连通层预测输出概率和坐标。</p>
+<p>我们的网络架构是受Google网图像分类模型的启发。我们的网络有24个卷积层接着2个全连接层。与谷歌使用的Inception模块不同，我们只使用了1✖️1reduction层和3✖️3卷积层。完整的网络如图3所示<img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzatt90wufj311a0g0mzr.jpg" alt="屏幕快照 2019-01-18 下午4.39.14"></p>
+<h5 id="2-2-Training"><a href="#2-2-Training" class="headerlink" title="2.2. Training"></a>2.2. Training</h5><p>我们在imagnet数据集上预训练，预训练时我们使用了图3中的前20层接着一个average-pooling layer 和一个 fully connected layer，我们训练了这个网络一周，实现了在2012年ImageNet验证集上面top5的88%的准确率，</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -170,37 +236,138 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">论文赏析</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">目标检测</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">论文</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IJCAI2018</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">人体骨架检测</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">综述</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/17/综述——二维目标检测/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/02/26/工具——将caj归于endnote下存档/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          工具————将caj归于endnote下存档
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/01/16/讲座笔记——苏航《可解释性AI》/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">讲座笔记——VALSE讲座《可解释性AI》</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#单阶段"><span class="toc-number">1.</span> <span class="toc-text">单阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#yolo"><span class="toc-number">1.1.</span> <span class="toc-text">yolo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#论文翻译"><span class="toc-number">1.1.1.</span> <span class="toc-text">论文翻译</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#摘要"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-介绍"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">1. 介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-统一检测"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">2. 统一检测</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-网络设计"><span class="toc-number">1.1.1.3.1.</span> <span class="toc-text">2.1. 网络设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-Training"><span class="toc-number">1.1.1.3.2.</span> <span class="toc-text">2.2. Training</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -223,9 +390,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -306,18 +473,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入门</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">CV</a>
               </li>
              
@@ -330,31 +485,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">typora</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">人体动作分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">2018日程记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">综述</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -386,15 +529,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IJCAI2018</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">人体骨架检测</a>
+                <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">人体行为分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">综述</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">人体动作分析</a>
               </li>
              
               <li class="article-tag-list-item">
