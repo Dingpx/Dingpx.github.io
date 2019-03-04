@@ -8,18 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>论文赏析——《The ActivityNet Large-Scale Activity Recognition Challenge 2018 Summary and Workshop Papers》 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
-<meta name="keywords" content="CV,人体多语义分析,论文赏析">
+  <meta name="description" content="这是2018年Activitynet的官方summary，下面是阅读笔记。 疑问汇总：  frame_mAP是什么指标？ 清华的那篇论文中non-local 操作是什么意思？ FPN model为什么具有高召回率和准确率？ Short-term clips是用在常用的3D CNN 中的，但这个是啥意思捏？还有文中提及的那篇论文里面强调的更长和更大的input效果更好，这是为什么捏？ uniform">
+<meta name="keywords" content="CV,论文赏析,人体多语义分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文赏析——《The ActivityNet Large-Scale Activity Recognition Challenge 2018 Summary and Workshop Papers》">
 <meta property="og:url" content="http://yoursite.com/2019/03/04/论文赏析——《The-ActivityNet-Large-Scale-Activity-Recognition-Challenge-2018-Summary-and-Workshop-Papers》/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="这是2018年Activitynet的官方summary，下面是阅读笔记。 疑问汇总：  frame_mAP是什么指标？ 清华的那篇论文中non-local 操作是什么意思？ FPN model为什么具有高召回率和准确率？ Short-term clips是用在常用的3D CNN 中的，但这个是啥意思捏？还有文中提及的那篇论文里面强调的更长和更大的input效果更好，这是为什么捏？ uniform">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-04T06:06:37.262Z">
+<meta property="og:image" content="http://yoursite.com/Users/dpx/Desktop/屏幕快照%202019-03-04%20下午2.45.35.png">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1g0qw79avkaj30ta0h00v9.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g0r187zbjbj311s0fewiw.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1g0r5v7w1cvj30r00bsdhu.jpg">
+<meta property="og:updated_time" content="2019-03-04T16:07:57.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文赏析——《The ActivityNet Large-Scale Activity Recognition Challenge 2018 Summary and Workshop Papers》">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:description" content="这是2018年Activitynet的官方summary，下面是阅读笔记。 疑问汇总：  frame_mAP是什么指标？ 清华的那篇论文中non-local 操作是什么意思？ FPN model为什么具有高召回率和准确率？ Short-term clips是用在常用的3D CNN 中的，但这个是啥意思捏？还有文中提及的那篇论文里面强调的更长和更大的input效果更好，这是为什么捏？ uniform">
+<meta name="twitter:image" content="http://yoursite.com/Users/dpx/Desktop/屏幕快照%202019-03-04%20下午2.45.35.png">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -153,7 +158,105 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>这是2018年Activitynet的官方summary，下面是阅读笔记。</p>
+<p><strong>疑问汇总</strong>：</p>
+<ul>
+<li>frame_mAP是什么指标？</li>
+<li>清华的那篇论文中non-local 操作是什么意思？</li>
+<li>FPN model为什么具有高召回率和准确率？</li>
+<li>Short-term clips是用在常用的3D CNN 中的，但这个是啥意思捏？还有文中提及的那篇论文里面强调的更长和更大的input效果更好，这是为什么捏？</li>
+<li>uniform sampling是什么？</li>
+<li>Point-wise 怎么理解？</li>
+<li></li>
+</ul>
+<a id="more"></a>
+<p>此竞赛共分为6个赛道，目前我关注的是TaskB的 Spatio-temporal Action Localization任务，先对这个任务进行介绍。</p>
+<p>这项任务是想要评估算法的能力，关于定位人体动作的时间和空间。每一个标注好的视频片段包括多个对象，其中每一个对象都可能发生多个动作。比赛的目标是在连续的视频片段中区分这些物体和动作。这个任务包括两个方面，其中一个是只可以使用视觉的数据，另一个是还可以使用包括音频等方面的数据。</p>
+<blockquote>
+<p>Description and Objective. This task is intended to evaluate the ability of algorithms to localize human actions in space and time. Each labeled video segment can contain multiple subjects, each performing potentially multiple actions. The goal is to identify these subjects and actions over continuous video clips. This task is divided into two tracks. Track #1 is strictly computer vision, i.e. participants are requested not to use signals derived from audio, metadata, etc. Track #2 lifts this restriction, allowing creative solu- tions that leverage any input modalities.</p>
+</blockquote>
+<p>关于数据集，使用的是AVA Dataset version v2.1，这个数据集在430个15min的视频中密集地标注了80个原子视觉动作，共产生了1.58M个动作标签，这些视频数据是来自于电影中的剪辑片段，整个数据集一共有235个训练集，64个验证集和131个测试集。</p>
+<blockquote>
+<p>Dataset. This task is evaluated on the AVA Dataset version v2.1 [2]. The AVA dataset densely annotates 80 atomic visual actions in 430 15-minute movie clips, where actions are localized in space and time, resulting in 1.58M action labels with multiple labels per human occurring frequently. Clips are drawn from contiguous segments of movies, to open the door for temporal reasoning about activities. The dataset is split into 235 videos for training, 64 videos for validation, and 131 videos for test.</p>
+</blockquote>
+<p>评估的标准，是 空间IOU的Frame-mAP ≥ 0.5 ，因为动作频率是服从自然分布，所以这个指标用的是AVA中前60个常见动作的平均值（？？）</p>
+<blockquote>
+<p>Evaluation Metric. We use the Frame-mAP at spatial IoU ≥ 0.5 as the metric for evaluating algorithms on this task. Since action frequency in AVA follows the natural distribution, the metric is averaged across the top 60 most common action classes in AVA</p>
+</blockquote>
+<p>前几名的指标如下：<img src="/Users/dpx/Desktop/屏幕快照 2019-03-04 下午2.45.35.png" alt="屏幕快照 2019-03-04 下午2.45.35"></p>
+<p>下面这篇翻译摘自summary中第一名团队（cv only tracked）的论文《Human Centric Spatio-Temporal Action Localization》</p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h3><p>这篇论文描述了我们对于时空动作定位挑战赛的解决方案，我们的系统是由三个部分组成：一个 human detector, 一个action classification module 和一个 actor-target relation network. </p>
+<ul>
+<li><p>我们首先应用了一个PPN网络去检测视频里的人，因为AVA数据集主要包含了human-centric的动作类别。</p>
+</li>
+<li><p>其次我们做了动作识别，通过在human regions采用ROI pooling的操作。为了捕捉human-object的关系，我们进一步设计了一个actor-target relation 网络，这个网络是用一个non-local 的操作在ROI操作和它的周边区域得到。</p>
+</li>
+<li><p>我们方法的mAP在验证集上获得了25.63% and 25.75%（two tracks），在测试集上获得了20.56%和20.78% 的结果。</p>
+</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0qw79avkaj30ta0h00v9.jpg" alt="屏幕快照 2019-03-04 下午5.31.08"></p>
+<blockquote>
+<p>Abstract—This paper describes our solution for the spatio- temporal action localization of ActivityNet AVA challenge. Our system is consisted of three components: a human detector, an action classification module and an actor-target relation network. We first apply a region proposal network (RPN) to detect human in the videos, since AVA mainly contains human-centric action categories. Then we conduct the action classification by adopting the ROI pooling operation on the human regions. In order to capture the human-object relationships, we further design an actor-target relation network, which is achieved with a non-local operation between the ROI and its surrounding regions. Our method obtains 25.63% and 25.75% in terms of mean average precision (mAP) on the validation set of the two tracks, and 20.56% and 20.78% on the testing set.</p>
+</blockquote>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a><strong>介绍</strong></h3><p>最近一些新的检测方法开始出现，比如ACT，online method , multi-region faster-RCNN 在检测方面的公开数据集里面获得了很好的结果。在这个挑战中，因为AVA数据集更加的具有挑战性，所以我们通过利用不同的线索去提取视觉表达。在这个report中我们主要是用了三个模态的信息，包括外观、运动、音频。在action detection中，我们基于Fastercnn的方法，并用一个预训练的human detector 作为RPN model，接着我们训练了 actor-target relation网络去提取actors 和the corresponding targets之间的关系。出于这个目的，我们在target和它的周边区域采取了non- local 的操作，这个被应用的基础model主要集中于short- or long-term的输入片段。</p>
+<blockquote>
+<p>Recently, some detection methods such as ACT [7], online method [20], multi-region faster-RCNN [13], achieve impressive results on the public datasets in the detection frameworks. In this challenge, the AVA dataset [4] is more challenging and we aim to apply different clues to extract video representation. In this report, we mainly adopt three modalities, including appearance, motion and audio information. Noting that, the audio feature is only applied in the full track. To conduct action detection, we design our method in the Faster-RCNN [15] framework. To better fit the framework on the action localization, we propose to apply a good pretrained human detectors as the RPN module, shown in Fig. I. Following the RPN, we train the action classification network in an end- to-end manner. Moreover, we design an actor-target relation (ATR) network to extract correlation between the actors and the corresponding targets. For this purpose, we conduct non- local operation between the ROI and its surrounding regions. The applied base models mainly focus on short- or long-term input clips, including i3d [1] with non-local module [26], C3D [22], and TSN [25].</p>
+</blockquote>
+<p>对于RPN模块，因为FPN model具有高召回率和准确率所以用这个（？？）。有了proposal region 之后，用ROI pooling提取特征并去分类每一个proposals，最后用一个融合的措施去每一个周边对象的动作类别预测。比起基准方法，我们提高了10%。</p>
+<blockquote>
+<p>For the RPN module, we apply FPN model [10] because of its high recall and precision. Given the proposal regions, we apply ROI pooling [15] to extract features and classify each proposals. After that, a posterior fusion strategy is used to give the final predictions of action categories of every correspond- ing target. Attributed to the structure of the designed model, we obtain 10% gain than the baseline method [4]. We show the overview in the Fig. I.</p>
+</blockquote>
+<h3 id="方法的具体介绍"><a href="#方法的具体介绍" class="headerlink" title="方法的具体介绍"></a><strong>方法的具体介绍</strong></h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g0r187zbjbj311s0fewiw.jpg" alt="屏幕快照 2019-03-04 下午5.50.56"></p>
+<h4 id="A-Multi-clues"><a href="#A-Multi-clues" class="headerlink" title="A. Multi clues"></a>A. Multi clues</h4><p>用了四种模态的信息，Short-term clips，Long-range sampling，Motion clues，Acoustic features。</p>
+<h5 id="1、Short-term-clips"><a href="#1、Short-term-clips" class="headerlink" title="1、Short-term clips"></a>1、Short-term clips</h5><p>受到绝大多数3D CNN的影响（ C3D, P3D and I3D ），我们采用了多个连续的片段作为输入去提取短期的视频表达。在一篇论文中（A video dataset of spatio-temporally localized atomic visual actions）谈到较长的输入长度和较大的输入尺寸是更有利于去提高效果。因此，我们采用实用的输入，这些输入是不同大小和长度去更好地理解他们的影响对最终结果的影响。</p>
+<p>在AVA数据集中，动作实例被每秒稀疏地标注，因此我们也在短时间间隔里去预测目标动作。在我们的方法中，我们采用了I3D Resnet 和P3D去构造视频表示，所有的方法都在Kinetics上预训练过了。</p>
+<blockquote>
+<p>Inspired by most 3D CNNs, such as C3D [22], P3D [14] and I3D [1], we apply several continuous clips as input to extract short-term video representation. As shown in the benchmark [4], long clip and large input size is helpful to improve the performance. Therefore, we explore the applied inputs with different length and size to better understand their influence to the final action classification results.</p>
+<p>In the AVA dataset [4], the action instances are sparsely annotated per second. Therefore, we extract one clip in a short time interval to predict the target actions. In our method, we apply the I3D Resnet [26], and P3D [14] to conduct the video representation. All the models are pretrained in Kinetics [8] in advance.</p>
+</blockquote>
+<h5 id="2、Long-range-sampling"><a href="#2、Long-range-sampling" class="headerlink" title="2、Long-range sampling"></a>2、Long-range sampling</h5><p>TSN被证明为一个很有用的方法对于长范围的时序结构建模，相似于TSN，我们采用了uniform sampling（？？）策略去采样N个帧给模型去训练。在我们的方法里，我们发现在传统2D CNN里面去采样更加有效，因此我们在这个框架里只使用2D 模型，比如resnet等。</p>
+<p>在ROI pooling之前，我们通过平均pooling的方式沿着时间轴去平均frame-level的特征。</p>
+<blockquote>
+<p>TSN [25] is proved to be a powerful method of long-range temporal structure modeling. Similar to TSN [25], we apply uniform sampling strategy to sample n frames for the model to learn. In our method, we find it effective to apply the sampling in the traditional 2D CNN. Therefore, we just adopt 2D model in this framework, such as resnext [27], resnet [5] and artnet18 [24].</p>
+<p>Before the ROI pooling module [15], we integrate the frame-level feature by using average pooling scheme along the time axis.</p>
+</blockquote>
+<h5 id="3、Motion-clues"><a href="#3、Motion-clues" class="headerlink" title="3、Motion clues"></a>3、Motion clues</h5><p>为了在连续的两帧之间更好地提取运动信息，我们计算了光流作为一个输出，我们首先计算了水平和垂直的光流图，构建了两个独立的channel,对于第三个channel，我们简单地使用了两个maps之间的点乘。</p>
+<p>在这篇论文中，我们用集成在Opencv里面的TV-L1方法，之后也尝试了用更多不同的光流方法，以增加模式的多样性。</p>
+<blockquote>
+<p>To better extract micro motion information between two consecutive frames, we calculate optical flow to be used as a modality of input for the deep models. We first compute the horizontal and vertical motion maps, which construct the two independent channels. For the third channel, we simply apply point-wise multiplication between these two maps.</p>
+<p>In this paper, we extract optical flow by applying TV-L1 [29] method which is integrated in the Opencv tools. Moreover, we also explore different methods of optical flow, such as Farneback [2], to add variety to the modality.</p>
+</blockquote>
+<h5 id="4、Acousitic-features"><a href="#4、Acousitic-features" class="headerlink" title="4、Acousitic features"></a>4、Acousitic features</h5><p>声学信息也适用于某些动作，如“演奏乐器”、“歌唱”等。因此，我们尝试提取声学特征来改进我们的视频表示。类似于基于CNN的音频分类任务[17]，我们将视频分割成一秒一次的帧，然后采用傅里叶变换和直方图积分。给出了新的框架，在动力学数据集预训练模型的基础上，应用VGG16[19]模型进行动作分类。</p>
+<blockquote>
+<p>Acoustic information is also discriminative for some actions, such as “play musical instrument”, “sing”. Therefore, we try to extract acoustic feature to improve our video representation. Similar to CNN based audio classification task [17], we divide the videos into frames every 1s, following which Fourier transformation and histogram integration are adopted. Given the new frames, we apply a VGG16 [19] model to conduct action classification based on a pre-trained model on the Kinetics dataset.</p>
+</blockquote>
+<h4 id="B、Action-Localization"><a href="#B、Action-Localization" class="headerlink" title="B、Action Localization"></a>B、Action Localization</h4><p>在这个部分，我们主要介绍RPN模型和分类模型。</p>
+<h4 id="1、RPN-module"><a href="#1、RPN-module" class="headerlink" title="1、RPN module"></a>1、RPN module</h4><p>这两个任务的目标是定位以人为中心的行为，因此我们认为该模块应该具有良好的人体检测性能。在我们的方法中，我们使用特征金字塔网络(10)来达到这个目标，以达到更好的性能。该检测器首先在MSCOCO数据集[11]上进行调整，然后在数据集AVA [4]上进行调整。通过这种方法，我们可以在评估集上以iou&gt;=0.5的基准获得约96.5%召回率和81.6%准确率。</p>
+<h4 id="2、Action-classification"><a href="#2、Action-classification" class="headerlink" title="2、Action classification"></a>2、Action classification</h4><p>如前所述，我们在 faster RCNN[15]框架中设计了我们的方法。我们采用基于提案区域的ROI pooling策略以及相应的基础模型。在上一次特征映射之后，我们定位到ROI pooling池层，然后是一个分类分支。对于分类网络，如文[4]中所使用的Sigmod函数。最后，将分类分支的输出作为相应提案框的分类概率预测结果。</p>
+<blockquote>
+<p>RPN module. The goal of these two tasks is to localize human centric spatio-temporal action, hence we hold the point that the RPN module should have good performance on human detection. In our method, we apply feature pyramid networks (FPN) [10] to reach this goal, for its better performance. The FPN detector is first pretrained on MSCOCO dataset [11] and then is fine tuned on the AVA dataset [4]. By this means, we can obtain 96.5% recall and 81.6% accuracy on the evaluation set on an Intersection over Union(IoU) threshold of 0.5.</p>
+<p>Action classification. As aforementioned, we design our method in the faster RCNN [15] framework. We apply the ROI pooling [15] strategy based on the proposal regions and the corresponding base models. We locate the ROI pooling layer after the last feature maps, followed by a classification branch. For the classification network, sigmoid function is used as in [4]. Finally, the output of the classification branch is used as the classification probability prediction results of the corresponding proposal boxes.</p>
+</blockquote>
+<p>为了进一步提高性能，我们还探讨了几种不同的策略：(1)从不同的网络中添加或添加feature map；(2)简单地将sigmoid function前后的分数进行平均：(3)在过程中采用Top-k融合方案；(4)把rgb和 optical flow一起融合在全连通层。(5)还探讨了 ROI align法。</p>
+<p>在我们的方法中，我们把所有的模型结合起来计算human.detection的结果。在实验中，我们发现应用k=n/2(n是总应用模型的数目)，在函数之前进行融合可以得到更好的结果。（？？具体的还是不太懂）</p>
+<blockquote>
+<p>To further improve the performance, we also explore fol- lowing several different strategies: (i) we concatenate or add the feature maps from different networks; (ii) we simply average the scores before or after sigmoid function; (iii) top- k fusion scheme are adopted for the ensemble process; (iv) we concatenate the features of RGB and Flow streams on the fully connected layer. (v) ROI align method is also explored.</p>
+<p>In our method, we integrate all the model to calculate the results of our human detections. In the experiments, we find that apply k = n//2 (n is the number of the total applied models), and fusion before sigmoid function can lead to better results.</p>
+</blockquote>
+<h4 id="C、Extract-Actor-Target-Relationship"><a href="#C、Extract-Actor-Target-Relationship" class="headerlink" title="C、Extract Actor-Target Relationship"></a>C、Extract Actor-Target Relationship</h4><p>在数据集[4]中，我们观察到注释框主要包含人，但对“抓取(一个人)”和“拥抱(一个人)”等目标失去了关注。通过引入actor-target关系，可以进一步提高系统的性能。</p>
+<p>在non-local[26]网络在动作识别中的成功应用的启发下，我们采用了非局部操作进行提取ATR。特别是，我们在ROI特征和bounding box外的特征之间才去了non-local操作。通过这种方式，我们可以了解与演员相关的关系。实验还表明，该结构通过时空域将人与交互对象连接起来，有效地捕捉到了人体的运动。</p>
+<blockquote>
+<p>In the AVA dataset [4], we observed that the annotation boxes mainly contain the human but lose much attention on the targets, such as “grab (a person)” and “hug (a person)”. We speculate the performance could be further improved by incorporating the the Actor-Target relationship (ATR).</p>
+<p>Inspired by the successful application of the non-local [26] network on the action recognition, we adopt the non-local operation to extract ATR. Particularly, we conduct non-local operation between the ROI feature and features outside the bounding boxes. By this means, we can learn the discrimina- tive relationship related to the actors. Experiments also show that this structure effectively captures the motion by bridging between people and the interactive objects through space and time domain.</p>
+</blockquote>
+<h4 id="D、training"><a href="#D、training" class="headerlink" title="D、training"></a>D、training</h4><p>列出了部分的信息，学习率为0.001，对于每一个模型只训练5epoches。在8个P40 GPU中训练，batch的大小是16。每次融合不同的模型的时候，我们都要在ROI pooling 前冻结base model。</p>
+<blockquote>
+<p>In this section, we present some details of our method during training stage. We train our network end-to-end with invariant 0.001 learning rate. For each model, we train about 5 epoches. We train our model on the 8 P40 GPUs for each experiments and the batch size is 16. When fusing different models, we freeze the base model before ROI pooling layer.</p>
+</blockquote>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><p>在这个部分，我们在验证集和测试集上各自测试了性能。<img src="https://ws4.sinaimg.cn/large/006tKfTcly1g0r5v7w1cvj30r00bsdhu.jpg" alt="屏幕快照 2019-03-04 下午10.58.27"></p>
+<p>在验证集上，我们展示了不同的2D/3D的模型，所有的3D模型都在Kinetics数据集上训练，所有的2D模型在Imagnet上预训练。提取ATR关系的话可以提高大概0.68%，意味着的确对于动作分类很有帮助。最后的结果是25.63%和25.75%。</p>
+<p>在测试集上，我们的方法达到了20.56% 和 20.78%。差距有5%左右，可能是数据的数量差距。</p>
+
       
 
       
@@ -170,11 +273,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">人体多语义分析</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">论文赏析</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">论文赏析</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">人体多语义分析</a>
         		</li>
       		
 		</ul>
@@ -273,7 +376,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#摘要"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-number">2.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法的具体介绍"><span class="toc-number">3.</span> <span class="toc-text">方法的具体介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-Multi-clues"><span class="toc-number">3.1.</span> <span class="toc-text">A. Multi clues</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、Short-term-clips"><span class="toc-number">3.1.1.</span> <span class="toc-text">1、Short-term clips</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、Long-range-sampling"><span class="toc-number">3.1.2.</span> <span class="toc-text">2、Long-range sampling</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、Motion-clues"><span class="toc-number">3.1.3.</span> <span class="toc-text">3、Motion clues</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、Acousitic-features"><span class="toc-number">3.1.4.</span> <span class="toc-text">4、Acousitic features</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B、Action-Localization"><span class="toc-number">3.2.</span> <span class="toc-text">B、Action Localization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1、RPN-module"><span class="toc-number">3.3.</span> <span class="toc-text">1、RPN module</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、Action-classification"><span class="toc-number">3.4.</span> <span class="toc-text">2、Action classification</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C、Extract-Actor-Target-Relationship"><span class="toc-number">3.5.</span> <span class="toc-text">C、Extract Actor-Target Relationship</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#D、training"><span class="toc-number">3.6.</span> <span class="toc-text">D、training</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实验结果"><span class="toc-number">4.</span> <span class="toc-text">实验结果</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -454,15 +557,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">论文</a>
+                <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">人体多语义分析</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
               </li>
              
               <li class="article-tag-list-item">
