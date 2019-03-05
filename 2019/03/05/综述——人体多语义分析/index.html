@@ -6,32 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>笔记——Tensorflow实战Google深度学习框架（三） | Dingpx&#39;s Blog</title>
+  <title>综述——人体多语义分析 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="TensorFlow 入门">
-<meta name="keywords" content="CV,笔记,tensorflow">
+  <meta name="description" content="record ideas and knowledge">
+<meta name="keywords" content="CV,综述,人体多语义分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="笔记——Tensorflow实战Google深度学习框架（三）">
-<meta property="og:url" content="http://yoursite.com/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/index.html">
+<meta property="og:title" content="综述——人体多语义分析">
+<meta property="og:url" content="http://yoursite.com/2019/03/05/综述——人体多语义分析/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="TensorFlow 入门">
+<meta property="og:description" content="record ideas and knowledge">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fya23q81vfj30ii062gnt.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fyc4kblut1j30xg0a4jzh.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fyd5w95cgtj30va03mad0.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fydb8076phj30wy07iafa.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fydba3c3ffj30xa07gdkw.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fydbdmx1qjj30vg0ma7vo.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fydbuthrvdj30ve07odpd.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fydc896qwej30vg0bm7j1.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fydcg5hsk5j30v40myhdh.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fydcgtja4hj30u013rkjl.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fydcgy6hewj30uk0nkkhf.jpg">
-<meta property="og:updated_time" content="2018-12-20T09:45:09.596Z">
+<meta property="og:updated_time" content="2019-03-05T10:40:43.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="笔记——Tensorflow实战Google深度学习框架（三）">
-<meta name="twitter:description" content="TensorFlow 入门">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fya23q81vfj30ii062gnt.jpg">
+<meta name="twitter:title" content="综述——人体多语义分析">
+<meta name="twitter:description" content="record ideas and knowledge">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -145,170 +133,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-笔记——Tensorflow实战Google深度学习框架（三）" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-综述——人体多语义分析" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      笔记——Tensorflow实战Google深度学习框架（三）
+      综述——人体多语义分析
     </h1>
   
 
         
-        <a href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/" class="archive-article-date">
-  	<time datetime="2018-12-17T12:44:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
+        <a href="/2019/03/05/综述——人体多语义分析/" class="archive-article-date">
+  	<time datetime="2019-03-05T10:40:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>TensorFlow 入门</p>
-<a id="more"></a>
-<h2 id="3-1-TensorFlow-计算模型——计算图"><a href="#3-1-TensorFlow-计算模型——计算图" class="headerlink" title="3.1 TensorFlow 计算模型——计算图"></a>3.1 TensorFlow 计算模型——计算图</h2><h3 id="3-1-1-计算图的概念"><a href="#3-1-1-计算图的概念" class="headerlink" title="3.1.1 计算图的概念"></a>3.1.1 计算图的概念</h3><p>Tensor：张量（也可以理解为多维数组）</p>
-<p>Flow：流（tensor之间通过计算相互转化的过程）</p>
-<p>Tensorflow：是一个通过计算图来表诉计算的编程系统，其中<strong>每一个计算</strong>都是计算图上的<strong>一个节点</strong>，而<strong>节点之间的边</strong>描述了<strong>计算之间的依赖关系<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fya23q81vfj30ii062gnt.jpg" alt="屏幕快照 2018-12-17 下午9.20.10"></strong></p>
-<h3 id="3-1-2-计算图的使用"><a href="#3-1-2-计算图的使用" class="headerlink" title="3.1.2 计算图的使用"></a>3.1.2 计算图的使用</h3><p>程序分为两个阶段，<strong>图的构建</strong>和<strong>图的运行</strong></p>
-<ul>
-<li><p>图的构建：</p>
-<ul>
-<li><p>首先程序 自动构建一个默认的计算图，可以用<code>tf.get_default_graph()</code>获取</p>
-</li>
-<li><p>其次定义的每个计算都会自动地转化为计算图上的节点，查看某个运算所属的图用<code>a.graph</code>,没有特殊指定的情况下属于当前默认的计算图</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = tf.constant([<span class="number">1</span>,<span class="number">2</span>],name=<span class="string">"a"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = tf.constant([<span class="number">2</span>,<span class="number">3</span>],name=<span class="string">"b"</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>result = a+b</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.graph</span><br><span class="line">&lt;tensorflow.python.framework.ops.Graph object at <span class="number">0x1018f4ac8</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>tf.get_default_graph()</span><br><span class="line">&lt;tensorflow.python.framework.ops.Graph object at <span class="number">0x1018f4ac8</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>tf.get_default_graph() <span class="keyword">is</span> a.graph</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>用<code>tf.Graph</code>生成新的计算图，不同计算图上的张量和运算不会共享<ul>
-<li>要注意的是，最后一个量e不是定义在with语句里面的，也就是说，e会包含在最开始的那个图中。也就是说，要在某个graph里面定义量，要在with语句的范围里面定义</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">c=tf.constant(value=<span class="number">1</span>)</span><br><span class="line">print(c.graph <span class="keyword">is</span> tf.get_default_graph())</span><br><span class="line">print(c.graph)</span><br><span class="line">print(tf.get_default_graph())</span><br><span class="line"><span class="comment">#True</span></span><br><span class="line"><span class="comment">#&lt;tensorflow.python.framework.ops.Graph object at 0x111a55160&gt;</span></span><br><span class="line"><span class="comment">#&lt;tensorflow.python.framework.ops.Graph object at 0x111a55160&gt;</span></span><br><span class="line"></span><br><span class="line">g1=tf.Graph()</span><br><span class="line">print(<span class="string">"g1:"</span>,g1)</span><br><span class="line"><span class="keyword">with</span> g1.as_default():</span><br><span class="line">    d=tf.constant(value=<span class="number">2</span>)</span><br><span class="line">    print(d.graph)</span><br><span class="line"><span class="comment">#g1: &lt;tensorflow.python.framework.ops.Graph object at 0x1836b8a828&gt;</span></span><br><span class="line"><span class="comment">#&lt;tensorflow.python.framework.ops.Graph object at 0x1836b8a828&gt;</span></span><br><span class="line"></span><br><span class="line">g2=tf.Graph()</span><br><span class="line">print(<span class="string">"g2:"</span>,g2)</span><br><span class="line">g2.as_default()</span><br><span class="line">e=tf.constant(value=<span class="number">15</span>)</span><br><span class="line">print(e.graph)</span><br><span class="line"><span class="comment">#g2: &lt;tensorflow.python.framework.ops.Graph object at 0x1836b8a748&gt;</span></span><br><span class="line"><span class="comment">#&lt;tensorflow.python.framework.ops.Graph object at 0x111a55160&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><code>tf.Graph.device</code>指定运行计算的设备</p>
-</li>
-<li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = tf.Graph()</span><br><span class="line"><span class="keyword">with</span> g.device(<span class="string">'/gpu:0'</span>):</span><br><span class="line">	result = a + b</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过集合（collection）管理计算图中的不同的计算资源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 将资源加入集合</span><br><span class="line">tf.add_collection</span><br><span class="line"># 获取集合里的资源</span><br><span class="line">tf.get_collection</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fyc4kblut1j30xg0a4jzh.jpg" alt="屏幕快照 2018-12-19 下午4.16.26"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-2-Tensorflow-数据模型——张量"><a href="#3-2-Tensorflow-数据模型——张量" class="headerlink" title="3.2 Tensorflow 数据模型——张量"></a>3.2 Tensorflow 数据模型——张量</h2><h2 id="3-2-1-张量的概念"><a href="#3-2-1-张量的概念" class="headerlink" title="3.2.1 张量的概念"></a>3.2.1 张量的概念</h2><ul>
-<li><p>简单理解为多维数组；但是实现时并不采用数组的形式，而是<strong>对计算结果的引用</strong>；</p>
-</li>
-<li><p>在张量中没有保存数据，而是保存了如何得到数字的计算过程</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">a = tf.constant([<span class="number">1</span>,<span class="number">2</span>],name=<span class="string">"a"</span>)</span><br><span class="line">b = tf.constant([<span class="number">2</span>,<span class="number">3</span>],name=<span class="string">"b"</span>)</span><br><span class="line">result = a+b</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Tensor("add:0", shape=(2,), dtype=int32)</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>张量包括：name, shape, types</p>
-<ul>
-<li><p>name: “node:src_output” ，唯一标志符</p>
-<ul>
-<li>和节点一一对应，src_output 指的是这个节点的第几个输出？？？</li>
-</ul>
-</li>
-<li><p>shape:维度</p>
-</li>
-<li><p>types: 注意参与运算的张量的类型必须一致</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># float和int型不一致会出错</span></span><br><span class="line"><span class="comment"># 将a改成“a= tf.constant([l, 2], name="a”, dtype=tf.float32)”就不会报错，所以一般建议指定张量的</span></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">a = tf. constant ([<span class="number">1</span>, <span class="number">2</span>], name=”a”)</span><br><span class="line">b = tf.constant([<span class="number">2.0</span>, <span class="number">3.0</span>], name=”b”) </span><br><span class="line">result = a + b</span><br><span class="line"><span class="comment">#ValueError: Tensor conversion requested dtype int32 for Tensor  with dtype float32 :’ Tensor (”b : 。”， shape=(2 ,), dtype=float32 ) ’</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-2-2-张量的使用"><a href="#3-2-2-张量的使用" class="headerlink" title="3.2.2 张量的使用"></a>3.2.2 张量的使用</h3><p>张量的使用主要可以总结为两大类。</p>
-<ul>
-<li>第一类用途是<strong>对中间计算结果的引用</strong>。当一个计算包含很多中间结果时，使用张量可以提高代码的可读性，并且可以保留中间结果以求做一些改动</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = tf.constant([<span class="number">1.</span>,<span class="number">2.</span>],name = <span class="string">'a'</span>)</span><br><span class="line">b = tf.constant([<span class="number">2.</span>,<span class="number">3.</span>],name = <span class="string">'b'</span>)</span><br><span class="line">result = a + b</span><br></pre></td></tr></table></figure>
-<ul>
-<li>比如下面这种的可读性就很差</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result = tf.constant([1.,2.],name = &apos;a&apos;) + tf.constant([2.,3.].name = &apos;b&apos;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>第二类情况是当计算图构造完成之后，张量可以用来<strong>获得计算结果</strong>，也就是得到真实的数字。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(tf.Session().run(result))</span><br><span class="line"><span class="comment">#array([ 3.,  5.], dtype=float32)</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-3-TensorFlow运行模型——会话"><a href="#3-3-TensorFlow运行模型——会话" class="headerlink" title="3.3 TensorFlow运行模型——会话"></a>3.3 TensorFlow运行模型——会话</h2><p>通过TensorFlow中的会话（session）来执行定义好的运算。会话拥有并管理TensorFlow程序运行时的所有资源，当所有计算完成之后需要关闭会话来帮助系统回收资源，否则就可能出现资源泄漏的问题。</p>
-<p>有两种会话使用模式。</p>
-<ul>
-<li>第一种，明确会话生成函数和关闭会话函数，存在一个风险：就是系统异常时没法执行Session().close()函数，会使得资源泄漏，解决的方式就是使用上下文管理器</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建一个会话</span></span><br><span class="line">sess=tf.Session()</span><br><span class="line"><span class="comment">#使用会话来得到运算结果</span></span><br><span class="line">sess.run(result)</span><br><span class="line">array([ <span class="number">3.</span>,  <span class="number">5.</span>], dtype=float32)</span><br><span class="line"><span class="comment">#关闭会话使本次运行中使用到的资源可以被释放</span></span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>第二种，通过Python的上下文管理器来使用会话。所以计算放在“with”内部，上下文管理器退出的时候会自动释放所有资源。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不需要Session().close()去关闭会话</span></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(result)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>计算图会在创建时会有一个默认图，会话也有类似的机制，但是默认的会话必须手动指定，当默认的会话被指定后，可以用tf.Tensor.eval函数来计算张量的取值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sess = tf.Session()</span><br><span class="line"><span class="keyword">with</span> sess.as_default():</span><br><span class="line">	print(result.eval())</span><br></pre></td></tr></table></figure>
-<ul>
-<li>等价于</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sess = tf.Session()</span><br><span class="line">print(sess.run(result))</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
-<ul>
-<li>等价于</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sess = tf.Session()</span><br><span class="line">print(result.eval(session=sess))</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在交互的环境下有一个直接构建默认会话的函数</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sess = tf.InteractivateSession()</span><br><span class="line">print(result.eval())</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通过<code>tf.ConfigProto</code> 来配置需要生成的会话的：并行的线程数、GPU的分配策略等</p>
-<ul>
-<li>allow_soft_placement: 为TRUE时，表示<strong>在以下任意一个条件成立时， GPU上的运算可以放到 CPU上进行</strong>，默认为false，但为了代码可移植性，以及为了程序能够在拥有不同gpu的机器中运行，建议设为TRUE<img src="https://ws4.sinaimg.cn/large/006tNbRwly1fyd5w95cgtj30va03mad0.jpg" alt="屏幕快照 2018-12-20 下午1.47.57"></li>
-<li>log_device_placement:为TRUE时，表示<strong>日志中将会记录每个节点被安排在 哪个设备上以方便调试</strong>，在生产环境中一般设置为FALSE，可以减少日志量</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">config = tf.ConfigProto(allow_soft_placement=<span class="keyword">True</span>,log_device_placement=<span class="keyword">True</span>)</span><br><span class="line">sessl = tf.InteractiveSession(config=config) </span><br><span class="line">sess2 = tf.Session(config=config)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="3-4-TensorFlow-实现神经网络"><a href="#3-4-TensorFlow-实现神经网络" class="headerlink" title="3.4 TensorFlow 实现神经网络"></a>3.4 TensorFlow 实现神经网络</h2><h3 id="3-4-1"><a href="#3-4-1" class="headerlink" title="3.4.1"></a>3.4.1</h3><p>讲解了一个网页在线训练的模式，暂时不需要了解</p>
-<h3 id="3-4-2"><a href="#3-4-2" class="headerlink" title="3.4.2"></a>3.4.2</h3><p><code>tf.matmul(x,w)</code>:矩阵的乘法</p>
-<h3 id="3-4-3神经网络参数和Tensorflow变量"><a href="#3-4-3神经网络参数和Tensorflow变量" class="headerlink" title="3.4.3神经网络参数和Tensorflow变量"></a>3.4.3神经网络参数和Tensorflow变量</h3><p><code>tf.Variable()</code>定义一个变量，参数是初始化这个参数的方法，比如随机数，常数等</p>
-<ul>
-<li><p>随机数：<code>weights= tf.Variable(tf.random_normal([2, 3], stddev=2))</code><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fydb8076phj30wy07iafa.jpg" alt="屏幕快照 2018-12-20 下午4.52.18"></p>
-</li>
-<li><p>常数：<code>biases= tf.Variable(tf.zeros([3]))</code></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fydba3c3ffj30xa07gdkw.jpg" alt="屏幕快照 2018-12-20 下午4.53.51"></p>
-</li>
-<li><p>通过其他变量的初始值来初始化新的变量</p>
-<p><code>w2 = tf.Variable (weights.initialized_value())</code></p>
-<p><code>w3 = tf.Variable(weights.initialized_value()*2.0)</code></p>
-</li>
-<li><p>Tensorflow中变量必须被明确初始化后才可以进行计算<img src="https://ws1.sinaimg.cn/large/006tNbRwly1fydbdmx1qjj30vg0ma7vo.jpg" alt="屏幕快照 2018-12-20 下午4.57.46"></p>
-</li>
-<li><p>因为单个变量单独初始化会很麻烦，所以引入了<code>tf.global_variables_initializer()</code></p>
-</li>
-<li><p>变量可以分为<code>可训练变量</code>和<code>不可训练变量</code>，通过在训练时申明<code>trainable</code>为true还是为false来区分需要优化的参数和其他参数，神经网络中默认的优化算法是针对可训练的变量的</p>
-<ul>
-<li>所有的变量都会自动加入<code>GraphKeys.VARIABLES</code>集合中，而可训练的变量则会自动加入到<code>GraphKeys.TRAINABLE_VARJABLES</code></li>
-<li><code>tf.trainable_variables</code>函数：得到所需要优化的参数</li>
-</ul>
-</li>
-<li>其余的变量的属性有shape和type，一般张量操作之间的这两个参数都得一致，但是维度是可以不一致的，需要设置参数<code>validate_shape=False</code>,但一般不建议<img src="https://ws2.sinaimg.cn/large/006tNbRwly1fydbuthrvdj30ve07odpd.jpg" alt="屏幕快照 2018-12-20 下午5.14.08"></li>
-</ul>
-<h3 id="3-4-4-通过-TensorFlow-训练神经网络模型"><a href="#3-4-4-通过-TensorFlow-训练神经网络模型" class="headerlink" title="3.4.4 通过 TensorFlow 训练神经网络模型"></a>3.4.4 通过 TensorFlow 训练神经网络模型</h3><p>在训练的过程中，需要输入数据，如果把所有的数据都生成常量的话，会非常大，所以引入了<code>tf.placeholder()</code>这个函数</p>
-<ul>
-<li>在定义时，类型必须给出，维度不一定要给出，或者只给出某一维度也可以</li>
-</ul>
-<p><code>x = tf.placeholder(tf.float32 , shape=(l, 2), name=”input&quot;)</code></p>
-<ul>
-<li>在run的时候，就需要提供一个<code>feed_dict</code>来指定 <code>所有placeholder</code>的取值</li>
-</ul>
-<p><code>print(sess.run(y , feed_dict={x: [[0.7,0.9]]}))</code></p>
-<ul>
-<li>下面是一个简易的训练过程，计算交叉熵损失，训练，再加上<code>sess.run(train_step)</code>,就可以进行一个训练了（<code>tf.clip_by_value()</code>是限定输入值的值域范围的函数）</li>
-</ul>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fydc896qwej30vg0bm7j1.jpg" alt="屏幕快照 2018-12-20 下午5.25.41"></p>
-<h3 id="3-4-5-完整神经网络样例程序"><a href="#3-4-5-完整神经网络样例程序" class="headerlink" title="3.4.5 完整神经网络样例程序"></a>3.4.5 完整神经网络样例程序</h3><p>下面的程序实现一个简单的二分类问题的训练</p>
-<p>注意一个之前一直不太懂的做法，<code>在 shape 的一个维度上使用 None 可以方便使用不同的 batch 大小</code>。在训练时需要把数据分成比较小的 batch， 但是在测试时，可以一次性使用全部的数据。当数据集比较小时这样比较方便测试，但数据集比较大时，将大量数据放入一个 batch 吁能会导致内存溢出。</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fydcg5hsk5j30v40myhdh.jpg" alt="屏幕快照 2018-12-20 下午5.34.04"></h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fydcgtja4hj30u013rkjl.jpg" alt="屏幕快照 2018-12-20 下午5.34.34"></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fydcgy6hewj30uk0nkkhf.jpg" alt="屏幕快照 2018-12-20 下午5.34.43"></p>
-
+        
       
 
       
@@ -325,11 +170,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">综述</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">人体多语义分析</a>
         		</li>
       		
 		</ul>
@@ -385,7 +230,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/17/笔记——Tensorflow实战Google深度学习框架（三）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/05/综述——人体多语义分析/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -399,18 +244,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/21/笔记——Tensorflow实战Google深度学习框架（四）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          笔记——Tensorflow实战Google深度学习框架（四）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/17/笔记——Tensorflow实战Google深度学习框架（二）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">笔记——Tensorflow实战Google深度学习框架（二）</div>
+    <a href="/2019/03/04/论文赏析——《The-ActivityNet-Large-Scale-Activity-Recognition-Challenge-2018-Summary-and-Workshop-Papers》/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">论文赏析——《The ActivityNet Large-Scale Activity Recognition Challenge 2018 Summary and Workshop Papers》</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -437,7 +273,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-TensorFlow-计算模型——计算图"><span class="toc-number">1.</span> <span class="toc-text">3.1 TensorFlow 计算模型——计算图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-计算图的概念"><span class="toc-number">1.1.</span> <span class="toc-text">3.1.1 计算图的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-计算图的使用"><span class="toc-number">1.2.</span> <span class="toc-text">3.1.2 计算图的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-Tensorflow-数据模型——张量"><span class="toc-number">2.</span> <span class="toc-text">3.2 Tensorflow 数据模型——张量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-1-张量的概念"><span class="toc-number">3.</span> <span class="toc-text">3.2.1 张量的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-张量的使用"><span class="toc-number">3.1.</span> <span class="toc-text">3.2.2 张量的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-TensorFlow运行模型——会话"><span class="toc-number">4.</span> <span class="toc-text">3.3 TensorFlow运行模型——会话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-TensorFlow-实现神经网络"><span class="toc-number">5.</span> <span class="toc-text">3.4 TensorFlow 实现神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1"><span class="toc-number">5.1.</span> <span class="toc-text">3.4.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2"><span class="toc-number">5.2.</span> <span class="toc-text">3.4.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3神经网络参数和Tensorflow变量"><span class="toc-number">5.3.</span> <span class="toc-text">3.4.3神经网络参数和Tensorflow变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-4-通过-TensorFlow-训练神经网络模型"><span class="toc-number">5.4.</span> <span class="toc-text">3.4.4 通过 TensorFlow 训练神经网络模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-5-完整神经网络样例程序"><span class="toc-number">5.5.</span> <span class="toc-text">3.4.5 完整神经网络样例程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">5.6.</span> <span class="toc-text"></span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
