@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>综述——人体多语义分析 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
+  <meta name="description" content="下面列出了视频时序动作检测(temporal action localization )的相关基础知识。 疑问汇总1、mAP的定义 2、时序动作分组和单元回归的proposal方法（？？，怎么实现）">
 <meta name="keywords" content="CV,综述,人体多语义分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="综述——人体多语义分析">
 <meta property="og:url" content="http://yoursite.com/2019/03/05/综述——人体多语义分析/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="下面列出了视频时序动作检测(temporal action localization )的相关基础知识。 疑问汇总1、mAP的定义 2、时序动作分组和单元回归的proposal方法（？？，怎么实现）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T10:40:43.105Z">
+<meta property="og:updated_time" content="2019-03-05T11:14:31.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="综述——人体多语义分析">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:description" content="下面列出了视频时序动作检测(temporal action localization )的相关基础知识。 疑问汇总1、mAP的定义 2、时序动作分组和单元回归的proposal方法（？？，怎么实现）">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -153,7 +153,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>下面列出了视频时序动作检测(temporal action localization )的相关基础知识。</p>
+<h4 id="疑问汇总"><a href="#疑问汇总" class="headerlink" title="疑问汇总"></a>疑问汇总</h4><p>1、mAP的定义</p>
+<p>2、时序动作分组和单元回归的proposal方法（？？，怎么实现）</p>
+<a id="more"></a>
+<h3 id="任务特点与难点"><a href="#任务特点与难点" class="headerlink" title="任务特点与难点"></a>任务特点与难点</h3><ul>
+<li>action recognition与temporal action detection之间的关系同 image classfication与 object detection之间的关系非常像。基于image classification问题，发展出了许多强大的网络模型（比如ResNet,VGGNet等），这些模型在object detection的方法中起到了很大的作用。同样，action recognition的相关模型（如2stream，C3D, iDT等)也被广泛的用在temporal action detection的方法中。</li>
+<li>由于temporal action detection和object detection之间存在一定的相似性，所以很多temporal action detection方法都采用了与一些object detection方法相似的框架（最常见的就是参考R-CNN系列方法）。具体的会在后面的论文介绍中讲到。</li>
+<li><strong>时序行为检测的难点1</strong>：在目标检测中，物体目标的边界通常都是非常明确的，所以可以标注出较为明确的边界框。但时序行为的边界很多时候并不是很明确，什么时候一个行为算开始，什么时候行为算结束常常无法给出一个准确的边界（指精确的第几帧）。</li>
+<li><strong>时序行为检测的难点2</strong>：只使用静态图像的信息，而不结合时序信息在行为识别中是可以的（虽然结合时序信息效果会更好）。但在时序行为检测中，是无法只使用静态图像信息的。必须结合时序的信息，比如使用RNN读入每帧图像上用CNN提取的特征，或是用时序卷积等。</li>
+<li><strong>时序行为检测的难点3</strong>：时序行为片段的时间跨度变化可能非常大。比如在ActivityNet中，最短的行为片段大概1s左右，最长的行为片段则超过了200s。巨大的时长跨度，也使得检测时序动作非常难</li>
+</ul>
+<h3 id="评估指标"><a href="#评估指标" class="headerlink" title="评估指标"></a>评估指标</h3><p>1、mAP（mean Average Precision）</p>
+<p>一般对tIOU=0.5的进行对比（tIOU是时间上的交并）</p>
+<h3 id="DataSet"><a href="#DataSet" class="headerlink" title="DataSet"></a>DataSet</h3><p>1、Thumos2014</p>
+<p>2、ActivityNet</p>
+<p>3、Mutithumos</p>
+<h4 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h4><p>1、先找proposals</p>
+<blockquote>
+<p>1、滑动窗口</p>
+<p>2、时序动作分组（？）</p>
+<p>3、单元回归（？）</p>
+</blockquote>
+<p>2、再进行分类和回归边界</p>
+<p>。。。待续</p>
+
       
 
       
@@ -273,8 +297,8 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
-                    </div>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#疑问汇总"><span class="toc-number">1.</span> <span class="toc-text">疑问汇总</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#任务特点与难点"><span class="toc-number"></span> <span class="toc-text">任务特点与难点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#评估指标"><span class="toc-number"></span> <span class="toc-text">评估指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataSet"><span class="toc-number"></span> <span class="toc-text">DataSet</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本流程"><span class="toc-number">1.</span> <span class="toc-text">基本流程</span></a></li></ol>
+                    </li></div>
                 </span>
             </div>
         </div>
@@ -438,10 +462,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">综述</a>
               </li>
              
@@ -455,6 +475,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
               </li>
              
               <li class="article-tag-list-item">
