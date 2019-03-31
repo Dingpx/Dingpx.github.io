@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: cs231n | Dingpx&#39;s Blog</title>
+  <title>论文阅读——《SlowFast Networks for Video Recognition》 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="record ideas and knowledge">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dingpx&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/cs231n/index.html">
+  <meta name="description" content="本文是FAIR新出的动作识别网络。 疑惑汇总：为什么在侧边连接时会用到51 1的卷积核？">
+<meta name="keywords" content="CV,人体多语义分析,论文赏析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文阅读——《SlowFast Networks for Video Recognition》">
+<meta property="og:url" content="http://yoursite.com/2019/03/28/论文阅读——《SlowFast-Networks-for-Video-Recognition》/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="record ideas and knowledge">
+<meta property="og:description" content="本文是FAIR新出的动作识别网络。 疑惑汇总：为什么在侧边连接时会用到51 1的卷积核？">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g1iv7jj1fgj30io0d0n25.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1g1jptg4qy7j30j80m8q72.jpg">
+<meta property="og:updated_time" content="2019-03-29T13:08:43.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dingpx&#39;s Blog">
-<meta name="twitter:description" content="record ideas and knowledge">
+<meta name="twitter:title" content="论文阅读——《SlowFast Networks for Video Recognition》">
+<meta name="twitter:description" content="本文是FAIR新出的动作识别网络。 疑惑汇总：为什么在侧边连接时会用到51 1的卷积核？">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g1iv7jj1fgj30io0d0n25.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -131,36 +136,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-论文阅读——《SlowFast-Networks-for-Video-Recognition》" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      论文阅读——《SlowFast Networks for Video Recognition》
+    </h1>
+  
+
+        
+        <a href="/2019/03/28/论文阅读——《SlowFast-Networks-for-Video-Recognition》/" class="archive-article-date">
+  	<time datetime="2019-03-28T08:39:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文是FAIR新出的动作识别网络。</p>
+<p>疑惑汇总：为什么在侧边连接时会用到5<em>1 </em>1的卷积核？</p>
+<a id="more"></a>
+<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>“SlowFast Networks for Video Recognition”，来自FAIR 何恺明等人。提出了用于视频识别的 SlowFast 网络，在不同分辨率的层级上分开处理空间结构和时间事件。该模型在视频动作分类及检测方面性能强大：在没有使用任何预训练的情况下，在 Kinetics 数据集上实现了当前最佳水平；在 AVA 动作检测数据集上也实现了 28.3 mAP 的当前最佳水准。</p>
+<h3 id="二、核心思路总结"><a href="#二、核心思路总结" class="headerlink" title="二、核心思路总结"></a>二、核心思路总结</h3><p>二维的图像在x,y空间方向上是对称的，即文中提到的isotropic(各个方向同性)，但是在视频中t维度上并不是这样的，因为大多数我们看到的世界往往是在某个时间看到的静止的状态，所以时间在slow的状态下我们能够注意点在空间结构，而fast的状态下，我们更关注的是motion的状态，所以利用high resolution的高帧率图片去抓取动作信息</p>
+<p>作者提出了一个SlowFast网络，包括两个部分：</p>
+<ul>
+<li>短的一路：作用于低帧率部分，去抓取空间语义</li>
+<li>长的一路：作用于高帧率部分，去抓取高时间分辨率上的运动（这一路可以通过减少通道的容量使得网络变得轻量,因为空间的信息可以直接套用第一条path的信息，从而减少冗余，大概占据20%）</li>
+<li>连接的时候采取的是侧边连接，即fast路的每一层都和同一层的slow层进行连接</li>
+<li><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g1iv7jj1fgj30io0d0n25.jpg" alt="屏幕快照 2019-03-28 下午10.12.41"></li>
+</ul>
+<h3 id="三、要点分析"><a href="#三、要点分析" class="headerlink" title="三、要点分析"></a>三、要点分析</h3><h4 id="1、Slow-pathway"><a href="#1、Slow-pathway" class="headerlink" title="1、Slow pathway"></a>1、Slow pathway</h4><ul>
+<li>模型可以采用I3D,no-local等等所有可以编码时空结构的3D模型</li>
+<li>步长𝛕表示每隔𝛕帧采样一帧图片，这里一般的值取16</li>
+<li>假设被采样的图片数目是T，那么原始的clip长度是T*𝛕</li>
+</ul>
+<h4 id="2、Fast-pathway"><a href="#2、Fast-pathway" class="headerlink" title="2、Fast pathway"></a>2、Fast pathway</h4><ul>
+<li>和slow的路并行，采用的模型也是一样</li>
+<li>更小的步长𝛕/α，其中α是两路的帧速率比，所以采样αT帧图像，在实验中取的是8</li>
+<li>拥有高分辨率的输入（因为采样频率高），同时在整个处理过程中（在做分类classfication之前），时间维度始终保持αT，这样就保证从提取的feature角度也保持着高分辨率</li>
+<li>这一路的channel的容量很小，是slow那一路的β 倍，实验中取的是1/8。目的是抓住很多的时间信息而抛弃一些空间信息，根据卷积层操作的浮点运算数大致和通道数成二次关系，因此减少channel的同时也减少了很多的参数。作者同样提出在后续的实验中也对很多的其余的减少空间信息的方法，比如丢弃颜色那一通道等等，都对结果有相应的提升，因此作者认为这中思路是有效的。</li>
+</ul>
+<h4 id="3、Lateral-connections"><a href="#3、Lateral-connections" class="headerlink" title="3、Lateral connections"></a>3、Lateral connections</h4><ul>
+<li>作者采用了在FPN网络中采用的侧边连接的手段，在每一个stage中都采取连接的方式，但是这两条路有不同的时序维度，所以作者这里采取了某种方式（下面会提到）去适配二者。</li>
+<li>同时作者采用的是将fast这一端向slow那一端进行单向融合，作者说他们也用了双向的融合但是结果是相似的。</li>
+<li>在两条路的最后输出部分，作者采用了global average pooling，然后将两者concatenate，最后连接一个全连接层。</li>
+</ul>
+<h4 id="4、论文中采取的实例Instantations"><a href="#4、论文中采取的实例Instantations" class="headerlink" title="4、论文中采取的实例Instantations"></a>4、论文中采取的实例Instantations</h4><ul>
+<li><h4 id="slow-pathway"><a href="#slow-pathway" class="headerlink" title="slow pathway:"></a>slow pathway:</h4><ul>
+<li>作者采用的是改编于“Spatiotemporal residual networks for video action recognition”（NIPS2016）一个空间Resnet变体。</li>
+<li>经过stride=16的采样后，一个clip拥有4张图片。</li>
+<li>作者说他们没用采用时间上的下采样，因为时间取样的跨度已经很大了，所以如果还对时间上进行下采样的话那么对整体的网络结构是没有太多帮助的。</li>
+<li>在conv1–res3这个阶段中，都没有对时间上进行卷积，在res4—res5的阶段中卷积。作者说他们在实验中发现如果早期就进行卷积的话会降低精度，因为由于采样的stride很大同时物体运动很快的话，前期的卷积结构在时间上的感受野并没有什么相关性，除非到了后期时间上的维度变得更厚的时候</li>
+</ul>
+</li>
+<li><h4 id="fast-pathway"><a href="#fast-pathway" class="headerlink" title="fast pathway:"></a>fast pathway:</h4><ul>
+<li>拥有高的时间分辨率和低的空间channel容量</li>
+<li>同样没有时间上的下采样</li>
+<li>整个stage里面都对时间维度进行了相应的卷积操作，因为这条路本来就是要通过抓取fine时间粒度的motion信息</li>
+</ul>
+</li>
+<li><h4 id="Lateral-connetions"><a href="#Lateral-connetions" class="headerlink" title="Lateral connetions:"></a>Lateral connetions:</h4><ul>
+<li>在fsat和slow部分的融合之前，需要尺度的匹配才行。</li>
+<li>作者在实验中尝试了三种连接方式：<ul>
+<li>Time-to-channel: 把αT帧中的信息压缩在T帧中，这样子通道数就从βC变成αβC，即 {αT, S2, βC} 变成 {T , S2, αβC}</li>
+<li>Time-strided sampling: 在每 α 帧中采样一帧, 将 {αT , S2, βC} 变成{T , S2, βC}.</li>
+<li>Time-strided convolution: 采用 3D 卷积的方式，时间维度上的stride为α，kernel为5<em>1 </em>1，输出的channels为2βC（至于为什么核为5<em> </em>1 *1 就不晓得了）</li>
+</ul>
+</li>
+<li>最后是通过summation/concatenation的方式连接到slow上</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1g1jptg4qy7j30j80m8q72.jpg" alt="屏幕快照 2019-03-29 下午3.51.47"></p>
+<h4 id="5、在AVA数据集上的实验结果"><a href="#5、在AVA数据集上的实验结果" class="headerlink" title="5、在AVA数据集上的实验结果"></a>5、在AVA数据集上的实验结果</h4><h3 id="四、一些思考"><a href="#四、一些思考" class="headerlink" title="四、一些思考"></a>四、一些思考</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/13/CS231n-Assignment2—Tensorflow/" class="archive-article-date">
-  	<time datetime="2018-12-13T08:35:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/13/CS231n-Assignment2—Tensorflow/">CS231n_Assignment2———Tensorflow</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -170,213 +228,129 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">人体多语义分析</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">论文赏析</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/28/论文阅读——《SlowFast-Networks-for-Video-Recognition》/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/10/CS231n-Assignment2——cnn/" class="archive-article-date">
-  	<time datetime="2018-12-10T10:11:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-10</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/05/综述——人体多语义分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">综述——人体多语义分析</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/10/CS231n-Assignment2——cnn/">CS231n_Assignment2——cnn</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、简介"><span class="toc-number">1.</span> <span class="toc-text">一、简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、核心思路总结"><span class="toc-number">2.</span> <span class="toc-text">二、核心思路总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、要点分析"><span class="toc-number">3.</span> <span class="toc-text">三、要点分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、Slow-pathway"><span class="toc-number">3.1.</span> <span class="toc-text">1、Slow pathway</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、Fast-pathway"><span class="toc-number">3.2.</span> <span class="toc-text">2、Fast pathway</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、Lateral-connections"><span class="toc-number">3.3.</span> <span class="toc-text">3、Lateral connections</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、论文中采取的实例Instantations"><span class="toc-number">3.4.</span> <span class="toc-text">4、论文中采取的实例Instantations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slow-pathway"><span class="toc-number">3.5.</span> <span class="toc-text">slow pathway:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fast-pathway"><span class="toc-number">3.6.</span> <span class="toc-text">fast pathway:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Lateral-connetions"><span class="toc-number">3.7.</span> <span class="toc-text">Lateral connetions:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、在AVA数据集上的实验结果"><span class="toc-number">3.8.</span> <span class="toc-text">5、在AVA数据集上的实验结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、一些思考"><span class="toc-number">4.</span> <span class="toc-text">四、一些思考</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/10/CS231n-Assignment2——Dropout/" class="archive-article-date">
-  	<time datetime="2018-12-10T09:50:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-10</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/10/CS231n-Assignment2——Dropout/">CS231n_Assignment2——Dropout</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/07/CS231n-Assignment2——BatchNormalization/" class="archive-article-date">
-  	<time datetime="2018-12-07T13:23:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/07/CS231n-Assignment2——BatchNormalization/">CS231n_Assignment2——BatchNormalization</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-posts">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/03/CS231n-Assignment2——FullyConnectedNets/" class="archive-article-date">
-  	<time datetime="2018-12-02T16:35:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/03/CS231n-Assignment2——FullyConnectedNets/">CS231n_Assignment2——FullyConnectedNets</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cs231n</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">assignment</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -399,9 +373,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
