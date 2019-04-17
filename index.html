@@ -133,6 +133,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-讲座笔记——梯度之谜" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/14/讲座笔记——梯度之谜/">讲座笔记——梯度之谜</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/14/讲座笔记——梯度之谜/" class="archive-article-date">
+  	<time datetime="2019-04-14T00:25:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>梯度之谜：</p>
+<p>模型驱动：正则项，其实是一种先验</p>
+<p>传统模型的缺点：非凸优化、每次只能fit一张图像、计算很慢</p>
+<p>深度模型的缺点：可解释性差、参数很难调、需要图像</p>
+<p>不管哪种问题，都是高度非凸的问题</p>
+<p>实际上我们是在学习一个趋势</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">讲座笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/14/讲座笔记——梯度之谜/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-讲座笔记——基于视觉和常识的推理" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -153,7 +236,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="X"><a href="#X" class="headerlink" title="X"></a>X</h2><p>Image caption：生成自然语言来描述图片，属于物体关系层次之间的建模</p>
+<p>图像的语义信息和分辨度的关系</p>
+<p>可不可以对于滑动窗去聚类呢</p>
+<p>先去通过注意力机制来抽取视觉特征（还是多尺度的特征提取比较好），再根据lstm来更新状态，最后推测下一个词（Beam search ???最近总听到啊），同时这个步骤一定要利用好场景信息（即额外加上一个场景信息）</p>
+<p>问题：data limit</p>
+<ul>
+<li>生成图像句子对：通过替换图像中前景的种类，替换这个前景的像素空间从而构造新的场景</li>
+</ul>
+<p>强化学习在处理image caption时候有问题</p>
+<h2 id="y"><a href="#y" class="headerlink" title="y"></a>y</h2><p>场景抽象性：场景是由物体以及局部组合构成，同时更加抽象  </p>
+<p> 之所以可以做文本图像的交互，是因为一张图像上的物体特别多，就是dense足够</p>
+<p>利用depth来帮助识别</p>
+<p>物体之间的关系OOR</p>
+<p>物体之间的关系转化为文本特征</p>
+<h2 id="z"><a href="#z" class="headerlink" title="z"></a>z</h2><p>在做推理的时候一定要把vision和reason分开</p>
+<p>利用数这种结构化东西就是相当于“打了草稿”，有一定的约束性</p>
+
       
 
       
@@ -973,84 +1072,6 @@
 
 
   
-    <article id="post-工具——将caj归于endnote下存档" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/26/工具——将caj归于endnote下存档/">工具————将caj归于endnote下存档</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/26/工具——将caj归于endnote下存档/" class="archive-article-date">
-  	<time datetime="2019-02-26T07:50:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>从知网上下载的caj文档总是需要用专门的阅读器打开且不利于归档，以下记录了如何将caj文件修改为可编辑pdf并存档于endnote下的过程。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">endnote</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/26/工具——将caj归于endnote下存档/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1189,15 +1210,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">endnote</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">流利说</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">endnote</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1209,19 +1230,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">综述</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">讲座笔记</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频识别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">综述</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>讲座笔记——以人为中心的视觉理解 | Dingpx&#39;s Blog</title>
+  <title>讲座笔记——梯度之谜 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="王利民三个层次：lab、movie、web video 数据库：kinetics最好 四个任务：识别、时序、空间、时序和空间结合 挑战：对动态信息的刻画、行为更加主观、视频标记更难（相对而言是若标签）、计算需求可能更大 时序的处理：短时、中时（10s级别，稀疏采样）、长时 历史：  deep network(2014)：各种fusion的讲解  Two stream CNN(2014):  3D">
-<meta name="keywords" content="CV,讲座笔记,视频识别">
+  <meta name="description" content="梯度之谜： 模型驱动：正则项，其实是一种先验 传统模型的缺点：非凸优化、每次只能fit一张图像、计算很慢 深度模型的缺点：可解释性差、参数很难调、需要图像 不管哪种问题，都是高度非凸的问题 实际上我们是在学习一个趋势">
+<meta name="keywords" content="CV,讲座笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="讲座笔记——以人为中心的视觉理解">
-<meta property="og:url" content="http://yoursite.com/2019/04/12/讲座笔记——以人为中心的视觉理解/index.html">
+<meta property="og:title" content="讲座笔记——梯度之谜">
+<meta property="og:url" content="http://yoursite.com/2019/04/14/讲座笔记——梯度之谜/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="王利民三个层次：lab、movie、web video 数据库：kinetics最好 四个任务：识别、时序、空间、时序和空间结合 挑战：对动态信息的刻画、行为更加主观、视频标记更难（相对而言是若标签）、计算需求可能更大 时序的处理：短时、中时（10s级别，稀疏采样）、长时 历史：  deep network(2014)：各种fusion的讲解  Two stream CNN(2014):  3D">
+<meta property="og:description" content="梯度之谜： 模型驱动：正则项，其实是一种先验 传统模型的缺点：非凸优化、每次只能fit一张图像、计算很慢 深度模型的缺点：可解释性差、参数很难调、需要图像 不管哪种问题，都是高度非凸的问题 实际上我们是在学习一个趋势">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-12T03:52:55.809Z">
+<meta property="og:updated_time" content="2019-04-14T01:51:02.104Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="讲座笔记——以人为中心的视觉理解">
-<meta name="twitter:description" content="王利民三个层次：lab、movie、web video 数据库：kinetics最好 四个任务：识别、时序、空间、时序和空间结合 挑战：对动态信息的刻画、行为更加主观、视频标记更难（相对而言是若标签）、计算需求可能更大 时序的处理：短时、中时（10s级别，稀疏采样）、长时 历史：  deep network(2014)：各种fusion的讲解  Two stream CNN(2014):  3D">
+<meta name="twitter:title" content="讲座笔记——梯度之谜">
+<meta name="twitter:description" content="梯度之谜： 模型驱动：正则项，其实是一种先验 传统模型的缺点：非凸优化、每次只能fit一张图像、计算很慢 深度模型的缺点：可解释性差、参数很难调、需要图像 不管哪种问题，都是高度非凸的问题 实际上我们是在学习一个趋势">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -133,106 +133,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-讲座笔记——以人为中心的视觉理解" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-讲座笔记——梯度之谜" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      讲座笔记——以人为中心的视觉理解
+      讲座笔记——梯度之谜
     </h1>
   
 
         
-        <a href="/2019/04/12/讲座笔记——以人为中心的视觉理解/" class="archive-article-date">
-  	<time datetime="2019-04-12T00:25:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
+        <a href="/2019/04/14/讲座笔记——梯度之谜/" class="archive-article-date">
+  	<time datetime="2019-04-14T00:25:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="王利民"><a href="#王利民" class="headerlink" title="王利民"></a>王利民</h2><p>三个层次：lab、movie、web video</p>
-<p>数据库：kinetics最好</p>
-<p>四个任务：识别、时序、空间、时序和空间结合</p>
-<p>挑战：对动态信息的刻画、行为更加主观、视频标记更难（相对而言是若标签）、计算需求可能更大</p>
-<p>时序的处理：短时、中时（10s级别，稀疏采样）、长时</p>
-<p>历史：</p>
-<ul>
-<li><p>deep network(2014)：各种fusion的讲解</p>
-</li>
-<li><p>Two stream CNN(2014):</p>
-</li>
-<li>3D CNN(2015)</li>
-<li>TDD(2015): 用轨迹去追踪动作</li>
-<li>Motion vetor: </li>
-<li>I3D(2017): deepmind</li>
-<li>R(2+!)D(2018): 不是所有的图都要用3d卷积</li>
-<li>Slowfast(2019):</li>
-</ul>
-<p>loss设计：如果二者应该独立的话，简单的加不太好，可以考虑二者的外积空间，类似于能量模型？？</p>
-<p>TSN的motivation:随机采样，因为有些帧是冗余的</p>
-<p>融合的方式：add,还有一些弱监督的方式</p>
-<p>Stnet：中间有一些3d卷积的融合</p>
-<p>更长视频：</p>
-<ul>
-<li>标记很昂贵、不同人的标准也不一样</li>
-<li>attetion、top-k的方式来选择</li>
-</ul>
-<p>Activitynet的数据噪声会很多</p>
-<p>图卷积的方式的应用</p>
-<h2 id="乔宇"><a href="#乔宇" class="headerlink" title="乔宇"></a>乔宇</h2><p>深度网络的思考：</p>
-<ul>
-<li>优化：RElu、BN…</li>
-<li>过拟合：</li>
-<li>结构设计：</li>
-<li>轻量级：</li>
-</ul>
-<p>长尾分布的解决办法：考虑类内和类间的差异</p>
-<p>姿态的估计去引领</p>
-<p>在图像中生成特征去帮助视频理解      </p>
-<h2 id="付彦伟"><a href="#付彦伟" class="headerlink" title="付彦伟"></a>付彦伟</h2><p>理解视频中的emotion（包含在主观的视觉属性）</p>
-<p>困难：ambiguity in emotion</p>
-<p>想法：通过比较的方式，比如A很漂亮，C 不漂亮，然后选择b没有a 漂亮</p>
-<p>但是又有困难：</p>
-<ul>
-<li>Cultural factor</li>
-<li>Psychological </li>
-<li>ambiguous</li>
-<li>Lazy annotation</li>
-</ul>
-<p>办法：统计的办法，多种图像之间的多重比较</p>
-<p>不仅仅是face emotion</p>
-<h2 id="欧阳万里"><a href="#欧阳万里" class="headerlink" title="欧阳万里"></a>欧阳万里</h2><p>人脑的神经元：同一层神经元是有联系的，而且是稀疏的</p>
-<p>在特征层级做结构化建模而不是在标签层，这样子可以利用好特征之间的互斥和互助关系</p>
-<p>利用条件随机场来帮助自己选择合适的激活函数等等</p>
-<p>在不同的领域都可以考虑结构化设计</p>
-<p>区域级/像素级的任务：都是在考虑上采样，不仅仅考虑高层语义的信息</p>
-<p>不同的任务对于图像需要的分辨率是不一样的</p>
-<p>孤立的卷积：1*1</p>
-<p>抛弃了孤立的卷积？？并不合适</p>
-<p>不同语义的特征是都有用的，存粹的混合（add）并不是最好的,他们是互补的，都要保留住，去修正比较好（Fishnet）</p>
-<p>同样情况下，参数量大大减少了</p>
-<p>结构化学习和特征学习的联合，利用联合训练将二者有机的结合在一起</p>
-<h2 id="林巍yao"><a href="#林巍yao" class="headerlink" title="林巍yao"></a>林巍yao</h2><p>行为识别的领域：</p>
-<ul>
-<li>基于轨迹/骨架的行为识别</li>
-<li>面向任意视频的行为识别</li>
-<li>监控场景下的行为识别（有交叉，所以需要定位，跟踪定位比较重要）</li>
-<li>密集场景分析</li>
-<li>异常行为识别</li>
-</ul>
-<p>AP -loss: 针对one-stage的loss计算，因为class的类别分布不均匀，前景的样本太少</p>
-<p>多相机的re-id(无人超市)</p>
-<p>多尺度特征（相似类之间的共享特征）</p>
-<p>时空异步的关联（rgb和光流信息最大的地方不一样！）</p>
-<p>时空行为定位（不是做全局的，sample）</p>
-<p>音频和视频的联合识别</p>
-<p>很多组群的行为还是很难做的</p>
-<h2 id="Panel"><a href="#Panel" class="headerlink" title="Panel"></a>Panel</h2><p>和其他领域的融合，不要只看cv的论文</p>
-<p>面临着巨大的信噪比问题，因为除了需要注意的点外其余的都是噪声</p>
-<p>将姿态估计+动作识别+localization相结合的做法</p>
+        <p>梯度之谜：</p>
+<p>模型驱动：正则项，其实是一种先验</p>
+<p>传统模型的缺点：非凸优化、每次只能fit一张图像、计算很慢</p>
+<p>深度模型的缺点：可解释性差、参数很难调、需要图像</p>
+<p>不管哪种问题，都是高度非凸的问题</p>
+<p>实际上我们是在学习一个趋势</p>
 
       
 
@@ -251,10 +177,6 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">讲座笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">视频识别</a>
         		</li>
       		
 		</ul>
@@ -310,7 +232,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/12/讲座笔记——以人为中心的视觉理解/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/14/讲座笔记——梯度之谜/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -324,18 +246,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/12/讲座笔记——基于视觉和常识的推理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          讲座笔记——基于视觉和常识的推理
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/04/流利阅读0404/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">流利阅读0404</div>
+    <a href="/2019/04/12/讲座笔记——基于视觉和常识的推理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">讲座笔记——基于视觉和常识的推理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -362,7 +275,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#王利民"><span class="toc-number">1.</span> <span class="toc-text">王利民</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#乔宇"><span class="toc-number">2.</span> <span class="toc-text">乔宇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#付彦伟"><span class="toc-number">3.</span> <span class="toc-text">付彦伟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#欧阳万里"><span class="toc-number">4.</span> <span class="toc-text">欧阳万里</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#林巍yao"><span class="toc-number">5.</span> <span class="toc-text">林巍yao</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Panel"><span class="toc-number">6.</span> <span class="toc-text">Panel</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
