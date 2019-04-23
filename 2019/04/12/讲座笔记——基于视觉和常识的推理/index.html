@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>讲座笔记——基于视觉和常识的推理 | Dingpx&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="XImage caption：生成自然语言来描述图片，属于物体关系层次之间的建模 图像的语义信息和分辨度的关系 可不可以对于滑动窗去聚类呢 先去通过注意力机制来抽取视觉特征（还是多尺度的特征提取比较好），再根据lstm来更新状态，最后推测下一个词（Beam search ???最近总听到啊），同时这个步骤一定要利用好场景信息（即额外加上一个场景信息） 问题：data limit  生成图像句子对：">
+  <meta name="description" content="基于视觉和常识的推理">
 <meta name="keywords" content="CV,讲座笔记,视频识别">
 <meta property="og:type" content="article">
 <meta property="og:title" content="讲座笔记——基于视觉和常识的推理">
 <meta property="og:url" content="http://yoursite.com/2019/04/12/讲座笔记——基于视觉和常识的推理/index.html">
 <meta property="og:site_name" content="Dingpx&#39;s Blog">
-<meta property="og:description" content="XImage caption：生成自然语言来描述图片，属于物体关系层次之间的建模 图像的语义信息和分辨度的关系 可不可以对于滑动窗去聚类呢 先去通过注意力机制来抽取视觉特征（还是多尺度的特征提取比较好），再根据lstm来更新状态，最后推测下一个词（Beam search ???最近总听到啊），同时这个步骤一定要利用好场景信息（即额外加上一个场景信息） 问题：data limit  生成图像句子对：">
+<meta property="og:description" content="基于视觉和常识的推理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-12T07:39:22.796Z">
+<meta property="og:updated_time" content="2019-04-22T17:48:40.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="讲座笔记——基于视觉和常识的推理">
-<meta name="twitter:description" content="XImage caption：生成自然语言来描述图片，属于物体关系层次之间的建模 图像的语义信息和分辨度的关系 可不可以对于滑动窗去聚类呢 先去通过注意力机制来抽取视觉特征（还是多尺度的特征提取比较好），再根据lstm来更新状态，最后推测下一个词（Beam search ???最近总听到啊），同时这个步骤一定要利用好场景信息（即额外加上一个场景信息） 问题：data limit  生成图像句子对：">
+<meta name="twitter:description" content="基于视觉和常识的推理">
   
     <link rel="alternative" href="/atom.xml" title="Dingpx&#39;s Blog" type="application/atom+xml">
   
@@ -153,7 +153,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="X"><a href="#X" class="headerlink" title="X"></a>X</h2><p>Image caption：生成自然语言来描述图片，属于物体关系层次之间的建模</p>
+        <p>基于视觉和常识的推理</p>
+<a id="more"></a>
+<h2 id="X"><a href="#X" class="headerlink" title="X"></a>X</h2><p>Image caption：生成自然语言来描述图片，属于物体关系层次之间的建模</p>
 <p>图像的语义信息和分辨度的关系</p>
 <p>可不可以对于滑动窗去聚类呢</p>
 <p>先去通过注意力机制来抽取视觉特征（还是多尺度的特征提取比较好），再根据lstm来更新状态，最后推测下一个词（Beam search ???最近总听到啊），同时这个步骤一定要利用好场景信息（即额外加上一个场景信息）</p>
@@ -423,27 +425,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">assignment</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,15 +433,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">endnote</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">流利说</a>
+                <a href="javascript:void(0)" class="js-tag color3">CV</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,15 +453,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">讲座笔记</a>
+                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">视频识别</a>
+                <a href="javascript:void(0)" class="js-tag color1">assignment</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
+                <a href="javascript:void(0)" class="js-tag color5">讲座总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">流利说</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,11 +485,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">讲座笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">视频识别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
               </li>
              
               <li class="article-tag-list-item">

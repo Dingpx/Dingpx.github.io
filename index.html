@@ -133,6 +133,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Valse2019总结" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/22/Valse2019总结/">讲座笔记——Valse2019总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/22/Valse2019总结/" class="archive-article-date">
+  	<time datetime="2019-04-22T14:38:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下是Valse青年会议的感悟总结。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">讲座总结</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/22/Valse2019总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-讲座笔记——梯度之谜" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -154,12 +232,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>梯度之谜：</p>
-<p>模型驱动：正则项，其实是一种先验</p>
-<p>传统模型的缺点：非凸优化、每次只能fit一张图像、计算很慢</p>
-<p>深度模型的缺点：可解释性差、参数很难调、需要图像</p>
-<p>不管哪种问题，都是高度非凸的问题</p>
-<p>实际上我们是在学习一个趋势</p>
-
+        
       
 
       
@@ -236,23 +309,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="X"><a href="#X" class="headerlink" title="X"></a>X</h2><p>Image caption：生成自然语言来描述图片，属于物体关系层次之间的建模</p>
-<p>图像的语义信息和分辨度的关系</p>
-<p>可不可以对于滑动窗去聚类呢</p>
-<p>先去通过注意力机制来抽取视觉特征（还是多尺度的特征提取比较好），再根据lstm来更新状态，最后推测下一个词（Beam search ???最近总听到啊），同时这个步骤一定要利用好场景信息（即额外加上一个场景信息）</p>
-<p>问题：data limit</p>
-<ul>
-<li>生成图像句子对：通过替换图像中前景的种类，替换这个前景的像素空间从而构造新的场景</li>
-</ul>
-<p>强化学习在处理image caption时候有问题</p>
-<h2 id="y"><a href="#y" class="headerlink" title="y"></a>y</h2><p>场景抽象性：场景是由物体以及局部组合构成，同时更加抽象  </p>
-<p> 之所以可以做文本图像的交互，是因为一张图像上的物体特别多，就是dense足够</p>
-<p>利用depth来帮助识别</p>
-<p>物体之间的关系OOR</p>
-<p>物体之间的关系转化为文本特征</p>
-<h2 id="z"><a href="#z" class="headerlink" title="z"></a>z</h2><p>在做推理的时候一定要把vision和reason分开</p>
-<p>利用数这种结构化东西就是相当于“打了草稿”，有一定的约束性</p>
-
+        <p>基于视觉和常识的推理</p>
+        
       
 
       
@@ -333,87 +391,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="王利民"><a href="#王利民" class="headerlink" title="王利民"></a>王利民</h2><p>三个层次：lab、movie、web video</p>
-<p>数据库：kinetics最好</p>
-<p>四个任务：识别、时序、空间、时序和空间结合</p>
-<p>挑战：对动态信息的刻画、行为更加主观、视频标记更难（相对而言是若标签）、计算需求可能更大</p>
-<p>时序的处理：短时、中时（10s级别，稀疏采样）、长时</p>
-<p>历史：</p>
-<ul>
-<li><p>deep network(2014)：各种fusion的讲解</p>
-</li>
-<li><p>Two stream CNN(2014):</p>
-</li>
-<li>3D CNN(2015)</li>
-<li>TDD(2015): 用轨迹去追踪动作</li>
-<li>Motion vetor: </li>
-<li>I3D(2017): deepmind</li>
-<li>R(2+!)D(2018): 不是所有的图都要用3d卷积</li>
-<li>Slowfast(2019):</li>
-</ul>
-<p>loss设计：如果二者应该独立的话，简单的加不太好，可以考虑二者的外积空间，类似于能量模型？？</p>
-<p>TSN的motivation:随机采样，因为有些帧是冗余的</p>
-<p>融合的方式：add,还有一些弱监督的方式</p>
-<p>Stnet：中间有一些3d卷积的融合</p>
-<p>更长视频：</p>
-<ul>
-<li>标记很昂贵、不同人的标准也不一样</li>
-<li>attetion、top-k的方式来选择</li>
-</ul>
-<p>Activitynet的数据噪声会很多</p>
-<p>图卷积的方式的应用</p>
-<h2 id="乔宇"><a href="#乔宇" class="headerlink" title="乔宇"></a>乔宇</h2><p>深度网络的思考：</p>
-<ul>
-<li>优化：RElu、BN…</li>
-<li>过拟合：</li>
-<li>结构设计：</li>
-<li>轻量级：</li>
-</ul>
-<p>长尾分布的解决办法：考虑类内和类间的差异</p>
-<p>姿态的估计去引领</p>
-<p>在图像中生成特征去帮助视频理解      </p>
-<h2 id="付彦伟"><a href="#付彦伟" class="headerlink" title="付彦伟"></a>付彦伟</h2><p>理解视频中的emotion（包含在主观的视觉属性）</p>
-<p>困难：ambiguity in emotion</p>
-<p>想法：通过比较的方式，比如A很漂亮，C 不漂亮，然后选择b没有a 漂亮</p>
-<p>但是又有困难：</p>
-<ul>
-<li>Cultural factor</li>
-<li>Psychological </li>
-<li>ambiguous</li>
-<li>Lazy annotation</li>
-</ul>
-<p>办法：统计的办法，多种图像之间的多重比较</p>
-<p>不仅仅是face emotion</p>
-<h2 id="欧阳万里"><a href="#欧阳万里" class="headerlink" title="欧阳万里"></a>欧阳万里</h2><p>人脑的神经元：同一层神经元是有联系的，而且是稀疏的</p>
-<p>在特征层级做结构化建模而不是在标签层，这样子可以利用好特征之间的互斥和互助关系</p>
-<p>利用条件随机场来帮助自己选择合适的激活函数等等</p>
-<p>在不同的领域都可以考虑结构化设计</p>
-<p>区域级/像素级的任务：都是在考虑上采样，不仅仅考虑高层语义的信息</p>
-<p>不同的任务对于图像需要的分辨率是不一样的</p>
-<p>孤立的卷积：1*1</p>
-<p>抛弃了孤立的卷积？？并不合适</p>
-<p>不同语义的特征是都有用的，存粹的混合（add）并不是最好的,他们是互补的，都要保留住，去修正比较好（Fishnet）</p>
-<p>同样情况下，参数量大大减少了</p>
-<p>结构化学习和特征学习的联合，利用联合训练将二者有机的结合在一起</p>
-<h2 id="林巍yao"><a href="#林巍yao" class="headerlink" title="林巍yao"></a>林巍yao</h2><p>行为识别的领域：</p>
-<ul>
-<li>基于轨迹/骨架的行为识别</li>
-<li>面向任意视频的行为识别</li>
-<li>监控场景下的行为识别（有交叉，所以需要定位，跟踪定位比较重要）</li>
-<li>密集场景分析</li>
-<li>异常行为识别</li>
-</ul>
-<p>AP -loss: 针对one-stage的loss计算，因为class的类别分布不均匀，前景的样本太少</p>
-<p>多相机的re-id(无人超市)</p>
-<p>多尺度特征（相似类之间的共享特征）</p>
-<p>时空异步的关联（rgb和光流信息最大的地方不一样！）</p>
-<p>时空行为定位（不是做全局的，sample）</p>
-<p>音频和视频的联合识别</p>
-<p>很多组群的行为还是很难做的</p>
-<h2 id="Panel"><a href="#Panel" class="headerlink" title="Panel"></a>Panel</h2><p>和其他领域的融合，不要只看cv的论文</p>
-<p>面临着巨大的信噪比问题，因为除了需要注意的点外其余的都是噪声</p>
-<p>将姿态估计+动作识别+localization相结合的做法</p>
-
+        <p>以人为中心的视觉理解</p>
+        
       
 
       
@@ -990,88 +969,6 @@
 
 
   
-    <article id="post-论文赏析——《基于视觉的人体行为识别》" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/26/论文赏析——《基于视觉的人体行为识别》/">论文赏析——《基于视觉的人体行为识别》</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/26/论文赏析——《基于视觉的人体行为识别》/" class="archive-article-date">
-  	<time datetime="2019-02-26T15:29:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文。。。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">CV</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">人体多语义分析</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">论文赏析</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/26/论文赏析——《基于视觉的人体行为识别》/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1182,27 +1079,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CV</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">assignment</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">入门</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1210,15 +1087,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">入门</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">endnote</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">流利说</a>
+                <a href="javascript:void(0)" class="js-tag color3">CV</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1230,15 +1107,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">讲座笔记</a>
+                <a href="javascript:void(0)" class="js-tag color2">cs231n</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">视频识别</a>
+                <a href="javascript:void(0)" class="js-tag color1">assignment</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
+                <a href="javascript:void(0)" class="js-tag color5">讲座总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">流利说</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Alfred</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1250,11 +1139,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">讲座笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">视频识别</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">知识图谱</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">论文赏析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">目标检测</a>
               </li>
              
               <li class="article-tag-list-item">
